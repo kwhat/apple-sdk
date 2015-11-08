@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Tk.framework/Versions/8.4/Headers/tkPlatDecls.h
+/tmp/MacOSX-SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers/tkPlatDecls.h

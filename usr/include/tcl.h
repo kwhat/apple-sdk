@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Tcl.framework/Versions/8.4/Headers/tcl.h
+/tmp/MacOSX-SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Tcl.framework/Versions/8.5/Headers/tcl.h

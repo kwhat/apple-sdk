@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.5.sdk/usr/include/AvailabilityMacros.h
+/tmp/MacOSX-SDKs/MacOSX10.6.sdk/usr/include/AvailabilityMacros.h
