@@ -2,7 +2,7 @@
 //  NSMailDelivery.h
 //  Message
 //  
-//  Copyright © 1997–2011 Apple Inc. All rights reserved.
+//  Copyright © 1997–2013 Apple Inc. All rights reserved.
 //
 
 /*! @header

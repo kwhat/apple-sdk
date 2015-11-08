@@ -90,6 +90,13 @@ enum {
 
     @constant kIOPMInitialDeviceState
     Indicates the initial power state for the device. If <code>initialPowerStateForDomainState()</code> returns a power state with this flag set in the capability field, then the initial power change is performed without calling the driver's <code>setPowerState()</code>.
+
+    @constant kIOPMRootDomainState
+    An indication that the power flags represent the state of the root power
+    domain. This bit must not be set in the IOPMPowerState structure.
+    Power Management may pass this bit to initialPowerStateForDomainState()
+    or powerStateForDomainState() to map from a global system state to the
+    desired device state.
 */
 typedef unsigned long IOPMPowerFlags;
 enum {
@@ -101,7 +108,8 @@ enum {
     kIOPMRestartCapability          = 0x00000080,
     kIOPMSleep                      = 0x00000001,
     kIOPMRestart                    = 0x00000080,
-    kIOPMInitialDeviceState         = 0x00000100
+    kIOPMInitialDeviceState         = 0x00000100,
+    kIOPMRootDomainState            = 0x00000200
 };
 
 /*
@@ -245,7 +253,31 @@ enum {
  *  false       == Retain FV key when going to standby mode
  *  not present == Retain FV key when going to standby mode
  */
-#define kIOPMDestroyFVKeyOnStandbyKey            "DestroyFVKeyOnStandby"
+#define kIOPMDestroyFVKeyOnStandbyKey       "DestroyFVKeyOnStandby"
+
+/*******************************************************************************
+ *
+ * Properties that can control power management behavior
+ *
+ ******************************************************************************/
+
+/* kIOPMResetPowerStateOnWakeKey
+ * If an IOService publishes this key with the value of kOSBooleanTrue,
+ * then PM will disregard the influence from changePowerStateToPriv() or
+ * any activity tickles that occurred before system sleep when resolving
+ * the initial device power state on wake. Influences from power children
+ * and changePowerStateTo() are not eliminated. At the earliest opportunity
+ * upon system wake, PM will query the driver for a new power state to be
+ * installed as the initial changePowerStateToPriv() influence, by calling
+ * initialPowerStateForDomainState() with both kIOPMRootDomainState and
+ * kIOPMPowerOn flags set. The default implementation will always return
+ * the lowest power state. Drivers can override this default behavior to
+ * immediately raise the power state when there are work blocked on the
+ * power change, and cannot afford to wait until the next activity tickle.
+ * This property should be statically added to a driver's plist or set at
+ * runtime before calling PMinit().
+ */
+#define kIOPMResetPowerStateOnWakeKey       "IOPMResetPowerStateOnWake"
 
 /*******************************************************************************
  *
@@ -288,7 +320,15 @@ enum {
      */
     kIOPMDriverAssertionPreventDisplaySleepBit      = 0x40,
 
-    kIOPMDriverAssertionReservedBit7                = 0x80
+    /*! kIOPMDriverAssertionReservedBit7
+     * Reserved for storage family.
+     */
+    kIOPMDriverAssertionReservedBit7                = 0x80,
+
+    /*! kIOPMDriverAssertionMagicPacketWakeEnabledBit
+     * When set, driver is informing PM that magic packet wake is enabled.
+     */
+    kIOPMDriverAssertionMagicPacketWakeEnabledBit   = 0x100
 };
 
  /* kIOPMAssertionsDriverKey
@@ -296,7 +336,7 @@ enum {
   * a bitfield describing the aggregate PM assertion levels.
   * Example: A value of 0 indicates that no driver has asserted anything.
   * Or, a value of <link>kIOPMDriverAssertionCPUBit</link>
-  *   indicates that a driver (or drivers) have asserted a need fro CPU and video.
+  *   indicates that a driver (or drivers) have asserted a need for CPU and video.
   */
 #define kIOPMAssertionsDriverKey            "DriverPMAssertions"
 
@@ -305,7 +345,7 @@ enum {
   * a bitfield describing the aggregate PM assertion levels.
   * Example: A value of 0 indicates that no driver has asserted anything.
   * Or, a value of <link>kIOPMDriverAssertionCPUBit</link>
-  *   indicates that a driver (or drivers) have asserted a need fro CPU and video.
+  *   indicates that a driver (or drivers) have asserted a need for CPU and video.
   */
 #define kIOPMAssertionsDriverDetailedKey    "DriverPMAssertionsDetailed"
 
@@ -408,6 +448,13 @@ enum {
 #define kIOPMMessageDriverAssertionsChanged  \
                 iokit_family_msg(sub_iokit_powermanagement, 0x150)
 
+/*! kIOPMMessageDarkWakeThermalEmergency
+ * Sent when machine becomes unsustainably warm in DarkWake.
+ * Kernel PM might choose to put the machine back to sleep right after.
+ */
+#define kIOPMMessageDarkWakeThermalEmergency \
+                iokit_family_msg(sub_iokit_powermanagement, 0x160)
+
 /*******************************************************************************
  *
  * Power commands issued to root domain
@@ -429,7 +476,8 @@ enum {
   kIOPMEnableClamshell          = (1<<7),  // sleep on clamshell closure
   kIOPMProcessorSpeedChange     = (1<<8),  // change the processor speed
   kIOPMOverTemp                 = (1<<9),  // system dangerously hot
-  kIOPMClamshellOpened          = (1<<10)  // clamshell was opened
+  kIOPMClamshellOpened          = (1<<10), // clamshell was opened
+  kIOPMDWOverTemp               = (1<<11)  // DarkWake thermal limits exceeded.
 };
 
 
@@ -665,6 +713,7 @@ enum {
 // Maintenance wake calendar.
 #define kIOPMSettingMaintenanceWakeCalendarKey      "MaintenanceWakeCalendarDate"
 
+
 struct IOPMCalendarStruct {
     UInt32      year;
     UInt8       month;
@@ -672,6 +721,7 @@ struct IOPMCalendarStruct {
     UInt8       hour;
     UInt8       minute;
     UInt8       second;
+    UInt8       selector;
 };
 typedef struct IOPMCalendarStruct IOPMCalendarStruct;
 
@@ -741,25 +791,6 @@ enum {
 // Internal power management data structures
 // **********************************************
 
-#if KERNEL && __cplusplus
-class IOService;
-
-enum {
-    kIOPowerEmergencyLevel = 1000
-};
-
-enum {
-    kIOPMSubclassPolicy,
-    kIOPMSuperclassPolicy1
-};
-
-struct stateChangeNote {
-    IOPMPowerFlags    stateFlags;
-    unsigned long    stateNum;
-    void *         powerRef;
-};
-typedef struct stateChangeNote stateChangeNote;
-
 struct IOPowerStateChangeNotification {
     void *        powerRef;
     unsigned long    returnValue;
@@ -768,7 +799,6 @@ struct IOPowerStateChangeNotification {
 };
 typedef struct IOPowerStateChangeNotification IOPowerStateChangeNotification;
 typedef IOPowerStateChangeNotification sleepWakeNote;
-#endif /* KERNEL && __cplusplus */
 
 /*! @struct IOPMSystemCapabilityChangeParameters
     @abstract A structure describing a system capability change.

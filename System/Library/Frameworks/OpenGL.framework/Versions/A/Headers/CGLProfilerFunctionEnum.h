@@ -1,6 +1,6 @@
 /*
 	File:		CGLProfilerFunctionEnum.h
-	Copyright:	© 2004 by Apple Computer, Inc., all rights reserved.
+	Copyright:	(c) 2004-2011 by Apple Inc., all rights reserved.
 */
 
 
@@ -975,9 +975,15 @@ typedef enum
 	kCGLFEglIsVertexArray,
 	kCGLFEglProvokingVertex,
 
+    kCGLFEglPointSizePointerAPPLE,
+    kCGLFEglVertexPointSizefAPPLE,
+
 	kCGLFENumFunctions,
 
 	/* Aliased Entries */
+    kCGLFEglGetQueryObjecti64vEXT  = kCGLFEglGetQueryObjecti64v,
+    kCGLFEglGetQueryObjectui64vEXT = kCGLFEglGetQueryObjectui64v,
+    
 	kCGLFEglIsRenderbuffer   = kCGLFEglIsRenderbufferEXT,
 	kCGLFEglBindRenderbuffer = kCGLFEglBindRenderbufferEXT,
 	kCGLFEglGenRenderbuffers = kCGLFEglGenRenderbuffersEXT,

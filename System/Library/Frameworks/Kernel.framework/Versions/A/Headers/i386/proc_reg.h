@@ -145,21 +145,23 @@
 /*
  * CR4
  */
-#define CR4_OSXSAVE 0x00040000	/* OS supports XSAVE */
-#define CR4_PCIDE   0x00020000	/* PCID Enable */
-#define CR4_SMXE    0x00004000	/* Enable SMX operation */
-#define CR4_VMXE    0x00002000	/* Enable VMX operation */
-#define CR4_OSXMM   0x00000400  /* SSE/SSE2 exceptions supported in OS */
-#define CR4_OSFXS   0x00000200  /* SSE/SSE2 OS supports FXSave */
-#define CR4_PCE     0x00000100  /* Performance-Monitor Count Enable */
-#define CR4_PGE     0x00000080  /* Page Global Enable */
-#define	CR4_MCE     0x00000040	/* Machine Check Exceptions */
-#define CR4_PAE     0x00000020  /* Physical Address Extensions */
-#define	CR4_PSE     0x00000010	/* Page Size Extensions */
-#define	CR4_DE      0x00000008	/* Debugging Extensions */
-#define	CR4_TSD     0x00000004	/* Time Stamp Disable */
-#define	CR4_PVI     0x00000002	/* Protected-mode Virtual Interrupts */
-#define	CR4_VME     0x00000001	/* Virtual-8086 Mode Extensions */
+#define CR4_SMEP	0x00100000	/* Supervisor-Mode Execute Protect */
+#define CR4_OSXSAVE	0x00040000	/* OS supports XSAVE */
+#define CR4_PCIDE	0x00020000	/* PCID Enable */
+#define CR4_RDWRFSGS	0x00010000	/* RDWRFSGS Enable */
+#define CR4_SMXE	0x00004000	/* Enable SMX operation */
+#define CR4_VMXE	0x00002000	/* Enable VMX operation */
+#define CR4_OSXMM	0x00000400	/* SSE/SSE2 exception support in OS */
+#define CR4_OSFXS	0x00000200	/* SSE/SSE2 OS supports FXSave */
+#define CR4_PCE		0x00000100	/* Performance-Monitor Count Enable */
+#define CR4_PGE		0x00000080	/* Page Global Enable */
+#define	CR4_MCE		0x00000040	/* Machine Check Exceptions */
+#define CR4_PAE		0x00000020	/* Physical Address Extensions */
+#define	CR4_PSE		0x00000010	/* Page Size Extensions */
+#define	CR4_DE		0x00000008	/* Debugging Extensions */
+#define	CR4_TSD		0x00000004	/* Time Stamp Disable */
+#define	CR4_PVI		0x00000002	/* Protected-mode Virtual Interrupts */
+#define	CR4_VME		0x00000001	/* Virtual-8086 Mode Extensions */
 
 /*
  * XCR0 - XFEATURE_ENABLED_MASK (a.k.a. XFEM) register
@@ -174,6 +176,9 @@
 
 #define	PMAP_PCID_PRESERVE (1ULL << 63)
 #define	PMAP_PCID_MASK (0xFFF)
+
+#define RDRAND_RAX 	.byte 0x48, 0x0f, 0xc7, 0xf0
+
 #ifndef	ASSEMBLER
 
 #include <sys/cdefs.h>
@@ -466,7 +471,6 @@ static inline uint64_t rdtscp64(uint32_t *aux)
  * The implementation is in locore.s.
  */
 extern int rdmsr_carefully(uint32_t msr, uint32_t *lo, uint32_t *hi);
-
 __END_DECLS
 
 #endif	/* ASSEMBLER */
@@ -500,7 +504,8 @@ __END_DECLS
 
 #define MSR_PLATFORM_INFO			0xce
 
-#define MSR_PMG_CST_CONFIG_CONTROL		0xe2
+#define MSR_IA32_MPERF				0xE7
+#define MSR_IA32_APERF				0xE8
 
 #define MSR_IA32_BBL_CR_CTL			0x119
 
@@ -522,7 +527,6 @@ __END_DECLS
 
 #define MSR_IA32_MISC_ENABLE			0x1a0
 
-#define MSR_IA32_ENERGY_PERFORMANCE_BIAS	0x1b0
 #define MSR_IA32_PACKAGE_THERM_STATUS		0x1b1
 #define MSR_IA32_PACKAGE_THERM_INTERRUPT	0x1b2
 
@@ -550,6 +554,14 @@ __END_DECLS
 #define MSR_IA32_MTRR_FIX4K_F0000		0x26e
 #define MSR_IA32_MTRR_FIX4K_F8000		0x26f
 
+#define MSR_IA32_PKG_C3_RESIDENCY		0x3F8
+#define MSR_IA32_PKG_C6_RESIDENCY		0x3F9
+#define MSR_IA32_PKG_C7_RESIDENCY		0x3FA
+
+#define MSR_IA32_CORE_C3_RESIDENCY 		0x3FC
+#define MSR_IA32_CORE_C6_RESIDENCY 		0x3FD
+#define MSR_IA32_CORE_C7_RESIDENCY 		0x3FE
+
 #define MSR_IA32_MC0_CTL			0x400
 #define MSR_IA32_MC0_STATUS			0x401
 #define MSR_IA32_MC0_ADDR			0x402
@@ -569,10 +581,23 @@ __END_DECLS
 
 #define MSR_IA32_DS_AREA			0x600
 
-#define MSR_IA32_PACKAGE_POWER_SKU_UNIT		0x606
-#define MSR_IA32_PACKAGE_ENERY_STATUS		0x611
-#define MSR_IA32_PRIMARY_PLANE_ENERY_STATUS	0x639
-#define MSR_IA32_SECONDARY_PLANE_ENERY_STATUS	0x641
+#define MSR_IA32_PKG_POWER_SKU_UNIT		0x606
+#define MSR_IA32_PKG_C2_RESIDENCY		0x60D
+#define MSR_IA32_PKG_ENERGY_STATUS		0x611
+
+#define MSR_IA32_DDR_ENERGY_STATUS		0x619
+#define MSR_IA32_LLC_FLUSHED_RESIDENCY_TIMER	0x61D
+#define MSR_IA32_RING_PERF_STATUS		0x621
+
+#define MSR_IA32_PKG_C8_RESIDENCY		0x630
+#define MSR_IA32_PKG_C9_RESIDENCY		0x631
+#define MSR_IA32_PKG_C10_RESIDENCY		0x632
+
+#define MSR_IA32_PP0_ENERGY_STATUS		0x639
+#define MSR_IA32_PP1_ENERGY_STATUS		0x641
+#define MSR_IA32_IA_PERF_LIMIT_REASONS		0x690
+#define MSR_IA32_GT_PERF_LIMIT_REASONS		0x6B0
+
 #define MSR_IA32_TSC_DEADLINE			0x6e0
 
 #define	MSR_IA32_EFER				0xC0000080

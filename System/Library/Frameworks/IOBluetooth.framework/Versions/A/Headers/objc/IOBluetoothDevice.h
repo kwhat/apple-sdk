@@ -71,7 +71,7 @@
 //	IOBluetoothDevice
 //====================================================================================================================
 
-@interface IOBluetoothDevice : IOBluetoothObject <NSCoding>
+@interface IOBluetoothDevice : IOBluetoothObject <NSCoding, NSSecureCoding>
 {
     id									mServerDevice;
     
@@ -109,7 +109,7 @@
     
     IOBluetoothRFCOMMConnection			*mRFCOMMConnection;
     
-    void								*_mReserved;
+    id                                  _mReserved;
 }
 
 // Creation/deletion.
@@ -191,8 +191,6 @@
 
 // L2CAP channel.
 
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_2
-
 /*!
     @method		openL2CAPChannelSync:withPSM:delegate:
 	@abstract	Opens a new L2CAP channel to the target device. Returns only after the channel is opened.
@@ -247,8 +245,6 @@
 
 - (IOReturn)openL2CAPChannelAsync:(IOBluetoothL2CAPChannel **)newChannel withPSM:(BluetoothL2CAPPSM)psm delegate:(id)channelDelegate;
 
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_2 */
-
 /*!
     @method		openL2CAPChannel:findExisting:newChannel:
 	@abstract	Opens a new L2CAP channel to the target device. Returns immedialty after starting the opening process.
@@ -269,7 +265,7 @@
                 L2CAP channel was found). 
 */
 
-- (IOReturn)openL2CAPChannel:(BluetoothL2CAPPSM)psm findExisting:(BOOL)findExisting newChannel:(IOBluetoothL2CAPChannel **)newChannel DEPRECATED_IN_BLUETOOTH_VERSION_2_0_AND_LATER;
+- (IOReturn)openL2CAPChannel:(BluetoothL2CAPPSM)psm findExisting:(BOOL)findExisting newChannel:(IOBluetoothL2CAPChannel **)newChannel DEPRECATED_IN_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 /*!
     @method		sendL2CAPEchoRequest:length:
@@ -301,9 +297,7 @@
                 RFCOMM channel was found). 
 */
 
-- (IOReturn)openRFCOMMChannel:(BluetoothRFCOMMChannelID)channelID channel:(IOBluetoothRFCOMMChannel **)rfcommChannel DEPRECATED_IN_BLUETOOTH_VERSION_2_0_AND_LATER;
-
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_2
+- (IOReturn)openRFCOMMChannel:(BluetoothRFCOMMChannelID)channelID channel:(IOBluetoothRFCOMMChannel **)rfcommChannel DEPRECATED_IN_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 /*!
     @method		openRFCOMMChannelSync:withChannelID:delegate:
@@ -376,8 +370,6 @@
 */
 
 - (IOReturn)openRFCOMMChannelAsync:(IOBluetoothRFCOMMChannel **)rfcommChannel withChannelID:(BluetoothRFCOMMChannelID)channelID delegate:(id)channelDelegate;
-
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_2 */
 
 // Setting/getting device info.
 
@@ -473,8 +465,6 @@
 
 - (const BluetoothDeviceAddress *)getAddress;
 
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_1
-
 /*!
     @method		getAddressString
 	@abstract	Get a string representation of the Bluetooth device address for the target device.  The
@@ -485,8 +475,6 @@
 
 @property(readonly) NSString *addressString;
 - (NSString *)getAddressString DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_1 */
 
 // Connecting to the device.
 
@@ -609,8 +597,6 @@
 
 - (IOReturn)openConnection:(id)target;
 
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_3
-
 /*!
     @method		openConnection:withPageTimeout:authenticationRequired:
 	@abstract	Create a baseband connection to the device.
@@ -632,8 +618,6 @@
 */
 - (IOReturn)openConnection:(id)target withPageTimeout:(BluetoothHCIPageTimeout)pageTimeoutValue authenticationRequired:(BOOL)authenticationRequired;
 
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_3 */
-
 /*!
     @method		closeConnection
 	@abstract	Close down the baseband connection to the device.
@@ -647,19 +631,20 @@
 /*!
     @method		remoteNameRequest:
 	@abstract	Issues a remote name request to the target device.
-	@discussion	If a target is specified, the request is asynchronous and on completion of the REMOTE_NAME_REQUEST
-                command, the method -remoteNameRequestComplete:status:name: will be called on the specified target.
-                If no target is specified, the request is made synchronously and won't return until the request is 
-                complete.  This call with operate with the default page timeout value.  If a different page timeout
-				value is desired, the method -remoteNameRequest:withPageTimeout: should be used instead.
+	@discussion	If a target is specified, the request is asynchronous and on completion of the request, the method
+ 
+				- (void)remoteNameRequestComplete:(IOBluetoothDevice *)device status:(IOReturn)status;
+
+                will be called on the specified target. If no target is specified, the request is made synchronously
+ 				and won't return until the request is complete.  This call with operate with the default page
+ 				timeout value. If a different page timeout value is desired, the method -remoteNameRequest:withPageTimeout:
+ 				should be used instead.
 	@param		target The target to message when the remote name request is complete
     @result		Returns kIOReturnSuccess if the remote name request was successfully issued (and if synchronous, if
                 the request completed successfully).
 */
 
 - (IOReturn)remoteNameRequest:(id)target;
-
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_3
 
 /*!
     @method		remoteNameRequest:withPageTimeout:
@@ -677,8 +662,6 @@
 */
 
 - (IOReturn)remoteNameRequest:(id)target withPageTimeout:(BluetoothHCIPageTimeout)pageTimeoutValue;
-
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_3 */
 
 /*!
     @method		requestAuthentication
@@ -704,8 +687,6 @@
 @property(readonly, assign) BluetoothConnectionHandle connectionHandle;
 - (BluetoothConnectionHandle)getConnectionHandle DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_3
-
 /*!
     @method		isIncoming
 	@abstract	Returns TRUE if the device connection was generated by the remote host.
@@ -716,8 +697,6 @@
 */
 
 - (BOOL)isIncoming;
-
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_3 */
 
 /*!
     @method		getLinkType
@@ -816,8 +795,6 @@
 
 - (IOBluetoothSDPServiceRecord *)getServiceRecordForUUID:(IOBluetoothSDPUUID *)sdpUUID;
 
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_1
-
 /*!
     @method		favoriteDevices
 	@abstract	Gets an array of the user's favorite devices.
@@ -888,10 +865,6 @@
 
 - (NSDate *)recentAccessDate;
 
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_1 */
-
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_2
-
 /*!
     @method		pairedDevices
 	@abstract	Gets an array of all of the paired devices on the system.
@@ -913,10 +886,6 @@
 */
 
 - (BOOL)isPaired;
-
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_2 */
-
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_0
 
 /*!
     @method		setSupervisionTimeout
@@ -989,8 +958,6 @@
 */
 
 - (IOReturn)openL2CAPChannelAsync:(IOBluetoothL2CAPChannel **)newChannel withPSM:(BluetoothL2CAPPSM)psm withConfiguration:(NSDictionary*)channelConfiguration delegate:(id)channelDelegate;
-
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_0 */
 
 - (id)awakeAfterUsingCoder:(NSCoder *)coder;
 

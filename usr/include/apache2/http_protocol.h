@@ -309,6 +309,13 @@ AP_DECLARE(void) ap_clear_method_list(ap_method_list_t *l);
  */
 AP_DECLARE(void) ap_set_content_type(request_rec *r, const char *ct);
 
+/**
+ * Set the Accept-Ranges header for this response
+ * @param r The current request
+ */
+AP_DECLARE(void) ap_set_accept_ranges(request_rec *r);
+
+
 /* Hmmm... could macrofy these for now, and maybe forever, though the
  * definitions of the macros would get a whole lot hairier.
  */
@@ -368,7 +375,7 @@ AP_DECLARE_NONSTD(int) ap_rprintf(request_rec *r, const char *fmt,...)
 /**
  * Flush all of the data for the current request to the client
  * @param r The current request
- * @return The number of bytes sent
+ * @return 0 on success, -1 if an error occurred
  */
 AP_DECLARE(int) ap_rflush(request_rec *r);
 

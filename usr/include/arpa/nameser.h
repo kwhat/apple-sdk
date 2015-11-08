@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.7.sdk/usr/include/nameser.h
+../nameser.h

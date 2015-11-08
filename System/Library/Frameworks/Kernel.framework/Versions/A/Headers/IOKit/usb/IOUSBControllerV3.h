@@ -1,21 +1,22 @@
 /*
-* Copyright (c) 2007-2008 Apple Inc. All rights reserved.
-*
-* @APPLE_LICENSE_HEADER_START@
-* 
-* The contents of this file constitute Original Code as defined in and
-* are subject to the Apple Public Source License Version 1.2 (the
-* "License").  You may not use this file except in compliance with the
-* License.  Please obtain a copy of the License at
-* http://www.apple.com/publicsource and read it before using this file.
-* 
-* This Original Code and all software distributed under the License are
-* distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, EITHER
-* EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
-* INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.  
-* Please see the License for the specific language governing rights and 
-* limitations under the License.
+ * Copyright © 2007-2013 Apple Inc. All rights reserved.
+ *
+ * @APPLE_LICENSE_HEADER_START@
+ * 
+ * This file contains Original Code and/or Modifications of Original Code
+ * as defined in and that are subject to the Apple Public Source License
+ * Version 2.0 (the 'License'). You may not use this file except in
+ * compliance with the License. Please obtain a copy of the License at
+ * http://www.opensource.apple.com/apsl/ and read it before using this
+ * file.
+ * 
+ * The Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
+ * Please see the License for the specific language governing rights and
+ * limitations under the License.
 * 
 * @APPLE_LICENSE_HEADER_END@
 */
@@ -23,6 +24,7 @@
 #ifndef _IOKIT_IOUSBCONTROLLERV3_H
 #define _IOKIT_IOUSBCONTROLLERV3_H
 
+#include <IOKit/IOInterruptEventSource.h>
 #include <IOKit/pci/IOPCIDevice.h>
 #include <IOKit/pwr_mgt/RootDomain.h>
 
@@ -58,12 +60,34 @@ typedef struct IOUSBRootHubInterruptTransaction
     IOUSBCompletion				completion;
 } IOUSBRootHubInterruptTransaction;
 
-enum 
+typedef IOUSBRootHubInterruptTransaction* IOUSBRootHubInterruptTransactionPtr;
+
+enum
 {
-	  kIOUSBMaxRootHubTransactions  = 2
+    kIOUSBMaxRootHubTransactions  = 2,
+    kMaxXHCIPorts = 32,
+    kMaxEHCIPorts = 15
 };
 
+#define kGPEACPIString                          "_GPE"
+#define kACPIInterruptTypeValid         (1 << 1)
 
+
+#ifndef __OPEN_SOURCE__
+	// Thunderbolt things
+	#ifndef kIOThunderboltTunnelEndpointDeviceMIDProperty
+		#define kIOThunderboltTunnelEndpointDeviceMIDProperty	"Tunnel Endpoint Device Model ID"
+	#endif
+	#ifndef kIOThunderboltTunnelEndpointDeviceVIDProperty
+		#define kIOThunderboltTunnelEndpointDeviceVIDProperty	"Tunnel Endpoint Device Vendor ID"
+	#endif
+	#ifndef  kIOThunderboltAppleDisplay2011DMID
+		#define kIOThunderboltAppleDisplay2011DMID				0x8002
+	#endif
+	#ifndef kIOThunderboltAppleDVID
+		#define kIOThunderboltAppleDVID                         0x0001
+	#endif
+#endif
 
 /*!
  @class IOUSBControllerV3
@@ -75,7 +99,7 @@ enum
 
 class IOUSBControllerV3 : public IOUSBControllerV2
 {	
-		OSDeclareAbstractStructors(IOUSBControllerV3)
+    OSDeclareAbstractStructors(IOUSBControllerV3)
 
 	protected:
 		// static variable shared by all instances
@@ -83,7 +107,7 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 
 	
 		UInt8							_myBusState;					// kUSBBusStateReset, kUSBBusStateSuspended, kUSBBusStateRunning
-		bool							_wakingFromHibernation;			// True while the Hibernation Wake thread is active
+		bool							_wakingFromHibernation;			// True while the Hibernation Wake thread is active going to the OFF(0) state
 		bool							_needToAckPowerDown;			// True while we are changing power state due to shutdown/restart
 		bool							_onCardBus;						// OBSOLETE
 		bool							_controllerAvailable;			// true if we can talk to the controller
@@ -105,16 +129,37 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 		IOUSBRootHubInterruptTransaction	_outstandingRHTrans[4];		// Transactions for the Root Hub.  We need 2, one for the current transaction and one for the next.  This is declared as 4 for binary compatibility
 
 		struct V3ExpansionData { 
-			uint32_t				_rootHubPollingRate32;
-			bool					_rootHubTransactionWasAborted;
-			IOPMDriverAssertionID	_externalUSBDeviceAssertionID;		// power manager assertion that we have an external USB device
-			SInt32					_externalDeviceCount;				// the count of external devices in this controller - changed through the WL gate
-			UInt32					_inCheckPowerModeSleeping;			// The CheckPowerModeGated
-			bool					_onThunderbolt;						// T if this controller is on a Thunderbolt bus
-			uint32_t				_thunderboltModelID;				// the model ID of the thunderbolt device in which this controller resides
+			uint32_t							_rootHubPollingRate32;
+			bool								_rootHubTransactionWasAborted;
+			IOPMDriverAssertionID				_externalUSBDeviceAssertionID;		// power manager assertion that we have an external USB device
+			SInt32								_externalDeviceCount;				// the count of external devices in this controller - changed through the WL gate
+			UInt32								_inCheckPowerModeSleeping;			// The CheckPowerModeGated
+			bool								_onThunderbolt;						// T if this controller is on a Thunderbolt bus
+			uint32_t							_thunderboltModelID;				// the model ID of the thunderbolt device in which this controller resides
+			uint32_t							_thunderboltVendorID;				// the vendor ID of the thunderbolt device in which this controller resides
+			UInt8								_rootHubNumPortsSS;					// number of SS root hub ports - should be 15 or fewer! (1-based)
+			UInt8								_rootHubNumPortsHS;					// number of SS root hub ports - should be 15 or fewer! (1-based)
+			UInt8								_rootHubPortsHSStartRange;          // Start port number for the HS Range (1-based)
+			UInt8								_rootHubPortsSSStartRange;          // Start port number for the SS Range (1-based)
+			IOUSBRootHubInterruptTransaction	_outstandingSSRHTrans[4];			// Transactions for the Root Hub.  We need 2, one for the current transaction and one for the next.  This is declared as 4 for binary compatibility
+            bool								_wakingFromStandby;					// t when waking from S4 standby - meaning that the hibernation bit was set but we
+            bool								_rootDomainWakingFromHibernation;   // t when pmrootdomain is between powerWill(ON) and powerDid(ON) while waking from hibernation
+            UInt32								_rootHubStatusChangedBitmapSS;      // support up to 30 ports for status changes - XHCI has 2 Roothubs
+            UInt64								_errata64Bits;						// Bitmap of controller-specific workarounds
+            UInt8								_companionPort[kMaxXHCIPorts+1];    // Mapping between HS and SS port numbers in an XHCI controllers.  This is 1-based, so index 0 does not correspond to a valid port, and a companionPort of 0 indicates no companion port
+            bool								_hasPCIPwrMgmt;                     // Set when PCI power management is avaialable
+            bool								_hibernationWakePart2;              // we are in the middle of the second part of a hibernation wake (OFF(0) to ON(3))
+            AbsoluteTime						_hibernationWakeStartTime;          // the time when we first noticed that we needed to do a hibernation wake
+			UInt16								_powerManagerCSRoffset;				// the offset into Config Space of the Power Manager Control/Status Register
+			IOACPIPlatformDevice				*_acpiDevice;						// our device in the ACPI plane
+			UInt32                              _minimumIdlePowerState;				// the lowest power state this controller will go to when everything is idle (initialized to kUSBPowerStateLowPower)
+			IOInterruptEventSource				*_PMEInterruptEventSource;			// interrupt to wake from RTD3
+			bool								_PMEdisabled;						// tracks when we have disabled the PME handler
+			bool								_minimumIdlePowerStateValid;		// T when we have calculated the minimumIdlePowerState
+            bool                                _parentDeviceON;                    // T when our parent device is in the ON power state
 		};
 		V3ExpansionData *_v3ExpansionData;
-
+    
 		// IOKit methods
 		virtual bool					init( OSDictionary *  propTable );
 		virtual bool					start( IOService *  provider );
@@ -146,9 +191,6 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 		virtual IOReturn		IsocIO(IOMemoryDescriptor *buffer, UInt64 frameStart, UInt32 numFrames, IOUSBIsocFrame *frameList, USBDeviceAddress address, Endpoint *endpoint, IOUSBIsocCompletion *completion );
 		virtual IOReturn		IsocIO(IOMemoryDescriptor *buffer, UInt64 frameStart, UInt32 numFrames, IOUSBLowLatencyIsocFrame *frameList, USBDeviceAddress address, Endpoint *endpoint, IOUSBLowLatencyIsocCompletion *completion, UInt32 updateFrequency );	
 
-		// we override this one to add some stuff which requires the _device iVar
-		virtual UInt32			GetErrataBits(UInt16 vendorID, UInt16 deviceID, UInt16 revisionID );    
-	
 		// IOUSBControllerV2 methods
 		// we override these to deal with methods attempting to go through the workloop while we are in sleep
 		virtual IOReturn 		OpenPipe(USBDeviceAddress address, UInt8 speed, Endpoint *endpoint);
@@ -160,13 +202,23 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 		// IOUSBControllerV3 methods
 	
 		// these are called through the workloop
-		static IOReturn					DoEnableAddressEndpoints(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
-		static IOReturn					DoEnableAllEndpoints(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
-		static IOReturn					GatedPowerChange(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
-		static IOReturn					ChangeExternalDeviceCount(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
-
+		static IOReturn					DoEnableAddressEndpoints(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3);
+		static IOReturn					DoEnableAllEndpoints(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3);
+		static IOReturn					GatedPowerChange(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3);
+		static IOReturn					ChangeExternalDeviceCount(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3);
+		static IOReturn					DoGetActualDeviceAddress(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3);
+		static IOReturn					DoCreateStreams(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
+	
 		// also on the workloop
 	    static void						RootHubTimerFired(OSObject *owner, IOTimerEventSource *sender);
+	
+		// Copied from IOUSBController DoAbortEP
+		static IOReturn 		DoAbortStream( 
+									  OSObject *	owner, 
+									  void *	arg0, 
+									  void *	arg1, 
+									  void *	arg2, 
+									  void *	arg3 );
 	
 		// subclassable methods
 		virtual IOReturn				CheckForEHCIController(IOService *provider);
@@ -215,26 +267,232 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  1);
 	virtual IOReturn				CheckPMAssertions(IOUSBDevice *forDevice, bool deviceBeingAdded);
 	
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  2);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  3);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  4);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  5);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  6);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  7);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  8);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  9);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  10);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  11);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  12);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  13);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  14);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  15);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  16);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  17);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  18);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  19);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  20);
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  21);
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  2);
+	
+	/*!
+	 @function GetRootHubBOSDescriptor
+	 @abstract UIM function, retrun the BOS descriptor of the simulated root hub device
+	 As GET_DESCRIPTOR control request for configuration descrptor
+	 @param  desc   Descriptor structure to return data in
+	 */
+    virtual IOReturn 		GetRootHubBOSDescriptor( OSData *desc );
+	
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  3);
+	/*!
+	 @function GetRootHubDescriptor
+	 @abstract UIM function, return the hub descriptor of the simulated root hub device
+	 As GET_DESCRIPTOR control request for hub descrptor
+	 @param  desc   Descriptor structure to return data in
+	 */
+    virtual IOReturn 		GetRootHub3Descriptor( IOUSB3HubDescriptor *desc );
+
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  4);
+	/*!
+	 @function UIMDeviceToBeReset
+	 @abstract Tell the UIM that the device will be reset.
+	 @param functionAddress USB device ID of device
+	 @result Return kIOReturnSuccess if pipes have been deleted and need to be setup again.
+	 */
+	virtual IOReturn        UIMDeviceToBeReset(short functionAddress);
+	
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  5);
+    /*!
+	 @function Read
+     Read from a stream on a bulk endpoint
+     @param streamID stream ID of the stream to read from
+     @param buffer place to put the transferred data
+     @param address Address of the device on the USB bus
+     @param endpoint description of endpoint
+     @param completion describes action to take when buffer has been filled
+     @param noDataTimeout number of milliseconds of no data movement before the request is aborted
+     @param completionTimeout number of milliseonds after the command is on the bus in which it must complete
+     @param reqCount number of bytes requested for the transfer (must not be greater than the length of the buffer)
+     */
+    virtual IOReturn Read(UInt32							streamID,
+							IOMemoryDescriptor *			buffer,
+							USBDeviceAddress					address,
+							Endpoint *						endpoint,
+							IOUSBCompletion             *	completion,
+							UInt32							noDataTimeout,
+							UInt32							completionTimeout,
+							IOByteCount						reqCount );
+
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  6);
+    /*!
+	 @function Write
+	 Write to a stream on a bulk endpoint
+     @param streamID stream ID of the stream to write to
+	 @param buffer place to get the transferred data
+	 @param address Address of the device on the USB bus
+	 @param endpoint description of endpoint
+	 @param completion describes action to take when buffer has been emptied
+	 @param noDataTimeout number of milliseconds of no data movement before the request is aborted
+	 @param completionTimeout number of milliseonds after the command is on the bus in which it must complete
+	 @param reqCount number of bytes requested for the transfer (must not be greater than the length of the buffer)
+	 */
+    virtual IOReturn 		Write(UInt32				streamID,
+								  IOMemoryDescriptor *	buffer,
+								  USBDeviceAddress 	address,
+								  Endpoint *		endpoint,
+								  IOUSBCompletion *	completion,
+								  UInt32			noDataTimeout,
+								  UInt32			completionTimeout,
+								  IOByteCount		reqCount );
+
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  7);
+	virtual IOReturn 		AbortPipe(UInt32 streamID, USBDeviceAddress address, Endpoint *endpoint);
+
+	
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  8);
+	/*!
+	 @function UIMAbortEndpoint
+	 @abstract UIM function  Abort the specified endpoint or stream, return all transactions queued on it.
+	 @param streamID		If zero, abort the endpoint, if non zero abort the stream on the endpoint
+	 @param functionNumber  The USB device ID of the device to Abort
+	 @param endpointNumber  The endpoint number to Abort
+	 @param direction       Specifies direction of the endpoint for uniqueness. kUSBIn or KUSBOut.
+	 */
+    virtual IOReturn 		UIMAbortStream(UInt32		streamID,
+											 short		functionNumber,
+											 short		endpointNumber,
+											 short		direction);
+	
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  9);
+	virtual IOReturn 		OpenPipe(USBDeviceAddress address, UInt8 speed, Endpoint *endpoint, UInt32 maxStreams, UInt32 maxBurstAndMult);
+
+	/*!
+	 @function UIMMaxSupportedStream
+	 @abstract UIM function  Returns how many streams per endpoint are supported by the USB controller.  This call does not go through the workloop gate.
+	 @result	The number of streams per endpont that are supported by the USB controller.  A value of 0 indicates that streams are not supported.
+	 */
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  10);
+	virtual UInt32			UIMMaxSupportedStream(void);
+	
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  11);
+	
+	virtual USBDeviceAddress UIMGetActualDeviceAddress(USBDeviceAddress current);
+	
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  12);
+	/*!
+	 @function UIMCreateBulkSSEndpoint
+	 @abstract Create an endpoint in the controller with superspeed streams and/or maxburst capabilities
+     if controller does not support superspeed, this method should not be overridden
+	 @param functionNumber  USB device ID of device
+	 @param endpointNumber  endpoint address of the endpoint in the device
+	 @param direction       Direction of data flow. kUSBIn or kUSBOut
+	 @param speed           speed of the device kUSBDeviceSpeedFull, kUSBDeviceSpeedHigh, kUSBDeviceSuper
+	 @param maxPacketSize   maximum packet size of this endpoint
+	 @param maxStreams		Maximum stream number that this endpoint can use
+	 @param maxBurst		number of extra packets in a burst transfer
+	 */
+    virtual IOReturn 		UIMCreateSSBulkEndpoint(
+                                                    UInt8		functionNumber,
+                                                    UInt8		endpointNumber,
+                                                    UInt8		direction,
+                                                    UInt8		speed,
+                                                    UInt16		maxPacketSize,
+                                                    UInt32      maxStream,
+                                                    UInt32      maxBurst);
+    
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  13);
+	/*!
+	 @function UIMCreateSSInterruptEndpoint
+	 @abstract Create an endpoint in the controller with maxburst capabilities
+     if controller does not support superspeed, this method should not be overridden
+	 @param functionNumber  USB device ID of device
+	 @param endpointNumber  endpoint address of the endpoint in the device
+	 @param direction       Direction of data flow. kUSBIn or kUSBOut
+	 @param speed           speed of the device kUSBDeviceSpeedFull, kUSBDeviceSpeedHigh, kUSBDeviceSpeedSuper
+	 @param maxPacketSize   maximum packet size of this endpoint
+	 @param pollingRate		
+	 @param maxBurst		number of extra packets in a burst transfer
+	 */
+    virtual IOReturn 		UIMCreateSSInterruptEndpoint(
+                                                         short		functionAddress,
+                                                         short		endpointNumber,
+                                                         UInt8		direction,
+                                                         short		speed,
+                                                         UInt16		maxPacketSize,
+                                                         short		pollingRate,
+                                                         UInt32     maxBurst);
+
+ 	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  14);
+	/*!
+	 @function UIMCreateSSIsochEndpoint
+	 @abstract Create an endpoint in the controller with maxburst capabilities
+     if controller does not support superspeed, this method should not be overridden
+	 @param functionNumber		USB device ID of device
+	 @param endpointNumber		endpoint address of the endpoint in the device
+	 @param maxPacketSize		maximum packet size of this endpoint
+	 @param direction			Direction of data flow. kUSBIn or kUSBOut
+	 @param interval		
+	 @param maxBurstAndMult		number of extra packets in a burst transfer and burst multiplier
+	 */
+    virtual IOReturn 		UIMCreateSSIsochEndpoint(
+                                                     short				functionAddress,
+                                                     short				endpointNumber,
+                                                     UInt32				maxPacketSize,
+                                                     UInt8				direction,
+                                                     UInt8				interval,
+                                                     UInt32             maxBurstAndMult);
+    
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  15);
+	/*!
+	 @function UIMCreateStreams
+	 @abstract Create streams on an endpoint
+     if controller does not support superspeed, this method should not be overridden
+	 @param functionNumber  USB device ID of device
+	 @param endpointNumber  endpoint address of the endpoint in the device
+	 @param direction       Direction of data flow. kUSBIn or kUSBOut
+	 @param maxStreams		Number of streams to create
+	 */
+    virtual IOReturn UIMCreateStreams(UInt8				functionNumber,
+                                      UInt8				endpointNumber,
+                                      UInt8				direction,
+                                      UInt32            maxStream);
+	
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  16);
+
+	virtual IOReturn		 	GetActualDeviceAddress(USBDeviceAddress currentAddress, USBDeviceAddress *newAddress);
+	
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  17);
+	virtual	IOReturn			CreateStreams(UInt8 functionNumber, UInt8 endpointNumber, UInt8 direction,  UInt32 maxStream);
+	
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  18);
+	/*!
+	 @function GetRootHubPortErrorCount
+	 @abstract UIM function, returns the port error count of the simulated root hub device (GET_PORT_ERROR_COUNT from the USB 3.0 spec)
+	 @param  port   Port Number
+	 @param	 count	Pointer to a UInt16 to store the actual link error count
+	 */
+    virtual IOReturn 		GetRootHubPortErrorCount( UInt16 port, UInt16 * count );
+
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  19);
+    /* !
+     @function GetBandwidthAvailableForDevice
+     @abstract returns the bandwidth available (in bytes) for a particular root hub port
+     @param forDevice The device looking to get bandwidth
+     @param pBandwidthAvailable Pointer to the holder for the bandwidth
+     */
+    virtual IOReturn        GetBandwidthAvailableForDevice(IOUSBDevice *forDevice, UInt32 *pBandwidthAvailable);
+	
+    OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  20);
+    /* !
+     @function GetMinimumIdlePowerState
+     @abstract determines the minimum Idle Power State for this controller and sets the iVar _v3ExpansionData->_minimumIdlePowerState.
+	 If the controller does support a lower idle power state, then it should also install the PME interrupt handler to handle it
+     @result returns the calculated minimum idle power state
+     */
+    virtual UInt32        GetMinimumIdlePowerState(void);
+
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  21);
+    /* !
+     @function GetErrata64Bits
+     @abstract  Used to get controller specific information for workarounds
+     @result returs a bit field with the errata that apply to the given vendor/device/revision of a USB controller
+     */
+	virtual UInt64			GetErrata64Bits(UInt16 vendorID, UInt16 deviceID, UInt16 revisionID );
+
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  22);
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  23);
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  24);
@@ -243,10 +501,22 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  27);
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  28);
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  29);
+
+#ifndef __OPEN_SOURCE__
+public:
+    // Non-virtual public methods which are out of the open source
+    bool                            GetInternalHubErrataBits(IORegistryEntry* provider, UInt32 portnum, UInt32 locationID, UInt32 *errataBits);
+    IOReturn                        GetConnectorType(IORegistryEntry * provider, UInt32 portNumber, UInt32 locationID, UInt8 *connectorType);
+    bool                            CanControllerMuxOverToEHCI( IORegistryEntry * provider, UInt32 locationID );
+#endif
+    
+protected:
 	
-	protected:
-	
-		void							FixupNECControllerConfigRegisters(void);
+		void		FixupNECControllerConfigRegisters(void);
+		IOReturn	RHQueueTransaction(IOMemoryDescriptor *buf, UInt32 bufLen, IOUSBCompletion completion, IOUSBRootHubInterruptTransactionPtr outstandingRHXaction);
+		void		RHCompleteTransaction(IOUSBRootHubInterruptTransactionPtr outstandingRHTransPtr, UInt16	rhStatusChangedBitmap, UInt16 numPorts, bool cancelTimer);
+		void		RHAbortTransaction(IOUSBRootHubInterruptTransactionPtr outstandingRHXaction);
+		void		PMEHandler(IOInterruptEventSource * source, int count);
 };
 
-#endif		// _IOKIT_IOUSBCONTROLLERV3_H
+#endif

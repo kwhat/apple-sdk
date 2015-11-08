@@ -33,15 +33,13 @@
 #include <IOKit/IOService.h>
 #include <IOKit/IODeviceMemory.h>
 #include <IOKit/IOFilterInterruptEventSource.h>
+#include <IOKit/pwr_mgt/RootDomain.h>
 #include <IOKit/pci/IOAGPDevice.h>
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-/*!
-    @class IOPCIBridge
-    @abstract   Base class for all PCI bridge drivers.
-*/
 class IOPCIConfigurator;
 class IOPCIDevice;
+class IOPCIMessagedInterruptController;
 
 enum {
     kIOPCIResourceTypeMemory         = 0,
@@ -51,6 +49,10 @@ enum {
     kIOPCIResourceTypeCount          = 4,
 };
 
+/*!
+    @class IOPCIBridge
+    @abstract   Base class for all PCI bridge drivers.
+*/
 
 class IOPCIBridge : public IOService
 {
@@ -66,17 +68,29 @@ private:
     bool checkProperties( IOPCIDevice * entry );
 
     void removeDevice( IOPCIDevice * device, IOOptionBits options = 0 );
-    IOReturn restoreMachineState( IOOptionBits options = 0);
+    IOReturn restoreMachineState( IOOptionBits options, IOPCIDevice * device );
     IOReturn _restoreDeviceState( IOPCIDevice * device, IOOptionBits options );
     IOReturn resolveLegacyInterrupts( IOService * provider, IOPCIDevice * nub );
     IOReturn resolveMSIInterrupts   ( IOService * provider, IOPCIDevice * nub );
 
+    IOReturn relocate(IOPCIDevice * device, uint32_t options);
+	void spaceFromProperties( IORegistryEntry * regEntry,
+                              IOPCIAddressSpace * space );
+	void updateWakeReason(IOPCIDevice * device);
+
 protected:
     static void nvLocation( IORegistryEntry * entry,
                             UInt8 * busNum, UInt8 * deviceNum, UInt8 * functionNum );
+#if !defined(__LP64__) || defined(__x86_64__)
     static SInt32 compareAddressCell( UInt32 cellCount, UInt32 cleft[], UInt32 cright[] );
+#else
+    static SInt64 compareAddressCell( UInt32 cellCount, UInt32 cleft[], UInt32 cright[] );
+#endif
     IOReturn setDeviceASPMBits(IOPCIDevice * device, IOOptionBits state);
+    IOReturn setDevicePowerState(IOPCIDevice * device, IOOptionBits options,
+								 unsigned long prevState, unsigned long newState);
     static IOReturn configOp(IOService * device, uintptr_t op, void * result);
+    static void     deferredProbe(IOPCIDevice * device);
 
     void * __reserved1;
     void * __reserved2;
@@ -87,6 +101,7 @@ protected:
     struct ExpansionData
     {
         struct IOPCIRange * rangeLists[kIOPCIResourceTypeCount];
+        IOPCIMessagedInterruptController *messagedInterruptController;
     };
 
 /*! @var reserved
@@ -149,6 +164,17 @@ public:
     virtual void stop( IOService * provider );
 
     virtual bool configure( IOService * provider );
+
+	virtual IOReturn setProperties(OSObject * properties);
+
+	virtual unsigned long maxCapabilityForDomainState ( IOPMPowerFlags domainState );
+	virtual unsigned long initialPowerStateForDomainState ( IOPMPowerFlags domainState );
+	virtual unsigned long powerStateForDomainState ( IOPMPowerFlags domainState );
+
+    virtual IOReturn callPlatformFunction(const OSSymbol * functionName,
+                                          bool waitForFunction,
+                                          void * param1, void * param2,
+                                          void * param3, void * param4);
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -262,10 +288,6 @@ protected:
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #define kIOPCIBridgeRegs (32)
-/*!
-    @class IOPCI2PCIBridge
-    @abstract Base class for all PCI-to-PCI bridge drivers.
-*/
 
 class IOPCI2PCIBridge : public IOPCIBridge
 {
@@ -287,6 +309,7 @@ protected:
         IOFilterInterruptEventSource * bridgeInterruptSource;
 		IOTimerEventSource *	    timerProbeES;
 		IOWorkLoop *                workLoop;
+		IOPMDriverAssertionID 		pmAssertion;
         uint32_t                    hotplugCount;
         uint8_t                     presence;
         uint8_t                     waitingLinkEnable;

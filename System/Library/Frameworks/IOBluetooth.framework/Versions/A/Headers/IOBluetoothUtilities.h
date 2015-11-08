@@ -89,7 +89,6 @@ extern	IOReturn	IOBluetoothCFStringToDeviceAddress( CFStringRef inNameString, Bl
 extern	CFStringRef	IOBluetoothCFStringFromDeviceAddress( const BluetoothDeviceAddress *deviceAddress );
 extern	Boolean		IOBluetoothIsFileAppleDesignatedPIMDataAtCFStringPath( CFStringRef inFileName );
 extern	CFStringRef	IOBluetoothGetUniqueFileNameAndWithCFStringPath( CFStringRef inName, CFStringRef inPath );
-extern	Boolean		IOBluetoothLaunchAudioAgent( CFStringRef deviceAddressString, Boolean useA2DP );
 extern	Boolean		IOBluetoothLaunchHandsFreeAgent( CFStringRef deviceAddressString );
 		
 
@@ -218,7 +217,7 @@ extern long		IOBluetoothUnpackDataList( ByteCount inBufferSize, const void *inBu
 	@result		Number of HID devices.
 */
 
-extern long IOBluetoothNumberOfAvailableHIDDevices() AVAILABLE_BLUETOOTH_VERSION_1_3_AND_LATER;
+extern long IOBluetoothNumberOfAvailableHIDDevices();
 
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@function	IOBluetoothNumberOfPointingHIDDevices
@@ -226,7 +225,7 @@ extern long IOBluetoothNumberOfAvailableHIDDevices() AVAILABLE_BLUETOOTH_VERSION
 	@result		Number of HID devices.
 */
 
-extern long IOBluetoothNumberOfPointingHIDDevices() AVAILABLE_BLUETOOTH_VERSION_1_3_AND_LATER;
+extern long IOBluetoothNumberOfPointingHIDDevices();
 
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@function	IOBluetoothNumberOfKeyboardHIDDevices
@@ -234,7 +233,7 @@ extern long IOBluetoothNumberOfPointingHIDDevices() AVAILABLE_BLUETOOTH_VERSION_
 	@result		Number of HID devices.
 */
 
-extern long IOBluetoothNumberOfKeyboardHIDDevices() AVAILABLE_BLUETOOTH_VERSION_1_3_AND_LATER;
+extern long IOBluetoothNumberOfKeyboardHIDDevices();
 
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@function	IOBluetoothNumberOfTabletHIDDevices
@@ -242,7 +241,7 @@ extern long IOBluetoothNumberOfKeyboardHIDDevices() AVAILABLE_BLUETOOTH_VERSION_
 	@result		Number of HID devices.
 */
 
-extern long IOBluetoothNumberOfTabletHIDDevices() AVAILABLE_BLUETOOTH_VERSION_1_3_AND_LATER;
+extern long IOBluetoothNumberOfTabletHIDDevices();
 
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@function	IOBluetoothFindNumberOfRegistryEntriesOfClassName
@@ -250,7 +249,7 @@ extern long IOBluetoothNumberOfTabletHIDDevices() AVAILABLE_BLUETOOTH_VERSION_1_
 	@result		Number of HID devices.
 */
 
-extern long IOBluetoothFindNumberOfRegistryEntriesOfClassName( const char *deviceType ) AVAILABLE_BLUETOOTH_VERSION_1_3_AND_LATER;
+extern long IOBluetoothFindNumberOfRegistryEntriesOfClassName( const char *deviceType );
 
 
 #ifdef	__cplusplus

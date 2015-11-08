@@ -1,6 +1,6 @@
 /*
 	File:		BluetoothAssignedNumbers.h
-	Copyright:	(c) 2010 by Apple Computer, Inc. All rights reserved.
+	Copyright:	(c) 2001-2012 by Apple, Inc. All rights reserved.
 */
 
 #pragma once
@@ -340,9 +340,9 @@ enum
 
 enum
 {
-	kBluetoothL2CAPPSMSDP						= 0x0001, 
-	kBluetoothL2CAPPSMRFCOMM					= 0x0003, 
-	kBluetoothL2CAPPSMTCS_BIN					= 0x0005,	// Telephony Control Specifictation / TCS Binary
+    kBluetoothL2CAPPSMSDP						= 0x0001, 
+    kBluetoothL2CAPPSMRFCOMM					= 0x0003, 
+    kBluetoothL2CAPPSMTCS_BIN					= 0x0005,	// Telephony Control Specifictation / TCS Binary
     kBluetoothL2CAPPSMTCS_BIN_Cordless			= 0x0007,	// Telephony Control Specifictation / TCS Binary
     kBluetoothL2CAPPSMBNEP						= 0x000F,	// Bluetooth Network Encapsulation Protocol
     kBluetoothL2CAPPSMHIDControl				= 0x0011,	// HID profile - control interface
@@ -350,6 +350,7 @@ enum
     kBluetoothL2CAPPSMAVCTP						= 0x0017,	// Audio/Video Control Transport Protocol
     kBluetoothL2CAPPSMAVDTP						= 0x0019,	// Audio/Video Distribution Transport Protocol
     kBluetoothL2CAPPSMUID_C_Plane				= 0x001D,	// Unrestricted Digital Information Profile (UDI)
+    kBluetoothL2CAPPSMATT						= 0x001F,	// Attribute Protocol
 	
 	// Range < 0x1000 reserved.
     kBluetoothL2CAPPSMReservedStart				= 0x0001,
@@ -400,7 +401,9 @@ enum
 	kBluetoothSDPUUID16AVDTP								= 0x0019,
 	kBluetoothSDPUUID16CMPT									= 0x001B,
 	kBluetoothSDPUUID16UDI_C_Plane							= 0x001D,
-	kBluetoothSDPUUID16L2CAP 								= 0x0100, 	// 00000100-0000-1000-8000-00805f9b34fb 
+	kBluetoothSDPUUID16MCAPControlChannel					= 0x001E,
+	kBluetoothSDPUUID16MCAPDataChannel						= 0x001F,
+	kBluetoothSDPUUID16L2CAP 								= 0x0100, 	// 00000100-0000-1000-8000-00805f9b34fb
 };
 
 enum SDPServiceClasses
@@ -460,11 +463,19 @@ enum SDPServiceClasses
     kBluetoothSDPUUID16ServiceClassMessageAccessServer						= 0x1132,
     kBluetoothSDPUUID16ServiceClassMessageNotificationServer				= 0x1133,
     kBluetoothSDPUUID16ServiceClassMessageAccessProfile						= 0x1134,
+    kBluetoothSDPUUID16ServiceClassGlobalNavigationSatelliteSystem			= 0x1135,
+    kBluetoothSDPUUID16ServiceClassGlobalNavigationSatelliteSystemServer	= 0x1136,
 	kBluetoothSDPUUID16ServiceClassPnPInformation							= 0x1200,	// 00001200-0000-1000-8000-00805f9b34fb
 	kBluetoothSDPUUID16ServiceClassGenericNetworking						= 0x1201,	// 00001201-0000-1000-8000-00805f9b34fb
 	kBluetoothSDPUUID16ServiceClassGenericFileTransfer						= 0x1202,	// 00001202-0000-1000-8000-00805f9b34fb
 	kBluetoothSDPUUID16ServiceClassGenericAudio								= 0x1203,	// 00001203-0000-1000-8000-00805f9b34fb
-	kBluetoothSDPUUID16ServiceClassGenericTelephony							= 0x1204	// 00001204-0000-1000-8000-00805f9b34fb
+	kBluetoothSDPUUID16ServiceClassGenericTelephony							= 0x1204,	// 00001204-0000-1000-8000-00805f9b34fb
+	kBluetoothSDPUUID16ServiceClassVideoSource								= 0x1303,
+	kBluetoothSDPUUID16ServiceClassVideoSink								= 0x1304,
+	kBluetoothSDPUUID16ServiceClassVideoDistribution						= 0x1305,
+	kBluetoothSDPUUID16ServiceClassHealthDevice								= 0x1400,
+	kBluetoothSDPUUID16ServiceClassHealthDeviceSource						= 0x1401,
+	kBluetoothSDPUUID16ServiceClassHealthDeviceSink							= 0x1402
 };
 
 enum SDPAttributeIdentifierCodes
@@ -494,22 +505,24 @@ enum SDPAttributeIdentifierCodes
     // PAN
     kBluetoothSDPAttributeIdentifierIPSubnet							= 0x0200,
 
-    // HID																			Required		Type		Section		Notes
-    kBluetoothSDPAttributeIdentifierHIDReleaseNumber					= 0x0200,	// O			uint16		7.11.1
-    kBluetoothSDPAttributeIdentifierHIDParserVersion					= 0x0201,	// M			uint16		-
-    kBluetoothSDPAttributeIdentifierHIDDeviceSubclass					= 0x0202,	// M			uint8		7.11.2		Should match the low order 8 bits of CoD unless a combo device
-    kBluetoothSDPAttributeIdentifierHIDCountryCode						= 0x0203,	// M			uint8		7.11.3
-    kBluetoothSDPAttributeIdentifierHIDVirtualCable						= 0x0204,	// M			bool		7.11.4
-    kBluetoothSDPAttributeIdentifierHIDReconnectInitiate				= 0x0205,	// M			bool		7.11.5
-    kBluetoothSDPAttributeIdentifierHIDDescriptorList					= 0x0206,	// M			sequence	7.11.6		Layout is defined in Section 6.2 of the HID Specification
-    kBluetoothSDPAttributeIdentifierHIDLangIDBaseList					= 0x0207,	// M			sequence	7.11.7
-    kBluetoothSDPAttributeIdentifierHIDSDPDisable						= 0x0208,	// O			bool		7.11.8
-    kBluetoothSDPAttributeIdentifierHIDBatteryPower						= 0x0209,	// O			bool		7.11.9
-    kBluetoothSDPAttributeIdentifierHIDRemoteWake						= 0x020A,	// O			bool		7.11.10
-    kBluetoothSDPAttributeIdentifierHIDProfileVersion					= 0x020B,	// M			uint16		7.11.14
-    kBluetoothSDPAttributeIdentifierHIDSupervisionTimeout				= 0x020C,	// O			uint16		7.11.12		Default to 5 seconds or longer if not defined
-    kBluetoothSDPAttributeIdentifierHIDNormallyConnectable				= 0x020D,	// O			bool		7.11.13
-    kBluetoothSDPAttributeIdentifierHIDBootDevice						= 0x020E,	// M			bool		7.11.11		Only defined for mice and keyboards as of HID 1.0
+    // HID																			Required		Type		Notes
+    kBluetoothSDPAttributeIdentifierHIDReleaseNumber					= 0x0200,	// O			uint16
+    kBluetoothSDPAttributeIdentifierHIDParserVersion					= 0x0201,	// M			uint16
+    kBluetoothSDPAttributeIdentifierHIDDeviceSubclass					= 0x0202,	// M			uint8       Should match the low order 8 bits of CoD unless a combo device
+    kBluetoothSDPAttributeIdentifierHIDCountryCode						= 0x0203,	// M			uint8
+    kBluetoothSDPAttributeIdentifierHIDVirtualCable						= 0x0204,	// M			bool
+    kBluetoothSDPAttributeIdentifierHIDReconnectInitiate				= 0x0205,	// M			bool
+    kBluetoothSDPAttributeIdentifierHIDDescriptorList					= 0x0206,	// M			sequence    Layout is defined in Section 6.2 of the HID Specification
+    kBluetoothSDPAttributeIdentifierHIDLangIDBaseList					= 0x0207,	// M			sequence
+    kBluetoothSDPAttributeIdentifierHIDSDPDisable						= 0x0208,	// O			bool
+    kBluetoothSDPAttributeIdentifierHIDBatteryPower						= 0x0209,	// O			bool
+    kBluetoothSDPAttributeIdentifierHIDRemoteWake						= 0x020A,	// O			bool
+    kBluetoothSDPAttributeIdentifierHIDProfileVersion					= 0x020B,	// M			uint16
+    kBluetoothSDPAttributeIdentifierHIDSupervisionTimeout				= 0x020C,	// O			uint16		Default to 5 seconds or longer if not defined
+    kBluetoothSDPAttributeIdentifierHIDNormallyConnectable				= 0x020D,	// O			bool
+    kBluetoothSDPAttributeIdentifierHIDBootDevice						= 0x020E,	// M			bool		Only defined for mice and keyboards as of HID 1.0
+    kBluetoothSDPAttributeIdentifierHIDSSRHostMaxLatency				= 0x020F,	// O			uint16
+    kBluetoothSDPAttributeIdentifierHIDSSRHostMinTimeout				= 0x0210,	// O			uint16
     
 	kBluetoothSDPAttributeIdentifierServiceVersion						= 0x0300,
 	kBluetoothSDPAttributeIdentifierExternalNetwork						= 0x0301,	// Cordless telephony
@@ -589,6 +602,9 @@ enum BluetoothHCIExtendedInquiryResponseDataTypes
     kBluetoothHCIExtendedInquiryResponseDataTypeServiceSolicitation16BitUUIDs               =   0x14,
     kBluetoothHCIExtendedInquiryResponseDataTypeServiceSolicitation128BitUUIDs              =   0x15,
     kBluetoothHCIExtendedInquiryResponseDataTypeServiceData                                 =   0x16,
+    kBluetoothHCIExtendedInquiryResponseDataTypePublicTargetAddress                         =   0x17,
+    kBluetoothHCIExtendedInquiryResponseDataTypeRandomTargetAddress                         =   0x18,
+    kBluetoothHCIExtendedInquiryResponseDataTypeAppearance                                  =   0x19,
 	kBluetoothHCIExtendedInquiryResponseDataTypeManufacturerSpecificData					=	0xFF
 };
 
@@ -603,7 +619,8 @@ enum BluetoothHCIVersions
 	kBluetoothHCIVersionCoreSpecification2_0EDR												=	0x03,
 	kBluetoothHCIVersionCoreSpecification2_1EDR												=	0x04,
 	kBluetoothHCIVersionCoreSpecification3_0HS												=	0x05,
-	kBluetoothHCIVersionCoreSpecification4_0												=	0x06
+	kBluetoothHCIVersionCoreSpecification4_0												=	0x06,
+	kBluetoothHCIVersionCoreSpecification4_1												=	0x07
 };
 
 
@@ -617,7 +634,8 @@ enum BluetoothLMPVersions
 	kBluetoothLMPVersionCoreSpecification2_0EDR												=	0x03,
 	kBluetoothLMPVersionCoreSpecification2_1EDR												=	0x04,
 	kBluetoothLMPVersionCoreSpecification3_0HS												=	0x05,
-	kBluetoothLMPVersionCoreSpecification4_0												=	0x06
+	kBluetoothLMPVersionCoreSpecification4_0												=	0x06,
+	kBluetoothLMPVersionCoreSpecification4_1												=	0x07
 };
 
 #ifdef	__cplusplus

@@ -1,8 +1,7 @@
 /*
- *
- * @APPLE_LICENSE_HEADER_START@
+ * Copyright © 1998-2007 Apple Inc.  All rights reserved.
  * 
- * Copyright (c) 1998-2007 Apple Inc.  All Rights Reserved.
+ * @APPLE_LICENSE_HEADER_START@
  * 
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
@@ -33,10 +32,10 @@
 #include <IOKit/usb/USB.h>
 
 
-/*!
- @class IOUSBControllerListElement
- @abstract Used by the IOUSBController to manage the USB controller lists that are common between EHCI and UHCI.
- */
+/*
+ class IOUSBControllerListElement
+ Used by the IOUSBController to manage the USB controller lists that are common between EHCI and UHCI.
+*/
 class IOUSBControllerListElement : public OSObject
 {
     OSDeclareDefaultStructors(IOUSBControllerListElement)

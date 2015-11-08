@@ -4,10 +4,10 @@
  *	  prototypes for postgres.c.
  *
  *
- * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2011, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/tcop/tcopprot.h,v 1.104 2010/02/26 02:01:28 momjian Exp $
+ * src/include/tcop/tcopprot.h
  *
  * OLD COMMENTS
  *	  This file was created so that other c files could get the two
@@ -45,8 +45,6 @@ typedef enum
 
 extern int	log_statement;
 
-extern List *pg_parse_and_rewrite(const char *query_string,
-					 Oid *paramTypes, int numParams);
 extern List *pg_parse_query(const char *query_string);
 extern List *pg_analyze_and_rewrite(Node *parsetree, const char *query_string,
 					   Oid *paramTypes, int numParams);
@@ -59,7 +57,8 @@ extern PlannedStmt *pg_plan_query(Query *querytree, int cursorOptions,
 extern List *pg_plan_queries(List *querytrees, int cursorOptions,
 				ParamListInfo boundParams);
 
-extern bool assign_max_stack_depth(int newval, bool doit, GucSource source);
+extern bool check_max_stack_depth(int *newval, void **extra, GucSource source);
+extern void assign_max_stack_depth(int newval, void *extra);
 
 extern void die(SIGNAL_ARGS);
 extern void quickdie(SIGNAL_ARGS);
@@ -69,9 +68,10 @@ extern void RecoveryConflictInterrupt(ProcSignalReason reason); /* called from S
 																 * handler */
 extern void prepare_for_client_read(void);
 extern void client_read_ended(void);
-extern const char *process_postgres_switches(int argc, char *argv[],
-						  GucContext ctx);
-extern int	PostgresMain(int argc, char *argv[], const char *username);
+extern void process_postgres_switches(int argc, char *argv[],
+						  GucContext ctx, const char **dbname);
+extern int	PostgresMain(int argc, char *argv[],
+						 const char *dbname, const char *username);
 extern long get_stack_depth_rlimit(void);
 extern void ResetUsage(void);
 extern void ShowUsage(const char *title);

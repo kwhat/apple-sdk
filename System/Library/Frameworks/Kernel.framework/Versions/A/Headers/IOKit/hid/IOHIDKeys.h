@@ -85,12 +85,14 @@ __BEGIN_DECLS
 #define kIOHIDPrimaryUsageKey               "PrimaryUsage"
 #define kIOHIDPrimaryUsagePageKey           "PrimaryUsagePage"
 #define kIOHIDMaxInputReportSizeKey         "MaxInputReportSize"
-#define kIOHIDMaxOutputReportSizeKey	    "MaxOutputReportSize"
-#define kIOHIDMaxFeatureReportSizeKey	    "MaxFeatureReportSize"
+#define kIOHIDMaxOutputReportSizeKey        "MaxOutputReportSize"
+#define kIOHIDMaxFeatureReportSizeKey       "MaxFeatureReportSize"
 #define kIOHIDReportIntervalKey             "ReportInterval"
 #define kIOHIDReportDescriptorKey           "ReportDescriptor"
 #define kIOHIDResetKey                      "Reset"
-
+#define kIOHIDKeyboardLanguageKey           "KeyboardLanguage"
+#define kIOHIDAltHandlerIdKey               "alt_handler_id"
+#define kIOHIDPowerOnDelayNSKey             "HIDPowerOnDelayNS"
 /*!
     @define kIOHIDElementKey
     @abstract Keys that represents an element property.
