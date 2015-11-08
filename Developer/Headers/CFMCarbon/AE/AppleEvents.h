@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.1.5.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/AE.framework/Headers/AppleEvents.h
+/tmp/MacOSX-SDKs/MacOSX10.2.8.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/AE.framework/Headers/AppleEvents.h
