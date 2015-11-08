@@ -3,7 +3,7 @@
  
      Contains:   International Resource definitions.
  
-     Version:    CarbonCore-861.39~1
+     Version:    CarbonCore-960.24~1
  
      Copyright:  © 1983-2008 by Apple Computer, Inc., all rights reserved.
  

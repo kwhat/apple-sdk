@@ -1,5 +1,5 @@
 /*
- * "$Id: adminutil.h 7026 2007-10-19 00:57:45Z mike $"
+ * "$Id: adminutil.h 9063 2010-04-01 17:01:09Z mike $"
  *
  *   Administration utility API definitions for CUPS.
  *
@@ -22,6 +22,7 @@
  * Include necessary headers...
  */
 
+#  include <stdio.h>
 #  include "cups.h"
 
 
@@ -73,5 +74,5 @@ extern int	cupsAdminSetServerSettings(http_t *http,
 #endif /* !_CUPS_ADMINUTIL_H_ */
 
 /*
- * End of "$Id: adminutil.h 7026 2007-10-19 00:57:45Z mike $".
+ * End of "$Id: adminutil.h 9063 2010-04-01 17:01:09Z mike $".
  */

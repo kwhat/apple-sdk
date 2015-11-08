@@ -1,9 +1,9 @@
 /*
- * "$Id: image.h 7306 2008-02-15 00:52:38Z mike $"
+ * "$Id: image.h 9771 2011-05-12 05:21:56Z mike $"
  *
- *   Image library definitions for the Common UNIX Printing System (CUPS).
+ *   Image library definitions for CUPS.
  *
- *   Copyright 2007-2008 by Apple Inc.
+ *   Copyright 2007-2011 by Apple Inc.
  *   Copyright 1993-2006 by Easy Software Products.
  *
  *   These coded instructions, statements, and computer programs are the
@@ -126,5 +126,5 @@ extern void		cupsImageWhiteToWhite(const cups_ib_t *in,
 #endif /* !_CUPS_IMAGE_H_ */
 
 /*
- * End of "$Id: image.h 7306 2008-02-15 00:52:38Z mike $".
+ * End of "$Id: image.h 9771 2011-05-12 05:21:56Z mike $".
  */

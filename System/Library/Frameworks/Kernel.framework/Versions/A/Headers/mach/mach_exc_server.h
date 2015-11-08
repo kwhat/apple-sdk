@@ -95,11 +95,21 @@ kern_return_t catch_mach_exception_raise_state_identity
 	mach_msg_type_number_t *new_stateCnt
 );
 
-extern boolean_t mach_exc_server(
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+boolean_t mach_exc_server(
 		mach_msg_header_t *InHeadP,
 		mach_msg_header_t *OutHeadP);
 
-extern mig_routine_t mach_exc_server_routine(
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+mig_routine_t mach_exc_server_routine(
 		mach_msg_header_t *InHeadP);
 
 
@@ -149,7 +159,7 @@ extern const struct catch_mach_exc_subsystem {
 		int64_t code[2];
 		int flavor;
 		mach_msg_type_number_t old_stateCnt;
-		natural_t old_state[144];
+		natural_t old_state[224];
 	} __Request__mach_exception_raise_state_t;
 #ifdef  __MigPackStructs
 #pragma pack()
@@ -171,7 +181,7 @@ extern const struct catch_mach_exc_subsystem {
 		int64_t code[2];
 		int flavor;
 		mach_msg_type_number_t old_stateCnt;
-		natural_t old_state[144];
+		natural_t old_state[224];
 	} __Request__mach_exception_raise_state_identity_t;
 #ifdef  __MigPackStructs
 #pragma pack()
@@ -215,7 +225,7 @@ union __RequestUnion__catch_mach_exc_subsystem {
 		kern_return_t RetCode;
 		int flavor;
 		mach_msg_type_number_t new_stateCnt;
-		natural_t new_state[144];
+		natural_t new_state[224];
 	} __Reply__mach_exception_raise_state_t;
 #ifdef  __MigPackStructs
 #pragma pack()
@@ -230,7 +240,7 @@ union __RequestUnion__catch_mach_exc_subsystem {
 		kern_return_t RetCode;
 		int flavor;
 		mach_msg_type_number_t new_stateCnt;
-		natural_t new_state[144];
+		natural_t new_state[224];
 	} __Reply__mach_exception_raise_state_identity_t;
 #ifdef  __MigPackStructs
 #pragma pack()

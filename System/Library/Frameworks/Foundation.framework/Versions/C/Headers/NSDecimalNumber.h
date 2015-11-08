@@ -1,5 +1,5 @@
 /*	NSDecimalNumber.h
-	Copyright (c) 1995-2009, Apple Inc. All rights reserved.
+	Copyright (c) 1995-2011, Apple Inc. All rights reserved.
 */
 
 #import <Foundation/NSValue.h>
@@ -92,13 +92,13 @@ FOUNDATION_EXPORT NSString * const NSDecimalNumberDivideByZeroException;
 + (void)setDefaultBehavior:(id <NSDecimalNumberBehaviors>)behavior;
 
 + (id <NSDecimalNumberBehaviors>)defaultBehavior;
-    // One behavior per NSThread ? The default behavior is
+    // One behavior per thread - The default behavior is
     //   rounding mode: NSRoundPlain
     //   scale: No defined scale (full precision)
     //   ignore exactnessException
     //   raise on overflow, underflow and divide by zero.
 
-- (const char *)objCType;
+- (const char *)objCType NS_RETURNS_INNER_POINTER;
     // return 'd' for double
     
 - (double)doubleValue;

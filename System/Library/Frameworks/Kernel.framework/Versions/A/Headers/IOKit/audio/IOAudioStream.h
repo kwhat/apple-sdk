@@ -40,8 +40,8 @@ class OSSet;
 class IOCommandGate;
 class IOAudioControl;
 
-typedef struct IOAudioClientBuffer;
-typedef struct IOAudioStreamFormatDesc;
+struct IOAudioClientBuffer;
+struct IOAudioStreamFormatDesc;
 
 /*!
  * @class IOAudioStream
@@ -245,6 +245,7 @@ public:
 
     virtual const IOAudioStreamFormat *getFormat();
     static IOReturn setFormatAction(OSObject *owner, void *arg1, void *arg2, void *arg3, void *arg4);
+	static IOReturn _setFormatAction(OSObject *target, void *arg0, void *arg1, void *arg2, void *arg3);	// <rdar://8568040,8691669>
     virtual IOReturn setFormat(const IOAudioStreamFormat *streamFormat, bool callDriver = true);
     virtual IOReturn setFormat(OSDictionary *formatDict);
     virtual IOReturn setFormat(const IOAudioStreamFormat *streamFormat, OSDictionary *formatDict, bool callDriver = true);

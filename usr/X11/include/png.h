@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.6.sdk/usr/X11/include/libpng12/png.h
+libpng15/png.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.6.sdk/usr/include/editline/readline.h
+../editline/readline.h

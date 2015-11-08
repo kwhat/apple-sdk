@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2010 The PHP Group                                |
+   | Copyright (c) 1997-2012 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -18,7 +18,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: tsrm_virtual_cwd.h 305070 2010-11-04 01:16:20Z pajoye $ */
+/* $Id: tsrm_virtual_cwd.h 321634 2012-01-01 13:15:04Z felipe $ */
 
 #ifndef VIRTUAL_CWD_H
 #define VIRTUAL_CWD_H

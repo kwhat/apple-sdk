@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers/tkIntXlibDecls.h
+../../System/Library/Frameworks/Tk.framework/Versions/8.5/Headers/tkIntXlibDecls.h

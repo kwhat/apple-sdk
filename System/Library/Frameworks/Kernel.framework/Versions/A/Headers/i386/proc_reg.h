@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000-2010 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 2000-2010 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  * 
@@ -145,20 +145,23 @@
 /*
  * CR4
  */
-#define CR4_OSXSAVE 0x00040000	/* OS supports XSAVE */
-#define CR4_SMXE    0x00004000	/* Enable SMX operation */
-#define CR4_VMXE    0x00002000	/* Enable VMX operation */
-#define CR4_OSXMM   0x00000400  /* SSE/SSE2 exceptions supported in OS */
-#define CR4_OSFXS   0x00000200  /* SSE/SSE2 OS supports FXSave */
-#define CR4_PCE     0x00000100  /* Performance-Monitor Count Enable */
-#define CR4_PGE     0x00000080  /* Page Global Enable */
-#define	CR4_MCE     0x00000040	/* Machine Check Exceptions */
-#define CR4_PAE     0x00000020  /* Physical Address Extensions */
-#define	CR4_PSE     0x00000010	/* Page Size Extensions */
-#define	CR4_DE      0x00000008	/* Debugging Extensions */
-#define	CR4_TSD     0x00000004	/* Time Stamp Disable */
-#define	CR4_PVI     0x00000002	/* Protected-mode Virtual Interrupts */
-#define	CR4_VME     0x00000001	/* Virtual-8086 Mode Extensions */
+#define CR4_SMEP	0x00100000	/* Supervisor-Mode Execute Protect */
+#define CR4_OSXSAVE	0x00040000	/* OS supports XSAVE */
+#define CR4_PCIDE	0x00020000	/* PCID Enable */
+#define CR4_RDWRFSGS	0x00010000	/* RDWRFSGS Enable */
+#define CR4_SMXE	0x00004000	/* Enable SMX operation */
+#define CR4_VMXE	0x00002000	/* Enable VMX operation */
+#define CR4_OSXMM	0x00000400	/* SSE/SSE2 exception support in OS */
+#define CR4_OSFXS	0x00000200	/* SSE/SSE2 OS supports FXSave */
+#define CR4_PCE		0x00000100	/* Performance-Monitor Count Enable */
+#define CR4_PGE		0x00000080	/* Page Global Enable */
+#define	CR4_MCE		0x00000040	/* Machine Check Exceptions */
+#define CR4_PAE		0x00000020	/* Physical Address Extensions */
+#define	CR4_PSE		0x00000010	/* Page Size Extensions */
+#define	CR4_DE		0x00000008	/* Debugging Extensions */
+#define	CR4_TSD		0x00000004	/* Time Stamp Disable */
+#define	CR4_PVI		0x00000002	/* Protected-mode Virtual Interrupts */
+#define	CR4_VME		0x00000001	/* Virtual-8086 Mode Extensions */
 
 /*
  * XCR0 - XFEATURE_ENABLED_MASK (a.k.a. XFEM) register
@@ -170,6 +173,9 @@
 #define XFEM_SSE XCR0_SSE
 #define XFEM_X87 XCR0_X87
 #define XCR0 (0)
+
+#define	PMAP_PCID_PRESERVE (1ULL << 63)
+#define	PMAP_PCID_MASK (0xFFF)
 #ifndef	ASSEMBLER
 
 #include <sys/cdefs.h>
@@ -178,6 +184,66 @@
 __BEGIN_DECLS
 
 #define	set_ts() set_cr0(get_cr0() | CR0_TS)
+
+static inline uint16_t get_es(void)
+{
+	uint16_t es;
+	__asm__ volatile("mov %%es, %0" : "=r" (es));
+	return es;
+}
+
+static inline void set_es(uint16_t es)
+{
+	__asm__ volatile("mov %0, %%es" : : "r" (es));
+}
+
+static inline uint16_t get_ds(void)
+{
+	uint16_t ds;
+	__asm__ volatile("mov %%ds, %0" : "=r" (ds));
+	return ds;
+}
+
+static inline void set_ds(uint16_t ds)
+{
+	__asm__ volatile("mov %0, %%ds" : : "r" (ds));
+}
+
+static inline uint16_t get_fs(void)
+{
+	uint16_t fs;
+	__asm__ volatile("mov %%fs, %0" : "=r" (fs));
+	return fs;
+}
+
+static inline void set_fs(uint16_t fs)
+{
+	__asm__ volatile("mov %0, %%fs" : : "r" (fs));
+}
+
+static inline uint16_t get_gs(void)
+{
+	uint16_t gs;
+	__asm__ volatile("mov %%gs, %0" : "=r" (gs));
+	return gs;
+}
+
+static inline void set_gs(uint16_t gs)
+{
+	__asm__ volatile("mov %0, %%gs" : : "r" (gs));
+}
+
+static inline uint16_t get_ss(void)
+{
+	uint16_t ss;
+	__asm__ volatile("mov %%ss, %0" : "=r" (ss));
+	return ss;
+}
+
+static inline void set_ss(uint16_t ss)
+{
+	__asm__ volatile("mov %0, %%ss" : : "r" (ss));
+}
 
 static inline uintptr_t get_cr0(void)
 {
@@ -198,6 +264,19 @@ static inline uintptr_t get_cr2(void)
 	return(cr2);
 }
 
+static inline uintptr_t get_cr3_raw(void)
+{
+	register uintptr_t cr3;
+	__asm__ volatile("mov %%cr3, %0" : "=r" (cr3));
+	return(cr3);
+}
+
+static inline void set_cr3_raw(uintptr_t value)
+{
+	__asm__ volatile("mov %0, %%cr3" : : "r" (value));
+}
+
+#if	defined(__i386__)
 static inline uintptr_t get_cr3(void)
 {
 	register uintptr_t cr3;
@@ -209,7 +288,20 @@ static inline void set_cr3(uintptr_t value)
 {
 	__asm__ volatile("mov %0, %%cr3" : : "r" (value));
 }
+#else
+static inline uintptr_t get_cr3_base(void)
+{
+	register uintptr_t cr3;
+	__asm__ volatile("mov %%cr3, %0" : "=r" (cr3));
+	return(cr3 & ~(0xFFFULL));
+}
 
+static inline void set_cr3_composed(uintptr_t base, uint16_t pcid, uint32_t preserve)
+{
+	__asm__ volatile("mov %0, %%cr3" : : "r" (base | pcid | ( ( (uint64_t)preserve) << 63) ) );
+}
+
+#endif
 static inline uintptr_t get_cr4(void)
 {
 	uintptr_t cr4;
@@ -220,6 +312,13 @@ static inline uintptr_t get_cr4(void)
 static inline void set_cr4(uintptr_t value)
 {
 	__asm__ volatile("mov %0, %%cr4" : : "r" (value));
+}
+
+static inline uintptr_t x86_get_flags(void)
+{
+	uintptr_t erflags;
+	__asm__ volatile("pushf; pop	%0" :  "=r" (erflags));
+	return erflags;
 }
 
 static inline void clear_ts(void)
@@ -344,19 +443,19 @@ static inline void wrmsr64(uint32_t msr, uint64_t val)
 
 static inline uint64_t rdtsc64(void)
 {
-	uint32_t lo, hi;
+	uint64_t lo, hi;
 	rdtsc(lo, hi);
-	return (((uint64_t)hi) << 32) | ((uint64_t)lo);
+	return ((hi) << 32) | (lo);
 }
 
 static inline uint64_t rdtscp64(uint32_t *aux)
 {
-	uint32_t lo, hi;
+	uint64_t lo, hi;
 	__asm__ volatile("rdtscp; mov %%ecx, %1"
 					 : "=a" (lo), "=d" (hi), "=m" (*aux)
 					 :
 					 : "ecx");
-	return (((uint64_t)hi) << 32) | ((uint64_t)lo);
+	return ((hi) << 32) | (lo);
 }
 
 #else

@@ -242,17 +242,14 @@ module WEBrick
           @raw_header << line
         end
       end
-      begin
-        @header = HTTPUtils::parse_header(@raw_header)
-      rescue => ex
-        raise  HTTPStatus::BadRequest, ex.message
-      end
+      @header = HTTPUtils::parse_header(@raw_header.join)
     end
 
     def parse_uri(str, scheme="http")
       if @config[:Escape8bitURI]
         str = HTTPUtils::escape8bit(str)
       end
+      str.sub!(%r{\A/+}o, '/')
       uri = URI::parse(str)
       return uri if uri.absolute?
       if self["host"]

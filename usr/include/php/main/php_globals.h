@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2010 The PHP Group                                |
+   | Copyright (c) 1997-2012 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_globals.h 293036 2010-01-03 09:23:27Z sebastian $ */
+/* $Id: php_globals.h 321634 2012-01-01 13:15:04Z felipe $ */
 
 #ifndef PHP_GLOBALS_H
 #define PHP_GLOBALS_H
@@ -170,6 +170,12 @@ struct _php_core_globals {
 	char *mail_log;
 
 	zend_bool in_error_log;
+
+#ifdef PHP_WIN32
+	zend_bool windows_show_crt_warning;
+#endif
+
+	long max_input_vars;
 };
 
 

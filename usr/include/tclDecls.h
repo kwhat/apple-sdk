@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Tcl.framework/Versions/8.5/Headers/tclDecls.h
+../../System/Library/Frameworks/Tcl.framework/Versions/8.5/Headers/tclDecls.h

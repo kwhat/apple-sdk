@@ -2,7 +2,7 @@
   +----------------------------------------------------------------------+
   | PHP Version 5                                                        |
   +----------------------------------------------------------------------+
-  | Copyright (c) 2006-2010 The PHP Group                                |
+  | Copyright (c) 2006-2012 The PHP Group                                |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -18,7 +18,7 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: mysqlnd_structs.h 304112 2010-10-05 16:27:49Z andrey $ */
+/* $Id: mysqlnd_structs.h 321634 2012-01-01 13:15:04Z felipe $ */
 
 #ifndef MYSQLND_STRUCTS_H
 #define MYSQLND_STRUCTS_H
@@ -258,7 +258,7 @@ typedef enum_func_status	(*func_mysqlnd_net__set_client_option)(MYSQLND_NET * co
 typedef enum_func_status	(*func_mysqlnd_net__network_read)(MYSQLND * conn, zend_uchar * buffer, size_t count TSRMLS_DC);
 typedef size_t				(*func_mysqlnd_net__network_write)(MYSQLND * const conn, const zend_uchar * const buf, size_t count TSRMLS_DC);
 typedef enum_func_status	(*func_mysqlnd_net__decode)(zend_uchar * uncompressed_data, size_t uncompressed_data_len, const zend_uchar * const compressed_data, size_t compressed_data_len TSRMLS_DC);
-typedef enum_func_status	(*func_mysqlnd_net__encode)(zend_uchar * compress_buffer, size_t compress_buffer_len, const zend_uchar * const uncompressed_data, size_t uncompressed_data_len TSRMLS_DC);
+typedef enum_func_status	(*func_mysqlnd_net__encode)(zend_uchar * compress_buffer, size_t * compress_buffer_len, const zend_uchar * const uncompressed_data, size_t uncompressed_data_len TSRMLS_DC);
 typedef size_t				(*func_mysqlnd_net__consume_uneaten_data)(MYSQLND_NET * const net, enum php_mysqlnd_server_command cmd TSRMLS_DC);
 typedef void				(*func_mysqlnd_net__free_contents)(MYSQLND_NET * net TSRMLS_DC);
 typedef enum_func_status	(*func_mysqlnd_net__enable_ssl)(MYSQLND_NET * const net TSRMLS_DC);
@@ -338,7 +338,7 @@ struct st_mysqlnd_protocol_methods
 
 typedef enum_func_status	(*func_mysqlnd_conn__init)(MYSQLND * conn TSRMLS_DC);
 typedef enum_func_status	(*func_mysqlnd_conn__connect)(MYSQLND *conn, const char *host, const char * user, const char * passwd, unsigned int passwd_len, const char * db, unsigned int db_len, unsigned int port, const char * socket_or_pipe, unsigned int mysql_flags TSRMLS_DC);
-typedef ulong				(*func_mysqlnd_conn__escape_string)(const MYSQLND * const conn, char *newstr, const char *escapestr, size_t escapestr_len TSRMLS_DC);
+typedef ulong				(*func_mysqlnd_conn__escape_string)(MYSQLND * const conn, char *newstr, const char *escapestr, size_t escapestr_len TSRMLS_DC);
 typedef enum_func_status	(*func_mysqlnd_conn__set_charset)(MYSQLND * const conn, const char * const charset TSRMLS_DC);
 typedef enum_func_status	(*func_mysqlnd_conn__query)(MYSQLND *conn, const char *query, unsigned int query_len TSRMLS_DC);
 typedef enum_func_status	(*func_mysqlnd_conn__send_query)(MYSQLND *conn, const char *query, unsigned int query_len TSRMLS_DC);
@@ -405,6 +405,11 @@ typedef enum_func_status	(*func_mysqlnd_conn__send_close)(MYSQLND * conn TSRMLS_
 typedef enum_func_status    (*func_mysqlnd_conn__ssl_set)(MYSQLND * const conn, const char * key, const char * const cert, const char * const ca, const char * const capath, const char * const cipher TSRMLS_DC);
 
 typedef MYSQLND_RES * 		(*func_mysqlnd_conn__result_init)(unsigned int field_count, zend_bool persistent TSRMLS_DC);
+
+typedef enum_func_status	(*func_mysqlnd_conn__set_autocommit)(MYSQLND * conn, unsigned int mode TSRMLS_DC);
+typedef enum_func_status	(*func_mysqlnd_conn__tx_commit)(MYSQLND * conn TSRMLS_DC);
+typedef enum_func_status	(*func_mysqlnd_conn__tx_rollback)(MYSQLND * conn TSRMLS_DC);
+
 
 struct st_mysqlnd_conn_methods
 {
@@ -477,6 +482,11 @@ struct st_mysqlnd_conn_methods
 	func_mysqlnd_conn__ssl_set ssl_set;
 
 	func_mysqlnd_conn__result_init result_init;
+#ifdef AUTOCOMMIT_TX_COMMIT_ROLLBACK
+	func_mysqlnd_conn__set_autocommit set_autocommit;
+	func_mysqlnd_conn__tx_commit tx_commit;
+	func_mysqlnd_conn__tx_rollback tx_rollback;
+#endif
 };
 
 

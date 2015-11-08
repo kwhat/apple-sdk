@@ -1,21 +1,19 @@
 /*
 	NSViewController.h
 	Application Kit
-	Copyright (c) 2006-2009, Apple Inc.
+	Copyright (c) 2006-2011, Apple Inc.
 	All rights reserved.
 */
 
 #import <AppKit/NSNibDeclarations.h>
 #import <AppKit/NSResponder.h>
 
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5
 
 @class NSArray, NSBundle, NSPointerArray, NSView;
 
-@interface NSViewController : NSResponder
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
-<NSCoding>
-#endif
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
+NS_CLASS_AVAILABLE(10_5, NA)
+@interface NSViewController : NSResponder <NSCoding>
 {
     @private
     NSString *_nibName;
@@ -69,4 +67,3 @@
 
 @end
 
-#endif

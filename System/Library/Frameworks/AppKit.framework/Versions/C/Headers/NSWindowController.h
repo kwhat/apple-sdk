@@ -1,7 +1,7 @@
 /*
 	NSWindowController.h
 	Application Kit
-	Copyright (c) 1997-2009, Apple Inc.
+	Copyright (c) 1997-2011, Apple Inc.
 	All rights reserved.
 */
 
@@ -10,6 +10,7 @@
 
 @class NSArray, NSDocument, NSWindow;
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSWindowController : NSResponder <NSCoding> {
     @private
     NSWindow *_window;

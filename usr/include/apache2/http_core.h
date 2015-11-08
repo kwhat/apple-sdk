@@ -568,6 +568,16 @@ typedef struct {
 #define USE_CANONICAL_PHYS_PORT_UNSET (2)
     unsigned use_canonical_phys_port : 2;
 
+
+    unsigned int decode_encoded_slashes : 1; /* whether to decode encoded slashes in URLs */
+
+#define AP_MAXRANGES_UNSET     -1
+#define AP_MAXRANGES_DEFAULT   -2
+#define AP_MAXRANGES_UNLIMITED -3
+#define AP_MAXRANGES_NORANGES   0
+    /** Number of Ranges before returning HTTP_OK. **/
+    int max_ranges;
+
 } core_dir_config;
 
 /* Per-server core configuration */

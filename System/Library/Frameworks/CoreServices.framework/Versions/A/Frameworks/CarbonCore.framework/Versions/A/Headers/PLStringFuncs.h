@@ -3,7 +3,7 @@
  
      Contains:   Pascal string manipulation routines that parallel ANSI C string.h
  
-     Version:    CarbonCore-861.39~1
+     Version:    CarbonCore-960.24~1
  
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
  

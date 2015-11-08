@@ -12,7 +12,7 @@ CXX_EXT = %w[cc cxx cpp]
 if /mswin|bccwin|mingw|msdosdjgpp|human|os2/ !~ CONFIG['build_os']
   CXX_EXT.concat(%w[C])
 end
-SRC_EXT = %w[c m] << CXX_EXT
+SRC_EXT = %w[c m].concat(CXX_EXT)
 $static = $config_h = nil
 $default_static = $static
 
@@ -1710,7 +1710,7 @@ def init_mkmf(config = CONFIG)
   $LIBRUBYARG = ""
   $LIBRUBYARG_STATIC = config['LIBRUBYARG_STATIC']
   $LIBRUBYARG_SHARED = config['LIBRUBYARG_SHARED']
-  $DEFLIBPATH = $extmk ? ["$(topdir)"] : CROSS_COMPILING ? [] : ["$(libdir)"]
+  $DEFLIBPATH = [$extmk ? "$(topdir)" : "$(libdir)"]
   $DEFLIBPATH.unshift(".")
   $LIBPATH = []
   $INSTALLFILES = []
