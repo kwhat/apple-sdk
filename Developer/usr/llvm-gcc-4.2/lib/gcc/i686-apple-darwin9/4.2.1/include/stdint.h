@@ -1,0 +1,1 @@
+/tmp/MacOSX-SDKs/MacOSX10.5.sdk/Developer/usr/llvm-gcc-4.2/include/gcc/darwin/4.2/stdint.h

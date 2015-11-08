@@ -1,1 +1,0 @@
-/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreGraphics.framework/Headers/CGDataProvider.h
