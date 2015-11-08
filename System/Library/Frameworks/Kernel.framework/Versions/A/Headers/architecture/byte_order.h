@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/usr/include/architecture/byte_order.h
+../../../../../../../../usr/include/architecture/byte_order.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gliContext.h
+../../../../OpenGL.framework/Headers/gliContext.h

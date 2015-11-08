@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/usr/include/gcc/darwin/default/stdint.h
+gcc/darwin/default/stdint.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Tk.framework/Versions/8.4/Headers/tkDecls.h
+../../System/Library/Frameworks/Tk.framework/Versions/8.4/Headers/tkDecls.h

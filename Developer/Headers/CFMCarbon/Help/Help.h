@@ -1,1 +1,0 @@
-/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/Help.framework/Headers/Help.h
