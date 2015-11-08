@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.0.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/SecurityHI.framework/Headers/SecurityHI.r
+/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/SecurityHI.framework/Headers/SecurityHI.r
