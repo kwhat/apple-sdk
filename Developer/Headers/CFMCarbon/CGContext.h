@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.2.8.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreGraphics.framework/Headers/CGContext.h
+/tmp/MacOSX-SDKs/MacOSX10.3.0.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreGraphics.framework/Headers/CGContext.h
