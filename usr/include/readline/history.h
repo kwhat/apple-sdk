@@ -1,0 +1,1 @@
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/usr/include/readline/readline.h

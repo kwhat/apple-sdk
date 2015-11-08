@@ -1,0 +1,1 @@
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Headers/jmm.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/ImageCapture.framework/Headers/ImageCapture.h
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/ImageCapture.framework/Headers/ImageCapture.h

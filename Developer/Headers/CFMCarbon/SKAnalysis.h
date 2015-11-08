@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/CoreServices.framework/Frameworks/SearchKit.framework/Headers/SKAnalysis.h
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/CoreServices.framework/Frameworks/SearchKit.framework/Headers/SKAnalysis.h

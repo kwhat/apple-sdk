@@ -1,0 +1,1 @@
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/ImageIO.framework/Headers/ImageIO.h

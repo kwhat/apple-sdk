@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/QuickTime.framework/Headers/QTSMovie.k.h
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/QuickTime.framework/Headers/QTSMovie.k.h

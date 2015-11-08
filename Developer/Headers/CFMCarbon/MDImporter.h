@@ -1,0 +1,1 @@
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Headers/MDImporter.h

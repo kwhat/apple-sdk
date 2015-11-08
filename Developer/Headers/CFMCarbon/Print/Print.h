@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/Print.framework/Headers/Print.h
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/Print.framework/Headers/Print.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/usr/include/nameser8_compat.h
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/usr/include/nameser8_compat.h

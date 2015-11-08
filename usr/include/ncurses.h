@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/usr/include/curses.h
+/tmp/MacOSX-SDKs/MacOSX10.4u.sdk/usr/include/curses.h
