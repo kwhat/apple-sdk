@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Tk.framework/Versions/Current/tkConfig.sh
+Versions/Current/tkConfig.sh
