@@ -1,1 +1,0 @@
-/tmp/MacOSX-SDKs/MacOSX10.6.sdk/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Headers/jvmpi.h

@@ -1,0 +1,1 @@
+/tmp/MacOSX-SDKs/MacOSX10.7.sdk/usr/X11/include/libpng15/pnglibconf.h
