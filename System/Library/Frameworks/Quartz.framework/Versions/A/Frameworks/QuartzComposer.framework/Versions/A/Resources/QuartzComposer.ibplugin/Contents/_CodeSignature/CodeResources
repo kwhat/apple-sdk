@@ -50,6 +50,13 @@
 			<key>weight</key>
 			<real>5</real>
 		</dict>
+		<key>^Resources/BridgeSupport/[^/]*\.(bridgesupport|dylib)$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
+		</dict>
 		<key>^Resources/English\.lproj/</key>
 		<dict>
 			<key>optional</key>

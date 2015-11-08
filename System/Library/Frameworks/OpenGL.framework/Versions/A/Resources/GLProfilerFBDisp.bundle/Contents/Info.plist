@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>GLProfilerFBDisp</string>
 	<key>CFBundleGetInfoString</key>
-	<string>OpenGL Engine Profiler plug-in version 4.1</string>
+	<string>OpenGL Engine Profiler plug-in version 4.2</string>
 	<key>CFBundleIconFile</key>
 	<string>GLEngineProfiler</string>
 	<key>CFBundleIdentifier</key>
@@ -19,10 +19,10 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>4.1</string>
+	<string>4.2</string>
 	<key>CFBundleSignature</key>
 	<string>oglp</string>
 	<key>CFBundleVersion</key>
-	<string>43</string>
+	<string>55</string>
 </dict>
 </plist>

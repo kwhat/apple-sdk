@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.5.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h
+../../../../OpenGL.framework/Headers/gl.h

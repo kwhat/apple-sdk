@@ -4,8 +4,9 @@
 <depends_on path='/System/Library/Frameworks/ApplicationServices.framework'/>
 <depends_on path='/System/Library/Frameworks/IOKit.framework'/>
 <depends_on path='/System/Library/Frameworks/CoreFoundation.framework'/>
+<depends_on path='/System/Library/Frameworks/IOSurface.framework'/>
 <depends_on path='/System/Library/Frameworks/CoreServices.framework'/>
-<struct name='GLIFunctionDispatch' type='{__GLIFunctionDispatchRec=&quot;accum&quot;^?&quot;alpha_func&quot;^?&quot;are_textures_resident&quot;^?&quot;array_element&quot;^?&quot;begin&quot;^?&quot;bind_texture&quot;^?&quot;bitmap&quot;^?&quot;blend_func&quot;^?&quot;call_list&quot;^?&quot;call_lists&quot;^?&quot;clear&quot;^?&quot;clear_accum&quot;^?&quot;clear_color&quot;^?&quot;clear_depth&quot;^?&quot;clear_index&quot;^?&quot;clear_stencil&quot;^?&quot;clip_plane&quot;^?&quot;color3b&quot;^?&quot;color3bv&quot;^?&quot;color3d&quot;^?&quot;color3dv&quot;^?&quot;color3f&quot;^?&quot;color3fv&quot;^?&quot;color3i&quot;^?&quot;color3iv&quot;^?&quot;color3s&quot;^?&quot;color3sv&quot;^?&quot;color3ub&quot;^?&quot;color3ubv&quot;^?&quot;color3ui&quot;^?&quot;color3uiv&quot;^?&quot;color3us&quot;^?&quot;color3usv&quot;^?&quot;color4b&quot;^?&quot;color4bv&quot;^?&quot;color4d&quot;^?&quot;color4dv&quot;^?&quot;color4f&quot;^?&quot;color4fv&quot;^?&quot;color4i&quot;^?&quot;color4iv&quot;^?&quot;color4s&quot;^?&quot;color4sv&quot;^?&quot;color4ub&quot;^?&quot;color4ubv&quot;^?&quot;color4ui&quot;^?&quot;color4uiv&quot;^?&quot;color4us&quot;^?&quot;color4usv&quot;^?&quot;color_mask&quot;^?&quot;color_material&quot;^?&quot;color_pointer&quot;^?&quot;copy_pixels&quot;^?&quot;copy_tex_image1D&quot;^?&quot;copy_tex_image2D&quot;^?&quot;copy_tex_sub_image1D&quot;^?&quot;copy_tex_sub_image2D&quot;^?&quot;cull_face&quot;^?&quot;delete_lists&quot;^?&quot;delete_textures&quot;^?&quot;depth_func&quot;^?&quot;depth_mask&quot;^?&quot;depth_range&quot;^?&quot;disable&quot;^?&quot;disable_client_state&quot;^?&quot;draw_arrays&quot;^?&quot;draw_buffer&quot;^?&quot;draw_elements&quot;^?&quot;draw_pixels&quot;^?&quot;edge_flag&quot;^?&quot;edge_flag_pointer&quot;^?&quot;edge_flagv&quot;^?&quot;enable&quot;^?&quot;enable_client_state&quot;^?&quot;end&quot;^?&quot;end_list&quot;^?&quot;eval_coord1d&quot;^?&quot;eval_coord1dv&quot;^?&quot;eval_coord1f&quot;^?&quot;eval_coord1fv&quot;^?&quot;eval_coord2d&quot;^?&quot;eval_coord2dv&quot;^?&quot;eval_coord2f&quot;^?&quot;eval_coord2fv&quot;^?&quot;eval_mesh1&quot;^?&quot;eval_mesh2&quot;^?&quot;eval_point1&quot;^?&quot;eval_point2&quot;^?&quot;feedback_buffer&quot;^?&quot;finish&quot;^?&quot;flush&quot;^?&quot;fogf&quot;^?&quot;fogfv&quot;^?&quot;fogi&quot;^?&quot;fogiv&quot;^?&quot;front_face&quot;^?&quot;frustum&quot;^?&quot;gen_lists&quot;^?&quot;gen_textures&quot;^?&quot;get_booleanv&quot;^?&quot;get_clip_plane&quot;^?&quot;get_doublev&quot;^?&quot;get_error&quot;^?&quot;get_floatv&quot;^?&quot;get_integerv&quot;^?&quot;get_lightfv&quot;^?&quot;get_lightiv&quot;^?&quot;get_mapdv&quot;^?&quot;get_mapfv&quot;^?&quot;get_mapiv&quot;^?&quot;get_materialfv&quot;^?&quot;get_materialiv&quot;^?&quot;get_pixel_mapfv&quot;^?&quot;get_pixel_mapuiv&quot;^?&quot;get_pixel_mapusv&quot;^?&quot;get_pointerv&quot;^?&quot;get_polygon_stipple&quot;^?&quot;get_string&quot;^?&quot;get_tex_envfv&quot;^?&quot;get_tex_enviv&quot;^?&quot;get_tex_gendv&quot;^?&quot;get_tex_genfv&quot;^?&quot;get_tex_geniv&quot;^?&quot;get_tex_image&quot;^?&quot;get_tex_level_parameterfv&quot;^?&quot;get_tex_level_parameteriv&quot;^?&quot;get_tex_parameterfv&quot;^?&quot;get_tex_parameteriv&quot;^?&quot;hint&quot;^?&quot;index_mask&quot;^?&quot;index_pointer&quot;^?&quot;indexd&quot;^?&quot;indexdv&quot;^?&quot;indexf&quot;^?&quot;indexfv&quot;^?&quot;indexi&quot;^?&quot;indexiv&quot;^?&quot;indexs&quot;^?&quot;indexsv&quot;^?&quot;indexub&quot;^?&quot;indexubv&quot;^?&quot;init_names&quot;^?&quot;interleaved_arrays&quot;^?&quot;is_enabled&quot;^?&quot;is_list&quot;^?&quot;is_texture&quot;^?&quot;light_modelf&quot;^?&quot;light_modelfv&quot;^?&quot;light_modeli&quot;^?&quot;light_modeliv&quot;^?&quot;lightf&quot;^?&quot;lightfv&quot;^?&quot;lighti&quot;^?&quot;lightiv&quot;^?&quot;line_stipple&quot;^?&quot;line_width&quot;^?&quot;list_base&quot;^?&quot;load_identity&quot;^?&quot;load_matrixd&quot;^?&quot;load_matrixf&quot;^?&quot;load_name&quot;^?&quot;logic_op&quot;^?&quot;map1d&quot;^?&quot;map1f&quot;^?&quot;map2d&quot;^?&quot;map2f&quot;^?&quot;map_grid1d&quot;^?&quot;map_grid1f&quot;^?&quot;map_grid2d&quot;^?&quot;map_grid2f&quot;^?&quot;materialf&quot;^?&quot;materialfv&quot;^?&quot;materiali&quot;^?&quot;materialiv&quot;^?&quot;matrix_mode&quot;^?&quot;mult_matrixd&quot;^?&quot;mult_matrixf&quot;^?&quot;new_list&quot;^?&quot;normal3b&quot;^?&quot;normal3bv&quot;^?&quot;normal3d&quot;^?&quot;normal3dv&quot;^?&quot;normal3f&quot;^?&quot;normal3fv&quot;^?&quot;normal3i&quot;^?&quot;normal3iv&quot;^?&quot;normal3s&quot;^?&quot;normal3sv&quot;^?&quot;normal_pointer&quot;^?&quot;ortho&quot;^?&quot;pass_through&quot;^?&quot;pixel_mapfv&quot;^?&quot;pixel_mapuiv&quot;^?&quot;pixel_mapusv&quot;^?&quot;pixel_storef&quot;^?&quot;pixel_storei&quot;^?&quot;pixel_transferf&quot;^?&quot;pixel_transferi&quot;^?&quot;pixel_zoom&quot;^?&quot;point_size&quot;^?&quot;polygon_mode&quot;^?&quot;polygon_offset&quot;^?&quot;polygon_stipple&quot;^?&quot;pop_attrib&quot;^?&quot;pop_client_attrib&quot;^?&quot;pop_matrix&quot;^?&quot;pop_name&quot;^?&quot;prioritize_textures&quot;^?&quot;push_attrib&quot;^?&quot;push_client_attrib&quot;^?&quot;push_matrix&quot;^?&quot;push_name&quot;^?&quot;raster_pos2d&quot;^?&quot;raster_pos2dv&quot;^?&quot;raster_pos2f&quot;^?&quot;raster_pos2fv&quot;^?&quot;raster_pos2i&quot;^?&quot;raster_pos2iv&quot;^?&quot;raster_pos2s&quot;^?&quot;raster_pos2sv&quot;^?&quot;raster_pos3d&quot;^?&quot;raster_pos3dv&quot;^?&quot;raster_pos3f&quot;^?&quot;raster_pos3fv&quot;^?&quot;raster_pos3i&quot;^?&quot;raster_pos3iv&quot;^?&quot;raster_pos3s&quot;^?&quot;raster_pos3sv&quot;^?&quot;raster_pos4d&quot;^?&quot;raster_pos4dv&quot;^?&quot;raster_pos4f&quot;^?&quot;raster_pos4fv&quot;^?&quot;raster_pos4i&quot;^?&quot;raster_pos4iv&quot;^?&quot;raster_pos4s&quot;^?&quot;raster_pos4sv&quot;^?&quot;read_buffer&quot;^?&quot;read_pixels&quot;^?&quot;rectd&quot;^?&quot;rectdv&quot;^?&quot;rectf&quot;^?&quot;rectfv&quot;^?&quot;recti&quot;^?&quot;rectiv&quot;^?&quot;rects&quot;^?&quot;rectsv&quot;^?&quot;render_mode&quot;^?&quot;rotated&quot;^?&quot;rotatef&quot;^?&quot;scaled&quot;^?&quot;scalef&quot;^?&quot;scissor&quot;^?&quot;select_buffer&quot;^?&quot;shade_model&quot;^?&quot;stencil_func&quot;^?&quot;stencil_mask&quot;^?&quot;stencil_op&quot;^?&quot;tex_coord1d&quot;^?&quot;tex_coord1dv&quot;^?&quot;tex_coord1f&quot;^?&quot;tex_coord1fv&quot;^?&quot;tex_coord1i&quot;^?&quot;tex_coord1iv&quot;^?&quot;tex_coord1s&quot;^?&quot;tex_coord1sv&quot;^?&quot;tex_coord2d&quot;^?&quot;tex_coord2dv&quot;^?&quot;tex_coord2f&quot;^?&quot;tex_coord2fv&quot;^?&quot;tex_coord2i&quot;^?&quot;tex_coord2iv&quot;^?&quot;tex_coord2s&quot;^?&quot;tex_coord2sv&quot;^?&quot;tex_coord3d&quot;^?&quot;tex_coord3dv&quot;^?&quot;tex_coord3f&quot;^?&quot;tex_coord3fv&quot;^?&quot;tex_coord3i&quot;^?&quot;tex_coord3iv&quot;^?&quot;tex_coord3s&quot;^?&quot;tex_coord3sv&quot;^?&quot;tex_coord4d&quot;^?&quot;tex_coord4dv&quot;^?&quot;tex_coord4f&quot;^?&quot;tex_coord4fv&quot;^?&quot;tex_coord4i&quot;^?&quot;tex_coord4iv&quot;^?&quot;tex_coord4s&quot;^?&quot;tex_coord4sv&quot;^?&quot;tex_coord_pointer&quot;^?&quot;tex_envf&quot;^?&quot;tex_envfv&quot;^?&quot;tex_envi&quot;^?&quot;tex_enviv&quot;^?&quot;tex_gend&quot;^?&quot;tex_gendv&quot;^?&quot;tex_genf&quot;^?&quot;tex_genfv&quot;^?&quot;tex_geni&quot;^?&quot;tex_geniv&quot;^?&quot;tex_image1D&quot;^?&quot;tex_image2D&quot;^?&quot;tex_parameterf&quot;^?&quot;tex_parameterfv&quot;^?&quot;tex_parameteri&quot;^?&quot;tex_parameteriv&quot;^?&quot;tex_sub_image1D&quot;^?&quot;tex_sub_image2D&quot;^?&quot;translated&quot;^?&quot;translatef&quot;^?&quot;vertex2d&quot;^?&quot;vertex2dv&quot;^?&quot;vertex2f&quot;^?&quot;vertex2fv&quot;^?&quot;vertex2i&quot;^?&quot;vertex2iv&quot;^?&quot;vertex2s&quot;^?&quot;vertex2sv&quot;^?&quot;vertex3d&quot;^?&quot;vertex3dv&quot;^?&quot;vertex3f&quot;^?&quot;vertex3fv&quot;^?&quot;vertex3i&quot;^?&quot;vertex3iv&quot;^?&quot;vertex3s&quot;^?&quot;vertex3sv&quot;^?&quot;vertex4d&quot;^?&quot;vertex4dv&quot;^?&quot;vertex4f&quot;^?&quot;vertex4fv&quot;^?&quot;vertex4i&quot;^?&quot;vertex4iv&quot;^?&quot;vertex4s&quot;^?&quot;vertex4sv&quot;^?&quot;vertex_pointer&quot;^?&quot;viewport&quot;^?&quot;blend_func_separate&quot;^?&quot;blend_color&quot;^?&quot;blend_equation&quot;^?&quot;lock_arrays_EXT&quot;^?&quot;unlock_arrays_EXT&quot;^?&quot;client_active_texture&quot;^?&quot;active_texture&quot;^?&quot;multi_tex_coord1d&quot;^?&quot;multi_tex_coord1dv&quot;^?&quot;multi_tex_coord1f&quot;^?&quot;multi_tex_coord1fv&quot;^?&quot;multi_tex_coord1i&quot;^?&quot;multi_tex_coord1iv&quot;^?&quot;multi_tex_coord1s&quot;^?&quot;multi_tex_coord1sv&quot;^?&quot;multi_tex_coord2d&quot;^?&quot;multi_tex_coord2dv&quot;^?&quot;multi_tex_coord2f&quot;^?&quot;multi_tex_coord2fv&quot;^?&quot;multi_tex_coord2i&quot;^?&quot;multi_tex_coord2iv&quot;^?&quot;multi_tex_coord2s&quot;^?&quot;multi_tex_coord2sv&quot;^?&quot;multi_tex_coord3d&quot;^?&quot;multi_tex_coord3dv&quot;^?&quot;multi_tex_coord3f&quot;^?&quot;multi_tex_coord3fv&quot;^?&quot;multi_tex_coord3i&quot;^?&quot;multi_tex_coord3iv&quot;^?&quot;multi_tex_coord3s&quot;^?&quot;multi_tex_coord3sv&quot;^?&quot;multi_tex_coord4d&quot;^?&quot;multi_tex_coord4dv&quot;^?&quot;multi_tex_coord4f&quot;^?&quot;multi_tex_coord4fv&quot;^?&quot;multi_tex_coord4i&quot;^?&quot;multi_tex_coord4iv&quot;^?&quot;multi_tex_coord4s&quot;^?&quot;multi_tex_coord4sv&quot;^?&quot;load_transpose_matrixd&quot;^?&quot;load_transpose_matrixf&quot;^?&quot;mult_transpose_matrixd&quot;^?&quot;mult_transpose_matrixf&quot;^?&quot;compressed_tex_image3D&quot;^?&quot;compressed_tex_image2D&quot;^?&quot;compressed_tex_image1D&quot;^?&quot;compressed_tex_sub_image3D&quot;^?&quot;compressed_tex_sub_image2D&quot;^?&quot;compressed_tex_sub_image1D&quot;^?&quot;get_compressed_tex_image&quot;^?&quot;secondary_color3b&quot;^?&quot;secondary_color3bv&quot;^?&quot;secondary_color3d&quot;^?&quot;secondary_color3dv&quot;^?&quot;secondary_color3f&quot;^?&quot;secondary_color3fv&quot;^?&quot;secondary_color3i&quot;^?&quot;secondary_color3iv&quot;^?&quot;secondary_color3s&quot;^?&quot;secondary_color3sv&quot;^?&quot;secondary_color3ub&quot;^?&quot;secondary_color3ubv&quot;^?&quot;secondary_color3ui&quot;^?&quot;secondary_color3uiv&quot;^?&quot;secondary_color3us&quot;^?&quot;secondary_color3usv&quot;^?&quot;secondary_color_pointer&quot;^?&quot;vertex_array_range_EXT&quot;^?&quot;flush_vertex_array_range_EXT&quot;^?&quot;draw_range_elements&quot;^?&quot;color_table&quot;^?&quot;color_table_parameterfv&quot;^?&quot;color_table_parameteriv&quot;^?&quot;copy_color_table&quot;^?&quot;get_color_table&quot;^?&quot;get_color_table_parameterfv&quot;^?&quot;get_color_table_parameteriv&quot;^?&quot;color_sub_table&quot;^?&quot;copy_color_sub_table&quot;^?&quot;convolution_filter1D&quot;^?&quot;convolution_filter2D&quot;^?&quot;convolution_parameterf&quot;^?&quot;convolution_parameterfv&quot;^?&quot;convolution_parameteri&quot;^?&quot;convolution_parameteriv&quot;^?&quot;copy_convolution_filter1D&quot;^?&quot;copy_convolution_filter2D&quot;^?&quot;get_convolution_filter&quot;^?&quot;get_convolution_parameterfv&quot;^?&quot;get_convolution_parameteriv&quot;^?&quot;get_separable_filter&quot;^?&quot;separable_filter2D&quot;^?&quot;get_histogram&quot;^?&quot;get_histogram_parameterfv&quot;^?&quot;get_histogram_parameteriv&quot;^?&quot;get_minmax&quot;^?&quot;get_minmax_parameterfv&quot;^?&quot;get_minmax_parameteriv&quot;^?&quot;histogram&quot;^?&quot;minmax&quot;^?&quot;reset_histogram&quot;^?&quot;reset_minmax&quot;^?&quot;tex_image3D&quot;^?&quot;tex_sub_image3D&quot;^?&quot;copy_tex_sub_image3D&quot;^?&quot;combiner_parameterfv_NV&quot;^?&quot;combiner_parameterf_NV&quot;^?&quot;combiner_parameteriv_NV&quot;^?&quot;combiner_parameteri_NV&quot;^?&quot;combiner_input_NV&quot;^?&quot;combiner_output_NV&quot;^?&quot;final_combiner_input_NV&quot;^?&quot;get_combiner_input_parameterfv_NV&quot;^?&quot;get_combiner_input_parameteriv_NV&quot;^?&quot;get_combiner_output_parameterfv_NV&quot;^?&quot;get_combiner_output_parameteriv_NV&quot;^?&quot;get_final_combiner_input_parameterfv_NV&quot;^?&quot;get_final_combiner_input_parameteriv_NV&quot;^?&quot;combiner_stage_parameterfv_NV&quot;^?&quot;get_combiner_stage_parameterfv_NV&quot;^?&quot;texture_range_APPLE&quot;^?&quot;get_tex_parameter_pointerv_APPLE&quot;^?&quot;blend_equation_separate_EXT&quot;^?&quot;sample_coverage&quot;^?&quot;sample_pass&quot;^?&quot;pn_trianglesi_ATI&quot;^?&quot;pn_trianglesf_ATI&quot;^?&quot;gen_fences_APPLE&quot;^?&quot;delete_fences_APPLE&quot;^?&quot;set_fence_APPLE&quot;^?&quot;is_fence_APPLE&quot;^?&quot;test_fence_APPLE&quot;^?&quot;finish_fence_APPLE&quot;^?&quot;test_object_APPLE&quot;^?&quot;finish_object_APPLE&quot;^?&quot;bind_program_ARB&quot;^?&quot;delete_programs_ARB&quot;^?&quot;gen_programs_ARB&quot;^?&quot;is_program_ARB&quot;^?&quot;vertex_attrib1s_ARB&quot;^?&quot;vertex_attrib1f_ARB&quot;^?&quot;vertex_attrib1d_ARB&quot;^?&quot;vertex_attrib2s_ARB&quot;^?&quot;vertex_attrib2f_ARB&quot;^?&quot;vertex_attrib2d_ARB&quot;^?&quot;vertex_attrib3s_ARB&quot;^?&quot;vertex_attrib3f_ARB&quot;^?&quot;vertex_attrib3d_ARB&quot;^?&quot;vertex_attrib4s_ARB&quot;^?&quot;vertex_attrib4f_ARB&quot;^?&quot;vertex_attrib4d_ARB&quot;^?&quot;vertex_attrib4Nub_ARB&quot;^?&quot;vertex_attrib1sv_ARB&quot;^?&quot;vertex_attrib1fv_ARB&quot;^?&quot;vertex_attrib1dv_ARB&quot;^?&quot;vertex_attrib2sv_ARB&quot;^?&quot;vertex_attrib2fv_ARB&quot;^?&quot;vertex_attrib2dv_ARB&quot;^?&quot;vertex_attrib3sv_ARB&quot;^?&quot;vertex_attrib3fv_ARB&quot;^?&quot;vertex_attrib3dv_ARB&quot;^?&quot;vertex_attrib4bv_ARB&quot;^?&quot;vertex_attrib4sv_ARB&quot;^?&quot;vertex_attrib4iv_ARB&quot;^?&quot;vertex_attrib4ubv_ARB&quot;^?&quot;vertex_attrib4usv_ARB&quot;^?&quot;vertex_attrib4uiv_ARB&quot;^?&quot;vertex_attrib4fv_ARB&quot;^?&quot;vertex_attrib4dv_ARB&quot;^?&quot;vertex_attrib4Nbv_ARB&quot;^?&quot;vertex_attrib4Nsv_ARB&quot;^?&quot;vertex_attrib4Niv_ARB&quot;^?&quot;vertex_attrib4Nubv_ARB&quot;^?&quot;vertex_attrib4Nusv_ARB&quot;^?&quot;vertex_attrib4Nuiv_ARB&quot;^?&quot;vertex_attrib_pointer_ARB&quot;^?&quot;enable_vertex_attrib_array_ARB&quot;^?&quot;disable_vertex_attrib_array_ARB&quot;^?&quot;get_vertex_attribdv_ARB&quot;^?&quot;get_vertex_attribfv_ARB&quot;^?&quot;get_vertex_attribiv_ARB&quot;^?&quot;get_vertex_attrib_pointerv_ARB&quot;^?&quot;program_env_parameter4d_ARB&quot;^?&quot;program_env_parameter4dv_ARB&quot;^?&quot;program_env_parameter4f_ARB&quot;^?&quot;program_env_parameter4fv_ARB&quot;^?&quot;program_local_parameter4d_ARB&quot;^?&quot;program_local_parameter4dv_ARB&quot;^?&quot;program_local_parameter4f_ARB&quot;^?&quot;program_local_parameter4fv_ARB&quot;^?&quot;get_program_env_parameterdv_ARB&quot;^?&quot;get_program_env_parameterfv_ARB&quot;^?&quot;get_program_local_parameterdv_ARB&quot;^?&quot;get_program_local_parameterfv_ARB&quot;^?&quot;program_string_ARB&quot;^?&quot;get_program_string_ARB&quot;^?&quot;get_programiv_ARB&quot;^?&quot;enable_vertex_attrib_ARB&quot;^?&quot;disable_vertex_attrib_ARB&quot;^?&quot;is_vertex_attrib_enabled_ARB&quot;^?&quot;map_vertex_attrib1d_ARB&quot;^?&quot;map_vertex_attrib1f_ARB&quot;^?&quot;map_vertex_attrib2d_ARB&quot;^?&quot;map_vertex_attrib2f_ARB&quot;^?&quot;point_parameterf&quot;^?&quot;point_parameterfv&quot;^?&quot;point_parameteri&quot;^?&quot;point_parameteriv&quot;^?&quot;fog_coordf&quot;^?&quot;fog_coordfv&quot;^?&quot;fog_coordd&quot;^?&quot;fog_coorddv&quot;^?&quot;fog_coord_pointer&quot;^?&quot;vertex_array_parameteri_EXT&quot;^?&quot;bind_vertex_array_EXT&quot;^?&quot;delete_vertex_arrays_EXT&quot;^?&quot;gen_vertex_arrays_EXT&quot;^?&quot;is_vertex_array_EXT&quot;^?&quot;element_pointer_APPLE&quot;^?&quot;draw_element_array_APPLE&quot;^?&quot;draw_range_element_array_APPLE&quot;^?&quot;weightbv_ARB&quot;^?&quot;weightsv_ARB&quot;^?&quot;weightiv_ARB&quot;^?&quot;weightfv_ARB&quot;^?&quot;weightdv_ARB&quot;^?&quot;weightubv_ARB&quot;^?&quot;weightusv_ARB&quot;^?&quot;weightuiv_ARB&quot;^?&quot;weight_pointer_ARB&quot;^?&quot;vertex_blend_ARB&quot;^?&quot;multi_draw_arrays&quot;^?&quot;multi_draw_elements&quot;^?&quot;window_pos2d&quot;^?&quot;window_pos2dv&quot;^?&quot;window_pos2f&quot;^?&quot;window_pos2fv&quot;^?&quot;window_pos2i&quot;^?&quot;window_pos2iv&quot;^?&quot;window_pos2s&quot;^?&quot;window_pos2sv&quot;^?&quot;window_pos3d&quot;^?&quot;window_pos3dv&quot;^?&quot;window_pos3f&quot;^?&quot;window_pos3fv&quot;^?&quot;window_pos3i&quot;^?&quot;window_pos3iv&quot;^?&quot;window_pos3s&quot;^?&quot;window_pos3sv&quot;^?&quot;active_stencil_face_EXT&quot;^?&quot;stencil_op_separate_ATI&quot;^?&quot;stencil_func_separate_ATI&quot;^?&quot;flush_render_APPLE&quot;^?&quot;finish_render_APPLE&quot;^?&quot;swap_APPLE&quot;^?&quot;delete_object_ARB&quot;^?&quot;get_handle_ARB&quot;^?&quot;detach_object_ARB&quot;^?&quot;create_shader_object_ARB&quot;^?&quot;shader_source_ARB&quot;^?&quot;compile_shader_ARB&quot;^?&quot;create_program_object_ARB&quot;^?&quot;attach_object_ARB&quot;^?&quot;link_program_ARB&quot;^?&quot;use_program_object_ARB&quot;^?&quot;validate_program_ARB&quot;^?&quot;uniform1f_ARB&quot;^?&quot;uniform2f_ARB&quot;^?&quot;uniform3f_ARB&quot;^?&quot;uniform4f_ARB&quot;^?&quot;uniform1i_ARB&quot;^?&quot;uniform2i_ARB&quot;^?&quot;uniform3i_ARB&quot;^?&quot;uniform4i_ARB&quot;^?&quot;uniform1fv_ARB&quot;^?&quot;uniform2fv_ARB&quot;^?&quot;uniform3fv_ARB&quot;^?&quot;uniform4fv_ARB&quot;^?&quot;uniform1iv_ARB&quot;^?&quot;uniform2iv_ARB&quot;^?&quot;uniform3iv_ARB&quot;^?&quot;uniform4iv_ARB&quot;^?&quot;uniform_matrix2fv_ARB&quot;^?&quot;uniform_matrix3fv_ARB&quot;^?&quot;uniform_matrix4fv_ARB&quot;^?&quot;get_object_parameterfv_ARB&quot;^?&quot;get_object_parameteriv_ARB&quot;^?&quot;get_info_log_ARB&quot;^?&quot;get_attached_objects_ARB&quot;^?&quot;get_uniform_location_ARB&quot;^?&quot;get_active_uniform_ARB&quot;^?&quot;get_uniformfv_ARB&quot;^?&quot;get_uniformiv_ARB&quot;^?&quot;get_shader_source_ARB&quot;^?&quot;bind_attrib_location_ARB&quot;^?&quot;get_active_attrib_ARB&quot;^?&quot;get_attrib_location_ARB&quot;^?&quot;pad&quot;^?&quot;gen_queries&quot;^?&quot;delete_queries&quot;^?&quot;is_query&quot;^?&quot;begin_query&quot;^?&quot;end_query&quot;^?&quot;get_queryiv&quot;^?&quot;get_query_objectiv&quot;^?&quot;get_query_objectuiv&quot;^?&quot;bind_buffer&quot;^?&quot;delete_buffers&quot;^?&quot;gen_buffers&quot;^?&quot;is_buffer&quot;^?&quot;buffer_data&quot;^?&quot;buffer_sub_data&quot;^?&quot;get_buffer_sub_data&quot;^?&quot;map_buffer&quot;^?&quot;unmap_buffer&quot;^?&quot;get_buffer_parameteriv&quot;^?&quot;get_buffer_pointerv&quot;^?&quot;depth_bounds_EXT&quot;^?&quot;draw_buffers_ARB&quot;^?&quot;is_shader&quot;^?&quot;is_program&quot;^?&quot;get_shaderiv&quot;^?&quot;get_programiv&quot;^?&quot;get_shader_info_log&quot;^?&quot;get_program_info_log&quot;^?&quot;stencil_func_separate&quot;^?&quot;stencil_mask_separate&quot;^?&quot;multi_draw_element_array_APPLE&quot;^?&quot;multi_draw_range_element_array_APPLE&quot;^?&quot;is_renderbuffer_EXT&quot;^?&quot;bind_renderbuffer_EXT&quot;^?&quot;delete_renderbuffers_EXT&quot;^?&quot;gen_renderbuffers_EXT&quot;^?&quot;renderbuffer_storage_EXT&quot;^?&quot;get_renderbuffer_parameteriv_EXT&quot;^?&quot;is_framebuffer_EXT&quot;^?&quot;bind_framebuffer_EXT&quot;^?&quot;delete_framebuffers_EXT&quot;^?&quot;gen_framebuffers_EXT&quot;^?&quot;check_framebuffer_status_EXT&quot;^?&quot;framebuffer_texture1D_EXT&quot;^?&quot;framebuffer_texture2D_EXT&quot;^?&quot;framebuffer_texture3D_EXT&quot;^?&quot;framebuffer_renderbuffer_EXT&quot;^?&quot;get_framebuffer_attachment_parameteriv_EXT&quot;^?&quot;generate_mipmap_EXT&quot;^?&quot;buffer_parameteri_APPLE&quot;^?&quot;flush_mapped_buffer_range_APPLE&quot;^?&quot;program_env_parameters4fv_EXT&quot;^?&quot;program_local_parameters4fv_EXT&quot;^?&quot;object_purgeable_APPLE&quot;^?&quot;object_unpurgeable_APPLE&quot;^?&quot;get_object_parameteriv_APPLE&quot;^?&quot;program_parameteri_EXT&quot;^?&quot;framebuffer_texture_EXT&quot;^?&quot;framebuffer_texture_layer_EXT&quot;^?&quot;framebuffer_texture_face_EXT&quot;^?&quot;bind_buffer_range_EXT&quot;^?&quot;bind_buffer_offset_EXT&quot;^?&quot;bind_buffer_base_EXT&quot;^?&quot;begin_transform_feedback_EXT&quot;^?&quot;end_transform_feedback_EXT&quot;^?&quot;transform_feedback_varyings_EXT&quot;^?&quot;get_transform_feedback_varying_EXT&quot;^?&quot;get_integer_indexedv_EXT&quot;^?&quot;get_boolean_indexedv_EXT&quot;^?&quot;uniform_buffer_EXT&quot;^?&quot;get_uniform_buffer_size_EXT&quot;^?&quot;get_uniform_buffer_offset_EXT&quot;^?&quot;clear_colorIi_EXT&quot;^?&quot;clear_colorIui_EXT&quot;^?&quot;tex_parameterIiv_EXT&quot;^?&quot;tex_parameterIuiv_EXT&quot;^?&quot;get_tex_parameterIiv_EXT&quot;^?&quot;get_tex_parameterIuiv_EXT&quot;^?&quot;vertex_attribI1i_EXT&quot;^?&quot;vertex_attribI2i_EXT&quot;^?&quot;vertex_attribI3i_EXT&quot;^?&quot;vertex_attribI4i_EXT&quot;^?&quot;vertex_attribI1ui_EXT&quot;^?&quot;vertex_attribI2ui_EXT&quot;^?&quot;vertex_attribI3ui_EXT&quot;^?&quot;vertex_attribI4ui_EXT&quot;^?&quot;vertex_attribI1iv_EXT&quot;^?&quot;vertex_attribI2iv_EXT&quot;^?&quot;vertex_attribI3iv_EXT&quot;^?&quot;vertex_attribI4iv_EXT&quot;^?&quot;vertex_attribI1uiv_EXT&quot;^?&quot;vertex_attribI2uiv_EXT&quot;^?&quot;vertex_attribI3uiv_EXT&quot;^?&quot;vertex_attribI4uiv_EXT&quot;^?&quot;vertex_attribI4bv_EXT&quot;^?&quot;vertex_attribI4sv_EXT&quot;^?&quot;vertex_attribI4ubv_EXT&quot;^?&quot;vertex_attribI4usv_EXT&quot;^?&quot;vertex_attribI_pointer_EXT&quot;^?&quot;get_vertex_attribIiv_EXT&quot;^?&quot;get_vertex_attribIuiv_EXT&quot;^?&quot;uniform1ui_EXT&quot;^?&quot;uniform2ui_EXT&quot;^?&quot;uniform3ui_EXT&quot;^?&quot;uniform4ui_EXT&quot;^?&quot;uniform1uiv_EXT&quot;^?&quot;uniform2uiv_EXT&quot;^?&quot;uniform3uiv_EXT&quot;^?&quot;uniform4uiv_EXT&quot;^?&quot;get_uniformuiv_EXT&quot;^?&quot;bind_frag_data_location_EXT&quot;^?&quot;get_frag_data_location_EXT&quot;^?&quot;color_mask_indexed_EXT&quot;^?&quot;enable_indexed_EXT&quot;^?&quot;disable_indexed_EXT&quot;^?&quot;is_enabled_indexed_EXT&quot;^?&quot;uniform_matrix2x3fv&quot;^?&quot;uniform_matrix3x2fv&quot;^?&quot;uniform_matrix2x4fv&quot;^?&quot;uniform_matrix4x2fv&quot;^?&quot;uniform_matrix3x4fv&quot;^?&quot;uniform_matrix4x3fv&quot;^?&quot;blit_framebuffer_EXT&quot;^?&quot;renderbuffer_storage_multisample_EXT&quot;^?}'/>
+<struct name='GLIFunctionDispatch' type='{__GLIFunctionDispatchRec=&quot;accum&quot;^?&quot;alpha_func&quot;^?&quot;are_textures_resident&quot;^?&quot;array_element&quot;^?&quot;begin&quot;^?&quot;bind_texture&quot;^?&quot;bitmap&quot;^?&quot;blend_func&quot;^?&quot;call_list&quot;^?&quot;call_lists&quot;^?&quot;clear&quot;^?&quot;clear_accum&quot;^?&quot;clear_color&quot;^?&quot;clear_depth&quot;^?&quot;clear_index&quot;^?&quot;clear_stencil&quot;^?&quot;clip_plane&quot;^?&quot;color3b&quot;^?&quot;color3bv&quot;^?&quot;color3d&quot;^?&quot;color3dv&quot;^?&quot;color3f&quot;^?&quot;color3fv&quot;^?&quot;color3i&quot;^?&quot;color3iv&quot;^?&quot;color3s&quot;^?&quot;color3sv&quot;^?&quot;color3ub&quot;^?&quot;color3ubv&quot;^?&quot;color3ui&quot;^?&quot;color3uiv&quot;^?&quot;color3us&quot;^?&quot;color3usv&quot;^?&quot;color4b&quot;^?&quot;color4bv&quot;^?&quot;color4d&quot;^?&quot;color4dv&quot;^?&quot;color4f&quot;^?&quot;color4fv&quot;^?&quot;color4i&quot;^?&quot;color4iv&quot;^?&quot;color4s&quot;^?&quot;color4sv&quot;^?&quot;color4ub&quot;^?&quot;color4ubv&quot;^?&quot;color4ui&quot;^?&quot;color4uiv&quot;^?&quot;color4us&quot;^?&quot;color4usv&quot;^?&quot;color_mask&quot;^?&quot;color_material&quot;^?&quot;color_pointer&quot;^?&quot;copy_pixels&quot;^?&quot;copy_tex_image1D&quot;^?&quot;copy_tex_image2D&quot;^?&quot;copy_tex_sub_image1D&quot;^?&quot;copy_tex_sub_image2D&quot;^?&quot;cull_face&quot;^?&quot;delete_lists&quot;^?&quot;delete_textures&quot;^?&quot;depth_func&quot;^?&quot;depth_mask&quot;^?&quot;depth_range&quot;^?&quot;disable&quot;^?&quot;disable_client_state&quot;^?&quot;draw_arrays&quot;^?&quot;draw_buffer&quot;^?&quot;draw_elements&quot;^?&quot;draw_pixels&quot;^?&quot;edge_flag&quot;^?&quot;edge_flag_pointer&quot;^?&quot;edge_flagv&quot;^?&quot;enable&quot;^?&quot;enable_client_state&quot;^?&quot;end&quot;^?&quot;end_list&quot;^?&quot;eval_coord1d&quot;^?&quot;eval_coord1dv&quot;^?&quot;eval_coord1f&quot;^?&quot;eval_coord1fv&quot;^?&quot;eval_coord2d&quot;^?&quot;eval_coord2dv&quot;^?&quot;eval_coord2f&quot;^?&quot;eval_coord2fv&quot;^?&quot;eval_mesh1&quot;^?&quot;eval_mesh2&quot;^?&quot;eval_point1&quot;^?&quot;eval_point2&quot;^?&quot;feedback_buffer&quot;^?&quot;finish&quot;^?&quot;flush&quot;^?&quot;fogf&quot;^?&quot;fogfv&quot;^?&quot;fogi&quot;^?&quot;fogiv&quot;^?&quot;front_face&quot;^?&quot;frustum&quot;^?&quot;gen_lists&quot;^?&quot;gen_textures&quot;^?&quot;get_booleanv&quot;^?&quot;get_clip_plane&quot;^?&quot;get_doublev&quot;^?&quot;get_error&quot;^?&quot;get_floatv&quot;^?&quot;get_integerv&quot;^?&quot;get_lightfv&quot;^?&quot;get_lightiv&quot;^?&quot;get_mapdv&quot;^?&quot;get_mapfv&quot;^?&quot;get_mapiv&quot;^?&quot;get_materialfv&quot;^?&quot;get_materialiv&quot;^?&quot;get_pixel_mapfv&quot;^?&quot;get_pixel_mapuiv&quot;^?&quot;get_pixel_mapusv&quot;^?&quot;get_pointerv&quot;^?&quot;get_polygon_stipple&quot;^?&quot;get_string&quot;^?&quot;get_tex_envfv&quot;^?&quot;get_tex_enviv&quot;^?&quot;get_tex_gendv&quot;^?&quot;get_tex_genfv&quot;^?&quot;get_tex_geniv&quot;^?&quot;get_tex_image&quot;^?&quot;get_tex_level_parameterfv&quot;^?&quot;get_tex_level_parameteriv&quot;^?&quot;get_tex_parameterfv&quot;^?&quot;get_tex_parameteriv&quot;^?&quot;hint&quot;^?&quot;index_mask&quot;^?&quot;index_pointer&quot;^?&quot;indexd&quot;^?&quot;indexdv&quot;^?&quot;indexf&quot;^?&quot;indexfv&quot;^?&quot;indexi&quot;^?&quot;indexiv&quot;^?&quot;indexs&quot;^?&quot;indexsv&quot;^?&quot;indexub&quot;^?&quot;indexubv&quot;^?&quot;init_names&quot;^?&quot;interleaved_arrays&quot;^?&quot;is_enabled&quot;^?&quot;is_list&quot;^?&quot;is_texture&quot;^?&quot;light_modelf&quot;^?&quot;light_modelfv&quot;^?&quot;light_modeli&quot;^?&quot;light_modeliv&quot;^?&quot;lightf&quot;^?&quot;lightfv&quot;^?&quot;lighti&quot;^?&quot;lightiv&quot;^?&quot;line_stipple&quot;^?&quot;line_width&quot;^?&quot;list_base&quot;^?&quot;load_identity&quot;^?&quot;load_matrixd&quot;^?&quot;load_matrixf&quot;^?&quot;load_name&quot;^?&quot;logic_op&quot;^?&quot;map1d&quot;^?&quot;map1f&quot;^?&quot;map2d&quot;^?&quot;map2f&quot;^?&quot;map_grid1d&quot;^?&quot;map_grid1f&quot;^?&quot;map_grid2d&quot;^?&quot;map_grid2f&quot;^?&quot;materialf&quot;^?&quot;materialfv&quot;^?&quot;materiali&quot;^?&quot;materialiv&quot;^?&quot;matrix_mode&quot;^?&quot;mult_matrixd&quot;^?&quot;mult_matrixf&quot;^?&quot;new_list&quot;^?&quot;normal3b&quot;^?&quot;normal3bv&quot;^?&quot;normal3d&quot;^?&quot;normal3dv&quot;^?&quot;normal3f&quot;^?&quot;normal3fv&quot;^?&quot;normal3i&quot;^?&quot;normal3iv&quot;^?&quot;normal3s&quot;^?&quot;normal3sv&quot;^?&quot;normal_pointer&quot;^?&quot;ortho&quot;^?&quot;pass_through&quot;^?&quot;pixel_mapfv&quot;^?&quot;pixel_mapuiv&quot;^?&quot;pixel_mapusv&quot;^?&quot;pixel_storef&quot;^?&quot;pixel_storei&quot;^?&quot;pixel_transferf&quot;^?&quot;pixel_transferi&quot;^?&quot;pixel_zoom&quot;^?&quot;point_size&quot;^?&quot;polygon_mode&quot;^?&quot;polygon_offset&quot;^?&quot;polygon_stipple&quot;^?&quot;pop_attrib&quot;^?&quot;pop_client_attrib&quot;^?&quot;pop_matrix&quot;^?&quot;pop_name&quot;^?&quot;prioritize_textures&quot;^?&quot;push_attrib&quot;^?&quot;push_client_attrib&quot;^?&quot;push_matrix&quot;^?&quot;push_name&quot;^?&quot;raster_pos2d&quot;^?&quot;raster_pos2dv&quot;^?&quot;raster_pos2f&quot;^?&quot;raster_pos2fv&quot;^?&quot;raster_pos2i&quot;^?&quot;raster_pos2iv&quot;^?&quot;raster_pos2s&quot;^?&quot;raster_pos2sv&quot;^?&quot;raster_pos3d&quot;^?&quot;raster_pos3dv&quot;^?&quot;raster_pos3f&quot;^?&quot;raster_pos3fv&quot;^?&quot;raster_pos3i&quot;^?&quot;raster_pos3iv&quot;^?&quot;raster_pos3s&quot;^?&quot;raster_pos3sv&quot;^?&quot;raster_pos4d&quot;^?&quot;raster_pos4dv&quot;^?&quot;raster_pos4f&quot;^?&quot;raster_pos4fv&quot;^?&quot;raster_pos4i&quot;^?&quot;raster_pos4iv&quot;^?&quot;raster_pos4s&quot;^?&quot;raster_pos4sv&quot;^?&quot;read_buffer&quot;^?&quot;read_pixels&quot;^?&quot;rectd&quot;^?&quot;rectdv&quot;^?&quot;rectf&quot;^?&quot;rectfv&quot;^?&quot;recti&quot;^?&quot;rectiv&quot;^?&quot;rects&quot;^?&quot;rectsv&quot;^?&quot;render_mode&quot;^?&quot;rotated&quot;^?&quot;rotatef&quot;^?&quot;scaled&quot;^?&quot;scalef&quot;^?&quot;scissor&quot;^?&quot;select_buffer&quot;^?&quot;shade_model&quot;^?&quot;stencil_func&quot;^?&quot;stencil_mask&quot;^?&quot;stencil_op&quot;^?&quot;tex_coord1d&quot;^?&quot;tex_coord1dv&quot;^?&quot;tex_coord1f&quot;^?&quot;tex_coord1fv&quot;^?&quot;tex_coord1i&quot;^?&quot;tex_coord1iv&quot;^?&quot;tex_coord1s&quot;^?&quot;tex_coord1sv&quot;^?&quot;tex_coord2d&quot;^?&quot;tex_coord2dv&quot;^?&quot;tex_coord2f&quot;^?&quot;tex_coord2fv&quot;^?&quot;tex_coord2i&quot;^?&quot;tex_coord2iv&quot;^?&quot;tex_coord2s&quot;^?&quot;tex_coord2sv&quot;^?&quot;tex_coord3d&quot;^?&quot;tex_coord3dv&quot;^?&quot;tex_coord3f&quot;^?&quot;tex_coord3fv&quot;^?&quot;tex_coord3i&quot;^?&quot;tex_coord3iv&quot;^?&quot;tex_coord3s&quot;^?&quot;tex_coord3sv&quot;^?&quot;tex_coord4d&quot;^?&quot;tex_coord4dv&quot;^?&quot;tex_coord4f&quot;^?&quot;tex_coord4fv&quot;^?&quot;tex_coord4i&quot;^?&quot;tex_coord4iv&quot;^?&quot;tex_coord4s&quot;^?&quot;tex_coord4sv&quot;^?&quot;tex_coord_pointer&quot;^?&quot;tex_envf&quot;^?&quot;tex_envfv&quot;^?&quot;tex_envi&quot;^?&quot;tex_enviv&quot;^?&quot;tex_gend&quot;^?&quot;tex_gendv&quot;^?&quot;tex_genf&quot;^?&quot;tex_genfv&quot;^?&quot;tex_geni&quot;^?&quot;tex_geniv&quot;^?&quot;tex_image1D&quot;^?&quot;tex_image2D&quot;^?&quot;tex_parameterf&quot;^?&quot;tex_parameterfv&quot;^?&quot;tex_parameteri&quot;^?&quot;tex_parameteriv&quot;^?&quot;tex_sub_image1D&quot;^?&quot;tex_sub_image2D&quot;^?&quot;translated&quot;^?&quot;translatef&quot;^?&quot;vertex2d&quot;^?&quot;vertex2dv&quot;^?&quot;vertex2f&quot;^?&quot;vertex2fv&quot;^?&quot;vertex2i&quot;^?&quot;vertex2iv&quot;^?&quot;vertex2s&quot;^?&quot;vertex2sv&quot;^?&quot;vertex3d&quot;^?&quot;vertex3dv&quot;^?&quot;vertex3f&quot;^?&quot;vertex3fv&quot;^?&quot;vertex3i&quot;^?&quot;vertex3iv&quot;^?&quot;vertex3s&quot;^?&quot;vertex3sv&quot;^?&quot;vertex4d&quot;^?&quot;vertex4dv&quot;^?&quot;vertex4f&quot;^?&quot;vertex4fv&quot;^?&quot;vertex4i&quot;^?&quot;vertex4iv&quot;^?&quot;vertex4s&quot;^?&quot;vertex4sv&quot;^?&quot;vertex_pointer&quot;^?&quot;viewport&quot;^?&quot;blend_func_separate&quot;^?&quot;blend_color&quot;^?&quot;blend_equation&quot;^?&quot;lock_arrays_EXT&quot;^?&quot;unlock_arrays_EXT&quot;^?&quot;client_active_texture&quot;^?&quot;active_texture&quot;^?&quot;multi_tex_coord1d&quot;^?&quot;multi_tex_coord1dv&quot;^?&quot;multi_tex_coord1f&quot;^?&quot;multi_tex_coord1fv&quot;^?&quot;multi_tex_coord1i&quot;^?&quot;multi_tex_coord1iv&quot;^?&quot;multi_tex_coord1s&quot;^?&quot;multi_tex_coord1sv&quot;^?&quot;multi_tex_coord2d&quot;^?&quot;multi_tex_coord2dv&quot;^?&quot;multi_tex_coord2f&quot;^?&quot;multi_tex_coord2fv&quot;^?&quot;multi_tex_coord2i&quot;^?&quot;multi_tex_coord2iv&quot;^?&quot;multi_tex_coord2s&quot;^?&quot;multi_tex_coord2sv&quot;^?&quot;multi_tex_coord3d&quot;^?&quot;multi_tex_coord3dv&quot;^?&quot;multi_tex_coord3f&quot;^?&quot;multi_tex_coord3fv&quot;^?&quot;multi_tex_coord3i&quot;^?&quot;multi_tex_coord3iv&quot;^?&quot;multi_tex_coord3s&quot;^?&quot;multi_tex_coord3sv&quot;^?&quot;multi_tex_coord4d&quot;^?&quot;multi_tex_coord4dv&quot;^?&quot;multi_tex_coord4f&quot;^?&quot;multi_tex_coord4fv&quot;^?&quot;multi_tex_coord4i&quot;^?&quot;multi_tex_coord4iv&quot;^?&quot;multi_tex_coord4s&quot;^?&quot;multi_tex_coord4sv&quot;^?&quot;load_transpose_matrixd&quot;^?&quot;load_transpose_matrixf&quot;^?&quot;mult_transpose_matrixd&quot;^?&quot;mult_transpose_matrixf&quot;^?&quot;compressed_tex_image3D&quot;^?&quot;compressed_tex_image2D&quot;^?&quot;compressed_tex_image1D&quot;^?&quot;compressed_tex_sub_image3D&quot;^?&quot;compressed_tex_sub_image2D&quot;^?&quot;compressed_tex_sub_image1D&quot;^?&quot;get_compressed_tex_image&quot;^?&quot;secondary_color3b&quot;^?&quot;secondary_color3bv&quot;^?&quot;secondary_color3d&quot;^?&quot;secondary_color3dv&quot;^?&quot;secondary_color3f&quot;^?&quot;secondary_color3fv&quot;^?&quot;secondary_color3i&quot;^?&quot;secondary_color3iv&quot;^?&quot;secondary_color3s&quot;^?&quot;secondary_color3sv&quot;^?&quot;secondary_color3ub&quot;^?&quot;secondary_color3ubv&quot;^?&quot;secondary_color3ui&quot;^?&quot;secondary_color3uiv&quot;^?&quot;secondary_color3us&quot;^?&quot;secondary_color3usv&quot;^?&quot;secondary_color_pointer&quot;^?&quot;vertex_array_range_EXT&quot;^?&quot;flush_vertex_array_range_EXT&quot;^?&quot;draw_range_elements&quot;^?&quot;color_table&quot;^?&quot;color_table_parameterfv&quot;^?&quot;color_table_parameteriv&quot;^?&quot;copy_color_table&quot;^?&quot;get_color_table&quot;^?&quot;get_color_table_parameterfv&quot;^?&quot;get_color_table_parameteriv&quot;^?&quot;color_sub_table&quot;^?&quot;copy_color_sub_table&quot;^?&quot;convolution_filter1D&quot;^?&quot;convolution_filter2D&quot;^?&quot;convolution_parameterf&quot;^?&quot;convolution_parameterfv&quot;^?&quot;convolution_parameteri&quot;^?&quot;convolution_parameteriv&quot;^?&quot;copy_convolution_filter1D&quot;^?&quot;copy_convolution_filter2D&quot;^?&quot;get_convolution_filter&quot;^?&quot;get_convolution_parameterfv&quot;^?&quot;get_convolution_parameteriv&quot;^?&quot;get_separable_filter&quot;^?&quot;separable_filter2D&quot;^?&quot;get_histogram&quot;^?&quot;get_histogram_parameterfv&quot;^?&quot;get_histogram_parameteriv&quot;^?&quot;get_minmax&quot;^?&quot;get_minmax_parameterfv&quot;^?&quot;get_minmax_parameteriv&quot;^?&quot;histogram&quot;^?&quot;minmax&quot;^?&quot;reset_histogram&quot;^?&quot;reset_minmax&quot;^?&quot;tex_image3D&quot;^?&quot;tex_sub_image3D&quot;^?&quot;copy_tex_sub_image3D&quot;^?&quot;get_uniform_indices&quot;^?&quot;get_active_uniformsiv&quot;^?&quot;get_active_uniform_name&quot;^?&quot;get_uniform_block_index&quot;^?&quot;get_active_uniform_blockiv&quot;^?&quot;get_active_uniform_block_name&quot;^?&quot;uniform_block_binding&quot;^?&quot;get_combiner_input_parameterfv_NV&quot;^?&quot;get_combiner_input_parameteriv_NV&quot;^?&quot;get_combiner_output_parameterfv_NV&quot;^?&quot;get_combiner_output_parameteriv_NV&quot;^?&quot;get_final_combiner_input_parameterfv_NV&quot;^?&quot;get_final_combiner_input_parameteriv_NV&quot;^?&quot;combiner_stage_parameterfv_NV&quot;^?&quot;get_combiner_stage_parameterfv_NV&quot;^?&quot;texture_range_APPLE&quot;^?&quot;get_tex_parameter_pointerv_APPLE&quot;^?&quot;blend_equation_separate_EXT&quot;^?&quot;sample_coverage&quot;^?&quot;sample_pass&quot;^?&quot;pn_trianglesi_ATI&quot;^?&quot;pn_trianglesf_ATI&quot;^?&quot;gen_fences_APPLE&quot;^?&quot;delete_fences_APPLE&quot;^?&quot;set_fence_APPLE&quot;^?&quot;is_fence_APPLE&quot;^?&quot;test_fence_APPLE&quot;^?&quot;finish_fence_APPLE&quot;^?&quot;test_object_APPLE&quot;^?&quot;finish_object_APPLE&quot;^?&quot;bind_program_ARB&quot;^?&quot;delete_programs_ARB&quot;^?&quot;gen_programs_ARB&quot;^?&quot;is_program_ARB&quot;^?&quot;vertex_attrib1s_ARB&quot;^?&quot;vertex_attrib1f_ARB&quot;^?&quot;vertex_attrib1d_ARB&quot;^?&quot;vertex_attrib2s_ARB&quot;^?&quot;vertex_attrib2f_ARB&quot;^?&quot;vertex_attrib2d_ARB&quot;^?&quot;vertex_attrib3s_ARB&quot;^?&quot;vertex_attrib3f_ARB&quot;^?&quot;vertex_attrib3d_ARB&quot;^?&quot;vertex_attrib4s_ARB&quot;^?&quot;vertex_attrib4f_ARB&quot;^?&quot;vertex_attrib4d_ARB&quot;^?&quot;vertex_attrib4Nub_ARB&quot;^?&quot;vertex_attrib1sv_ARB&quot;^?&quot;vertex_attrib1fv_ARB&quot;^?&quot;vertex_attrib1dv_ARB&quot;^?&quot;vertex_attrib2sv_ARB&quot;^?&quot;vertex_attrib2fv_ARB&quot;^?&quot;vertex_attrib2dv_ARB&quot;^?&quot;vertex_attrib3sv_ARB&quot;^?&quot;vertex_attrib3fv_ARB&quot;^?&quot;vertex_attrib3dv_ARB&quot;^?&quot;vertex_attrib4bv_ARB&quot;^?&quot;vertex_attrib4sv_ARB&quot;^?&quot;vertex_attrib4iv_ARB&quot;^?&quot;vertex_attrib4ubv_ARB&quot;^?&quot;vertex_attrib4usv_ARB&quot;^?&quot;vertex_attrib4uiv_ARB&quot;^?&quot;vertex_attrib4fv_ARB&quot;^?&quot;vertex_attrib4dv_ARB&quot;^?&quot;vertex_attrib4Nbv_ARB&quot;^?&quot;vertex_attrib4Nsv_ARB&quot;^?&quot;vertex_attrib4Niv_ARB&quot;^?&quot;vertex_attrib4Nubv_ARB&quot;^?&quot;vertex_attrib4Nusv_ARB&quot;^?&quot;vertex_attrib4Nuiv_ARB&quot;^?&quot;vertex_attrib_pointer_ARB&quot;^?&quot;enable_vertex_attrib_array_ARB&quot;^?&quot;disable_vertex_attrib_array_ARB&quot;^?&quot;get_vertex_attribdv_ARB&quot;^?&quot;get_vertex_attribfv_ARB&quot;^?&quot;get_vertex_attribiv_ARB&quot;^?&quot;get_vertex_attrib_pointerv_ARB&quot;^?&quot;program_env_parameter4d_ARB&quot;^?&quot;program_env_parameter4dv_ARB&quot;^?&quot;program_env_parameter4f_ARB&quot;^?&quot;program_env_parameter4fv_ARB&quot;^?&quot;program_local_parameter4d_ARB&quot;^?&quot;program_local_parameter4dv_ARB&quot;^?&quot;program_local_parameter4f_ARB&quot;^?&quot;program_local_parameter4fv_ARB&quot;^?&quot;get_program_env_parameterdv_ARB&quot;^?&quot;get_program_env_parameterfv_ARB&quot;^?&quot;get_program_local_parameterdv_ARB&quot;^?&quot;get_program_local_parameterfv_ARB&quot;^?&quot;program_string_ARB&quot;^?&quot;get_program_string_ARB&quot;^?&quot;get_programiv_ARB&quot;^?&quot;enable_vertex_attrib_ARB&quot;^?&quot;disable_vertex_attrib_ARB&quot;^?&quot;is_vertex_attrib_enabled_ARB&quot;^?&quot;map_vertex_attrib1d_ARB&quot;^?&quot;map_vertex_attrib1f_ARB&quot;^?&quot;map_vertex_attrib2d_ARB&quot;^?&quot;map_vertex_attrib2f_ARB&quot;^?&quot;point_parameterf&quot;^?&quot;point_parameterfv&quot;^?&quot;point_parameteri&quot;^?&quot;point_parameteriv&quot;^?&quot;fog_coordf&quot;^?&quot;fog_coordfv&quot;^?&quot;fog_coordd&quot;^?&quot;fog_coorddv&quot;^?&quot;fog_coord_pointer&quot;^?&quot;vertex_array_parameteri_EXT&quot;^?&quot;bind_vertex_array_EXT&quot;^?&quot;delete_vertex_arrays_EXT&quot;^?&quot;gen_vertex_arrays_EXT&quot;^?&quot;is_vertex_array_EXT&quot;^?&quot;element_pointer_APPLE&quot;^?&quot;draw_element_array_APPLE&quot;^?&quot;draw_range_element_array_APPLE&quot;^?&quot;weightbv_ARB&quot;^?&quot;weightsv_ARB&quot;^?&quot;weightiv_ARB&quot;^?&quot;weightfv_ARB&quot;^?&quot;weightdv_ARB&quot;^?&quot;weightubv_ARB&quot;^?&quot;weightusv_ARB&quot;^?&quot;weightuiv_ARB&quot;^?&quot;weight_pointer_ARB&quot;^?&quot;vertex_blend_ARB&quot;^?&quot;multi_draw_arrays&quot;^?&quot;multi_draw_elements&quot;^?&quot;window_pos2d&quot;^?&quot;window_pos2dv&quot;^?&quot;window_pos2f&quot;^?&quot;window_pos2fv&quot;^?&quot;window_pos2i&quot;^?&quot;window_pos2iv&quot;^?&quot;window_pos2s&quot;^?&quot;window_pos2sv&quot;^?&quot;window_pos3d&quot;^?&quot;window_pos3dv&quot;^?&quot;window_pos3f&quot;^?&quot;window_pos3fv&quot;^?&quot;window_pos3i&quot;^?&quot;window_pos3iv&quot;^?&quot;window_pos3s&quot;^?&quot;window_pos3sv&quot;^?&quot;active_stencil_face_EXT&quot;^?&quot;stencil_op_separate_ATI&quot;^?&quot;stencil_func_separate_ATI&quot;^?&quot;flush_render_APPLE&quot;^?&quot;finish_render_APPLE&quot;^?&quot;swap_APPLE&quot;^?&quot;delete_object_ARB&quot;^?&quot;get_handle_ARB&quot;^?&quot;detach_object_ARB&quot;^?&quot;create_shader_object_ARB&quot;^?&quot;shader_source_ARB&quot;^?&quot;compile_shader_ARB&quot;^?&quot;create_program_object_ARB&quot;^?&quot;attach_object_ARB&quot;^?&quot;link_program_ARB&quot;^?&quot;use_program_object_ARB&quot;^?&quot;validate_program_ARB&quot;^?&quot;uniform1f_ARB&quot;^?&quot;uniform2f_ARB&quot;^?&quot;uniform3f_ARB&quot;^?&quot;uniform4f_ARB&quot;^?&quot;uniform1i_ARB&quot;^?&quot;uniform2i_ARB&quot;^?&quot;uniform3i_ARB&quot;^?&quot;uniform4i_ARB&quot;^?&quot;uniform1fv_ARB&quot;^?&quot;uniform2fv_ARB&quot;^?&quot;uniform3fv_ARB&quot;^?&quot;uniform4fv_ARB&quot;^?&quot;uniform1iv_ARB&quot;^?&quot;uniform2iv_ARB&quot;^?&quot;uniform3iv_ARB&quot;^?&quot;uniform4iv_ARB&quot;^?&quot;uniform_matrix2fv_ARB&quot;^?&quot;uniform_matrix3fv_ARB&quot;^?&quot;uniform_matrix4fv_ARB&quot;^?&quot;get_object_parameterfv_ARB&quot;^?&quot;get_object_parameteriv_ARB&quot;^?&quot;get_info_log_ARB&quot;^?&quot;get_attached_objects_ARB&quot;^?&quot;get_uniform_location_ARB&quot;^?&quot;get_active_uniform_ARB&quot;^?&quot;get_uniformfv_ARB&quot;^?&quot;get_uniformiv_ARB&quot;^?&quot;get_shader_source_ARB&quot;^?&quot;bind_attrib_location_ARB&quot;^?&quot;get_active_attrib_ARB&quot;^?&quot;get_attrib_location_ARB&quot;^?&quot;clamp_color_ARB&quot;^?&quot;gen_queries&quot;^?&quot;delete_queries&quot;^?&quot;is_query&quot;^?&quot;begin_query&quot;^?&quot;end_query&quot;^?&quot;get_queryiv&quot;^?&quot;get_query_objectiv&quot;^?&quot;get_query_objectuiv&quot;^?&quot;bind_buffer&quot;^?&quot;delete_buffers&quot;^?&quot;gen_buffers&quot;^?&quot;is_buffer&quot;^?&quot;buffer_data&quot;^?&quot;buffer_sub_data&quot;^?&quot;get_buffer_sub_data&quot;^?&quot;map_buffer&quot;^?&quot;unmap_buffer&quot;^?&quot;get_buffer_parameteriv&quot;^?&quot;get_buffer_pointerv&quot;^?&quot;depth_bounds_EXT&quot;^?&quot;draw_buffers_ARB&quot;^?&quot;is_shader&quot;^?&quot;is_program&quot;^?&quot;get_shaderiv&quot;^?&quot;get_programiv&quot;^?&quot;get_shader_info_log&quot;^?&quot;get_program_info_log&quot;^?&quot;stencil_func_separate&quot;^?&quot;stencil_mask_separate&quot;^?&quot;multi_draw_element_array_APPLE&quot;^?&quot;multi_draw_range_element_array_APPLE&quot;^?&quot;is_renderbuffer_EXT&quot;^?&quot;bind_renderbuffer_EXT&quot;^?&quot;delete_renderbuffers_EXT&quot;^?&quot;gen_renderbuffers_EXT&quot;^?&quot;renderbuffer_storage_EXT&quot;^?&quot;get_renderbuffer_parameteriv_EXT&quot;^?&quot;is_framebuffer_EXT&quot;^?&quot;bind_framebuffer_EXT&quot;^?&quot;delete_framebuffers_EXT&quot;^?&quot;gen_framebuffers_EXT&quot;^?&quot;check_framebuffer_status_EXT&quot;^?&quot;framebuffer_texture1D_EXT&quot;^?&quot;framebuffer_texture2D_EXT&quot;^?&quot;framebuffer_texture3D_EXT&quot;^?&quot;framebuffer_renderbuffer_EXT&quot;^?&quot;get_framebuffer_attachment_parameteriv_EXT&quot;^?&quot;generate_mipmap_EXT&quot;^?&quot;buffer_parameteri_APPLE&quot;^?&quot;flush_mapped_buffer_range_APPLE&quot;^?&quot;program_env_parameters4fv_EXT&quot;^?&quot;program_local_parameters4fv_EXT&quot;^?&quot;object_purgeable_APPLE&quot;^?&quot;object_unpurgeable_APPLE&quot;^?&quot;get_object_parameteriv_APPLE&quot;^?&quot;program_parameteri_EXT&quot;^?&quot;framebuffer_texture_EXT&quot;^?&quot;framebuffer_texture_layer_EXT&quot;^?&quot;framebuffer_texture_face_EXT&quot;^?&quot;bind_buffer_range_EXT&quot;^?&quot;bind_buffer_offset_EXT&quot;^?&quot;bind_buffer_base_EXT&quot;^?&quot;begin_transform_feedback_EXT&quot;^?&quot;end_transform_feedback_EXT&quot;^?&quot;transform_feedback_varyings_EXT&quot;^?&quot;get_transform_feedback_varying_EXT&quot;^?&quot;get_integer_indexedv_EXT&quot;^?&quot;get_boolean_indexedv_EXT&quot;^?&quot;uniform_buffer_EXT&quot;^?&quot;get_uniform_buffer_size_EXT&quot;^?&quot;get_uniform_buffer_offset_EXT&quot;^?&quot;clear_colorIi_EXT&quot;^?&quot;clear_colorIui_EXT&quot;^?&quot;tex_parameterIiv_EXT&quot;^?&quot;tex_parameterIuiv_EXT&quot;^?&quot;get_tex_parameterIiv_EXT&quot;^?&quot;get_tex_parameterIuiv_EXT&quot;^?&quot;vertex_attribI1i_EXT&quot;^?&quot;vertex_attribI2i_EXT&quot;^?&quot;vertex_attribI3i_EXT&quot;^?&quot;vertex_attribI4i_EXT&quot;^?&quot;vertex_attribI1ui_EXT&quot;^?&quot;vertex_attribI2ui_EXT&quot;^?&quot;vertex_attribI3ui_EXT&quot;^?&quot;vertex_attribI4ui_EXT&quot;^?&quot;vertex_attribI1iv_EXT&quot;^?&quot;vertex_attribI2iv_EXT&quot;^?&quot;vertex_attribI3iv_EXT&quot;^?&quot;vertex_attribI4iv_EXT&quot;^?&quot;vertex_attribI1uiv_EXT&quot;^?&quot;vertex_attribI2uiv_EXT&quot;^?&quot;vertex_attribI3uiv_EXT&quot;^?&quot;vertex_attribI4uiv_EXT&quot;^?&quot;vertex_attribI4bv_EXT&quot;^?&quot;vertex_attribI4sv_EXT&quot;^?&quot;vertex_attribI4ubv_EXT&quot;^?&quot;vertex_attribI4usv_EXT&quot;^?&quot;vertex_attribI_pointer_EXT&quot;^?&quot;get_vertex_attribIiv_EXT&quot;^?&quot;get_vertex_attribIuiv_EXT&quot;^?&quot;uniform1ui_EXT&quot;^?&quot;uniform2ui_EXT&quot;^?&quot;uniform3ui_EXT&quot;^?&quot;uniform4ui_EXT&quot;^?&quot;uniform1uiv_EXT&quot;^?&quot;uniform2uiv_EXT&quot;^?&quot;uniform3uiv_EXT&quot;^?&quot;uniform4uiv_EXT&quot;^?&quot;get_uniformuiv_EXT&quot;^?&quot;bind_frag_data_location_EXT&quot;^?&quot;get_frag_data_location_EXT&quot;^?&quot;color_mask_indexed_EXT&quot;^?&quot;enable_indexed_EXT&quot;^?&quot;disable_indexed_EXT&quot;^?&quot;is_enabled_indexed_EXT&quot;^?&quot;uniform_matrix2x3fv&quot;^?&quot;uniform_matrix3x2fv&quot;^?&quot;uniform_matrix2x4fv&quot;^?&quot;uniform_matrix4x2fv&quot;^?&quot;uniform_matrix3x4fv&quot;^?&quot;uniform_matrix4x3fv&quot;^?&quot;blit_framebuffer_EXT&quot;^?&quot;renderbuffer_storage_multisample_EXT&quot;^?&quot;begin_conditional_render_NV&quot;^?&quot;end_conditional_render_NV&quot;^?&quot;get_attached_shaders&quot;^?&quot;provoking_vertex_EXT&quot;^?&quot;vertex_attrib_divisor&quot;^?&quot;draw_arrays_instanced&quot;^?&quot;draw_elements_instanced&quot;^?}'/>
 <opaque name='CGLContextObj' type='^{_CGLContextObject=}'/>
 <opaque name='CGLPBufferObj' type='^{_CGLPBufferObject=}'/>
 <opaque name='CGLPixelFormatObj' type='^{_CGLPixelFormatObject=}'/>
@@ -197,6 +198,8 @@
 <enum name='GL_ACTIVE_TEXTURE' value='34016'/>
 <enum name='GL_ACTIVE_TEXTURE_ARB' value='34016'/>
 <enum name='GL_ACTIVE_UNIFORMS' value='35718'/>
+<enum name='GL_ACTIVE_UNIFORM_BLOCKS' value='35382'/>
+<enum name='GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH' value='35381'/>
 <enum name='GL_ACTIVE_UNIFORM_MAX_LENGTH' value='35719'/>
 <enum name='GL_ACTIVE_VERTEX_UNITS_ARB' value='34469'/>
 <enum name='GL_ADD' value='260'/>
@@ -246,6 +249,7 @@
 <enum name='GL_APPLE_object_purgeable' value='1'/>
 <enum name='GL_APPLE_packed_pixels' value='1'/>
 <enum name='GL_APPLE_pixel_buffer' value='1'/>
+<enum name='GL_APPLE_rgb_422' value='1'/>
 <enum name='GL_APPLE_row_bytes' value='1'/>
 <enum name='GL_APPLE_specular_vector' value='1'/>
 <enum name='GL_APPLE_texture_range' value='1'/>
@@ -254,13 +258,18 @@
 <enum name='GL_APPLE_vertex_array_range' value='1'/>
 <enum name='GL_APPLE_vertex_program_evaluators' value='1'/>
 <enum name='GL_APPLE_ycbcr_422' value='1'/>
+<enum name='GL_ARB_color_buffer_float' value='1'/>
+<enum name='GL_ARB_depth_buffer_float' value='1'/>
 <enum name='GL_ARB_depth_texture' value='1'/>
 <enum name='GL_ARB_draw_buffers' value='1'/>
 <enum name='GL_ARB_fragment_program' value='1'/>
 <enum name='GL_ARB_fragment_program_shadow' value='1'/>
 <enum name='GL_ARB_fragment_shader' value='1'/>
+<enum name='GL_ARB_framebuffer_object' value='1'/>
 <enum name='GL_ARB_half_float_pixel' value='1'/>
+<enum name='GL_ARB_half_float_vertex' value='1'/>
 <enum name='GL_ARB_imaging' value='1'/>
+<enum name='GL_ARB_instanced_arrays' value='1'/>
 <enum name='GL_ARB_multisample' value='1'/>
 <enum name='GL_ARB_multitexture' value='1'/>
 <enum name='GL_ARB_occlusion_query' value='1'/>
@@ -274,6 +283,7 @@
 <enum name='GL_ARB_shadow_ambient' value='1'/>
 <enum name='GL_ARB_texture_border_clamp' value='1'/>
 <enum name='GL_ARB_texture_compression' value='1'/>
+<enum name='GL_ARB_texture_compression_rgtc' value='1'/>
 <enum name='GL_ARB_texture_cube_map' value='1'/>
 <enum name='GL_ARB_texture_env_add' value='1'/>
 <enum name='GL_ARB_texture_env_combine' value='1'/>
@@ -283,7 +293,9 @@
 <enum name='GL_ARB_texture_mirrored_repeat' value='1'/>
 <enum name='GL_ARB_texture_non_power_of_two' value='1'/>
 <enum name='GL_ARB_texture_rectangle' value='1'/>
+<enum name='GL_ARB_texture_rg' value='1'/>
 <enum name='GL_ARB_transpose_matrix' value='1'/>
+<enum name='GL_ARB_uniform_buffer_object' value='1'/>
 <enum name='GL_ARB_vertex_blend' value='1'/>
 <enum name='GL_ARB_vertex_buffer_object' value='1'/>
 <enum name='GL_ARB_vertex_program' value='1'/>
@@ -295,15 +307,12 @@
 <enum name='GL_ARRAY_BUFFER_BINDING_ARB' value='34964'/>
 <enum name='GL_ARRAY_ELEMENT_LOCK_COUNT_EXT' value='33193'/>
 <enum name='GL_ARRAY_ELEMENT_LOCK_FIRST_EXT' value='33192'/>
-<enum name='GL_ARRAY_REV_COMPS_IN_4_BYTES_ATI' value='35196'/>
 <enum name='GL_ATIX_pn_triangles' value='1'/>
-<enum name='GL_ATI_array_rev_comps_in_4_bytes' value='1'/>
 <enum name='GL_ATI_blend_equation_separate' value='1'/>
 <enum name='GL_ATI_blend_weighted_minmax' value='1'/>
 <enum name='GL_ATI_pn_triangles' value='1'/>
 <enum name='GL_ATI_point_cull_mode' value='1'/>
 <enum name='GL_ATI_separate_stencil' value='1'/>
-<enum name='GL_ATI_text_fragment_shader' value='1'/>
 <enum name='GL_ATI_texture_compression_3dc' value='1'/>
 <enum name='GL_ATI_texture_env_combine3' value='1'/>
 <enum name='GL_ATI_texture_float' value='1'/>
@@ -326,7 +335,6 @@
 <enum name='GL_BGRA_INTEGER_EXT' value='36251'/>
 <enum name='GL_BGR_EXT' value='32992'/>
 <enum name='GL_BGR_INTEGER_EXT' value='36250'/>
-<enum name='GL_BIAS_BY_NEGATIVE_ONE_HALF_NV' value='34113'/>
 <enum name='GL_BITMAP' value='6656'/>
 <enum name='GL_BITMAP_TOKEN' value='1796'/>
 <enum name='GL_BLEND' value='3042'/>
@@ -381,10 +389,13 @@
 <enum name='GL_C4UB_V3F' value='10787'/>
 <enum name='GL_CCW' value='2305'/>
 <enum name='GL_CLAMP' value='10496'/>
+<enum name='GL_CLAMP_FRAGMENT_COLOR_ARB' value='35099'/>
+<enum name='GL_CLAMP_READ_COLOR_ARB' value='35100'/>
 <enum name='GL_CLAMP_TO_BORDER' value='33069'/>
 <enum name='GL_CLAMP_TO_BORDER_ARB' value='33069'/>
 <enum name='GL_CLAMP_TO_EDGE' value='33071'/>
 <enum name='GL_CLAMP_TO_EDGE_SGIS' value='33071'/>
+<enum name='GL_CLAMP_VERTEX_COLOR_ARB' value='35098'/>
 <enum name='GL_CLEAR' value='5376'/>
 <enum name='GL_CLIENT_ACTIVE_TEXTURE' value='34017'/>
 <enum name='GL_CLIENT_ACTIVE_TEXTURE_ARB' value='34017'/>
@@ -408,32 +419,42 @@
 <enum name='GL_COLOR_ARRAY_SIZE' value='32897'/>
 <enum name='GL_COLOR_ARRAY_STRIDE' value='32899'/>
 <enum name='GL_COLOR_ARRAY_TYPE' value='32898'/>
+<enum name='GL_COLOR_ATTACHMENT0' value='36064'/>
 <enum name='GL_COLOR_ATTACHMENT0_EXT' value='36064'/>
+<enum name='GL_COLOR_ATTACHMENT1' value='36065'/>
+<enum name='GL_COLOR_ATTACHMENT10' value='36074'/>
 <enum name='GL_COLOR_ATTACHMENT10_EXT' value='36074'/>
+<enum name='GL_COLOR_ATTACHMENT11' value='36075'/>
 <enum name='GL_COLOR_ATTACHMENT11_EXT' value='36075'/>
+<enum name='GL_COLOR_ATTACHMENT12' value='36076'/>
 <enum name='GL_COLOR_ATTACHMENT12_EXT' value='36076'/>
+<enum name='GL_COLOR_ATTACHMENT13' value='36077'/>
 <enum name='GL_COLOR_ATTACHMENT13_EXT' value='36077'/>
+<enum name='GL_COLOR_ATTACHMENT14' value='36078'/>
 <enum name='GL_COLOR_ATTACHMENT14_EXT' value='36078'/>
+<enum name='GL_COLOR_ATTACHMENT15' value='36079'/>
 <enum name='GL_COLOR_ATTACHMENT15_EXT' value='36079'/>
 <enum name='GL_COLOR_ATTACHMENT1_EXT' value='36065'/>
+<enum name='GL_COLOR_ATTACHMENT2' value='36066'/>
 <enum name='GL_COLOR_ATTACHMENT2_EXT' value='36066'/>
+<enum name='GL_COLOR_ATTACHMENT3' value='36067'/>
 <enum name='GL_COLOR_ATTACHMENT3_EXT' value='36067'/>
+<enum name='GL_COLOR_ATTACHMENT4' value='36068'/>
 <enum name='GL_COLOR_ATTACHMENT4_EXT' value='36068'/>
+<enum name='GL_COLOR_ATTACHMENT5' value='36069'/>
 <enum name='GL_COLOR_ATTACHMENT5_EXT' value='36069'/>
+<enum name='GL_COLOR_ATTACHMENT6' value='36070'/>
 <enum name='GL_COLOR_ATTACHMENT6_EXT' value='36070'/>
+<enum name='GL_COLOR_ATTACHMENT7' value='36071'/>
 <enum name='GL_COLOR_ATTACHMENT7_EXT' value='36071'/>
+<enum name='GL_COLOR_ATTACHMENT8' value='36072'/>
 <enum name='GL_COLOR_ATTACHMENT8_EXT' value='36072'/>
+<enum name='GL_COLOR_ATTACHMENT9' value='36073'/>
 <enum name='GL_COLOR_ATTACHMENT9_EXT' value='36073'/>
 <enum name='GL_COLOR_BUFFER_BIT' value='16384'/>
 <enum name='GL_COLOR_CLEAR_VALUE' value='3106'/>
 <enum name='GL_COLOR_FLOAT_APPLE' value='35343'/>
 <enum name='GL_COLOR_INDEX' value='6400'/>
-<enum name='GL_COLOR_INDEX12_EXT' value='32998'/>
-<enum name='GL_COLOR_INDEX16_EXT' value='32999'/>
-<enum name='GL_COLOR_INDEX1_EXT' value='32994'/>
-<enum name='GL_COLOR_INDEX2_EXT' value='32995'/>
-<enum name='GL_COLOR_INDEX4_EXT' value='32996'/>
-<enum name='GL_COLOR_INDEX8_EXT' value='32997'/>
 <enum name='GL_COLOR_INDEXES' value='5635'/>
 <enum name='GL_COLOR_LOGIC_OP' value='3058'/>
 <enum name='GL_COLOR_MATERIAL' value='2903'/>
@@ -445,7 +466,6 @@
 <enum name='GL_COLOR_MATRIX_STACK_DEPTH_SGI' value='32946'/>
 <enum name='GL_COLOR_SUM' value='33880'/>
 <enum name='GL_COLOR_SUM_ARB' value='33880'/>
-<enum name='GL_COLOR_SUM_CLAMP_NV' value='34127'/>
 <enum name='GL_COLOR_SUM_EXT' value='33880'/>
 <enum name='GL_COLOR_TABLE' value='32976'/>
 <enum name='GL_COLOR_TABLE_ALPHA_SIZE' value='32989'/>
@@ -460,30 +480,12 @@
 <enum name='GL_COLOR_TABLE_WIDTH' value='32985'/>
 <enum name='GL_COLOR_WRITEMASK' value='3107'/>
 <enum name='GL_COMBINE' value='34160'/>
-<enum name='GL_COMBINER0_NV' value='34128'/>
-<enum name='GL_COMBINER1_NV' value='34129'/>
-<enum name='GL_COMBINER2_NV' value='34130'/>
-<enum name='GL_COMBINER3_NV' value='34131'/>
-<enum name='GL_COMBINER4_NV' value='34132'/>
-<enum name='GL_COMBINER5_NV' value='34133'/>
-<enum name='GL_COMBINER6_NV' value='34134'/>
-<enum name='GL_COMBINER7_NV' value='34135'/>
-<enum name='GL_COMBINER_AB_DOT_PRODUCT_NV' value='34117'/>
-<enum name='GL_COMBINER_AB_OUTPUT_NV' value='34122'/>
-<enum name='GL_COMBINER_BIAS_NV' value='34121'/>
-<enum name='GL_COMBINER_CD_DOT_PRODUCT_NV' value='34118'/>
-<enum name='GL_COMBINER_CD_OUTPUT_NV' value='34123'/>
-<enum name='GL_COMBINER_COMPONENT_USAGE_NV' value='34116'/>
-<enum name='GL_COMBINER_INPUT_NV' value='34114'/>
-<enum name='GL_COMBINER_MAPPING_NV' value='34115'/>
-<enum name='GL_COMBINER_MUX_SUM_NV' value='34119'/>
-<enum name='GL_COMBINER_SCALE_NV' value='34120'/>
-<enum name='GL_COMBINER_SUM_OUTPUT_NV' value='34124'/>
 <enum name='GL_COMBINE_ALPHA' value='34162'/>
 <enum name='GL_COMBINE_ALPHA_ARB' value='34162'/>
 <enum name='GL_COMBINE_ARB' value='34160'/>
 <enum name='GL_COMBINE_RGB' value='34161'/>
 <enum name='GL_COMBINE_RGB_ARB' value='34161'/>
+<enum name='GL_COMPARE_REF_DEPTH_TO_TEXTURE_EXT' value='34894'/>
 <enum name='GL_COMPARE_R_TO_TEXTURE' value='34894'/>
 <enum name='GL_COMPARE_R_TO_TEXTURE_ARB' value='34894'/>
 <enum name='GL_COMPILE' value='4864'/>
@@ -498,6 +500,9 @@
 <enum name='GL_COMPRESSED_LUMINANCE_ALPHA_3DC_ATI' value='34871'/>
 <enum name='GL_COMPRESSED_LUMINANCE_ALPHA_ARB' value='34027'/>
 <enum name='GL_COMPRESSED_LUMINANCE_ARB' value='34026'/>
+<enum name='GL_COMPRESSED_RED' value='33317'/>
+<enum name='GL_COMPRESSED_RED_RGTC1' value='36283'/>
+<enum name='GL_COMPRESSED_RG' value='33318'/>
 <enum name='GL_COMPRESSED_RGB' value='34029'/>
 <enum name='GL_COMPRESSED_RGBA' value='34030'/>
 <enum name='GL_COMPRESSED_RGBA_ARB' value='34030'/>
@@ -506,6 +511,9 @@
 <enum name='GL_COMPRESSED_RGBA_S3TC_DXT5_EXT' value='33779'/>
 <enum name='GL_COMPRESSED_RGB_ARB' value='34029'/>
 <enum name='GL_COMPRESSED_RGB_S3TC_DXT1_EXT' value='33776'/>
+<enum name='GL_COMPRESSED_RG_RGTC2' value='36285'/>
+<enum name='GL_COMPRESSED_SIGNED_RED_RGTC1' value='36284'/>
+<enum name='GL_COMPRESSED_SIGNED_RG_RGTC2' value='36286'/>
 <enum name='GL_COMPRESSED_SLUMINANCE' value='35914'/>
 <enum name='GL_COMPRESSED_SLUMINANCE_ALPHA' value='35915'/>
 <enum name='GL_COMPRESSED_SLUMINANCE_ALPHA_EXT' value='35915'/>
@@ -527,10 +535,7 @@
 <enum name='GL_CONSTANT_ATTENUATION' value='4615'/>
 <enum name='GL_CONSTANT_BORDER' value='33105'/>
 <enum name='GL_CONSTANT_COLOR' value='32769'/>
-<enum name='GL_CONSTANT_COLOR0_NV' value='34090'/>
-<enum name='GL_CONSTANT_COLOR1_NV' value='34091'/>
 <enum name='GL_CONSTANT_COLOR_EXT' value='32769'/>
-<enum name='GL_CONST_EYE_NV' value='34533'/>
 <enum name='GL_CONVOLUTION_1D' value='32784'/>
 <enum name='GL_CONVOLUTION_2D' value='32785'/>
 <enum name='GL_CONVOLUTION_BORDER_COLOR' value='33108'/>
@@ -548,8 +553,6 @@
 <enum name='GL_COPY_PIXEL_TOKEN' value='1798'/>
 <enum name='GL_CULL_FACE' value='2884'/>
 <enum name='GL_CULL_FACE_MODE' value='2885'/>
-<enum name='GL_CULL_FRAGMENT_NV' value='34535'/>
-<enum name='GL_CULL_MODES_NV' value='34528'/>
 <enum name='GL_CURRENT_BIT' value='1'/>
 <enum name='GL_CURRENT_COLOR' value='2816'/>
 <enum name='GL_CURRENT_FOG_COORD' value='33875'/>
@@ -581,13 +584,11 @@
 <enum name='GL_DECR_WRAP' value='34056'/>
 <enum name='GL_DECR_WRAP_EXT' value='34056'/>
 <enum name='GL_DELETE_STATUS' value='35712'/>
-<enum name='GL_DEPENDENT_AR_TEXTURE_2D_NV' value='34537'/>
-<enum name='GL_DEPENDENT_GB_TEXTURE_2D_NV' value='34538'/>
-<enum name='GL_DEPENDENT_HILO_TEXTURE_2D_NV' value='34904'/>
-<enum name='GL_DEPENDENT_RGB_TEXTURE_3D_NV' value='34905'/>
-<enum name='GL_DEPENDENT_RGB_TEXTURE_CUBE_MAP_NV' value='34906'/>
 <enum name='GL_DEPTH' value='6145'/>
+<enum name='GL_DEPTH24_STENCIL8' value='35056'/>
 <enum name='GL_DEPTH24_STENCIL8_EXT' value='35056'/>
+<enum name='GL_DEPTH32F_STENCIL8' value='36013'/>
+<enum name='GL_DEPTH_ATTACHMENT' value='36096'/>
 <enum name='GL_DEPTH_ATTACHMENT_EXT' value='36096'/>
 <enum name='GL_DEPTH_BIAS' value='3359'/>
 <enum name='GL_DEPTH_BITS' value='3414'/>
@@ -602,17 +603,19 @@
 <enum name='GL_DEPTH_COMPONENT24' value='33190'/>
 <enum name='GL_DEPTH_COMPONENT24_ARB' value='33190'/>
 <enum name='GL_DEPTH_COMPONENT32' value='33191'/>
+<enum name='GL_DEPTH_COMPONENT32F' value='36012'/>
 <enum name='GL_DEPTH_COMPONENT32_ARB' value='33191'/>
 <enum name='GL_DEPTH_FUNC' value='2932'/>
 <enum name='GL_DEPTH_RANGE' value='2928'/>
 <enum name='GL_DEPTH_SCALE' value='3358'/>
+<enum name='GL_DEPTH_STENCIL' value='34041'/>
+<enum name='GL_DEPTH_STENCIL_ATTACHMENT' value='33306'/>
 <enum name='GL_DEPTH_STENCIL_EXT' value='34041'/>
 <enum name='GL_DEPTH_TEST' value='2929'/>
 <enum name='GL_DEPTH_TEXTURE_MODE' value='34891'/>
 <enum name='GL_DEPTH_TEXTURE_MODE_ARB' value='34891'/>
 <enum name='GL_DEPTH_WRITEMASK' value='2930'/>
 <enum name='GL_DIFFUSE' value='4609'/>
-<enum name='GL_DISCARD_NV' value='34096'/>
 <enum name='GL_DITHER' value='3024'/>
 <enum name='GL_DOMAIN' value='2562'/>
 <enum name='GL_DONT_CARE' value='4352'/>
@@ -620,18 +623,6 @@
 <enum name='GL_DOT3_RGBA' value='34479'/>
 <enum name='GL_DOT3_RGBA_ARB' value='34479'/>
 <enum name='GL_DOT3_RGB_ARB' value='34478'/>
-<enum name='GL_DOT_PRODUCT_AFFINE_DEPTH_REPLACE_NV' value='34909'/>
-<enum name='GL_DOT_PRODUCT_CONST_EYE_REFLECT_CUBE_MAP_NV' value='34547'/>
-<enum name='GL_DOT_PRODUCT_DEPTH_REPLACE_NV' value='34541'/>
-<enum name='GL_DOT_PRODUCT_DIFFUSE_CUBE_MAP_NV' value='34545'/>
-<enum name='GL_DOT_PRODUCT_NV' value='34540'/>
-<enum name='GL_DOT_PRODUCT_PASS_THROUGH_NV' value='34907'/>
-<enum name='GL_DOT_PRODUCT_REFLECT_CUBE_MAP_NV' value='34546'/>
-<enum name='GL_DOT_PRODUCT_TEXTURE_1D_NV' value='34908'/>
-<enum name='GL_DOT_PRODUCT_TEXTURE_2D_NV' value='34542'/>
-<enum name='GL_DOT_PRODUCT_TEXTURE_3D_NV' value='34543'/>
-<enum name='GL_DOT_PRODUCT_TEXTURE_CUBE_MAP_NV' value='34544'/>
-<enum name='GL_DOT_PRODUCT_TEXTURE_RECTANGLE_NV' value='34382'/>
 <enum name='GL_DOUBLE' value='5130'/>
 <enum name='GL_DOUBLEBUFFER' value='3122'/>
 <enum name='GL_DRAW_BUFFER' value='3073'/>
@@ -667,23 +658,14 @@
 <enum name='GL_DRAW_BUFFER8_ARB' value='34861'/>
 <enum name='GL_DRAW_BUFFER9' value='34862'/>
 <enum name='GL_DRAW_BUFFER9_ARB' value='34862'/>
+<enum name='GL_DRAW_FRAMEBUFFER' value='36009'/>
+<enum name='GL_DRAW_FRAMEBUFFER_BINDING' value='36006'/>
 <enum name='GL_DRAW_FRAMEBUFFER_BINDING_EXT' value='36006'/>
 <enum name='GL_DRAW_FRAMEBUFFER_EXT' value='36009'/>
 <enum name='GL_DRAW_PIXELS_APPLE' value='35338'/>
 <enum name='GL_DRAW_PIXEL_TOKEN' value='1797'/>
-<enum name='GL_DSDT8_MAG8_INTENSITY8_NV' value='34571'/>
-<enum name='GL_DSDT8_MAG8_NV' value='34570'/>
-<enum name='GL_DSDT8_NV' value='34569'/>
-<enum name='GL_DSDT_MAG_INTENSITY_NV' value='34524'/>
-<enum name='GL_DSDT_MAG_NV' value='34550'/>
-<enum name='GL_DSDT_MAG_VIB_NV' value='34551'/>
-<enum name='GL_DSDT_NV' value='34549'/>
 <enum name='GL_DST_ALPHA' value='772'/>
 <enum name='GL_DST_COLOR' value='774'/>
-<enum name='GL_DS_BIAS_NV' value='34582'/>
-<enum name='GL_DS_SCALE_NV' value='34576'/>
-<enum name='GL_DT_BIAS_NV' value='34583'/>
-<enum name='GL_DT_SCALE_NV' value='34577'/>
 <enum name='GL_DYNAMIC_COPY' value='35050'/>
 <enum name='GL_DYNAMIC_COPY_ARB' value='35050'/>
 <enum name='GL_DYNAMIC_DRAW' value='35048'/>
@@ -703,7 +685,6 @@
 <enum name='GL_ELEMENT_ARRAY_BUFFER_BINDING_ARB' value='34965'/>
 <enum name='GL_ELEMENT_ARRAY_POINTER_APPLE' value='35342'/>
 <enum name='GL_ELEMENT_ARRAY_TYPE_APPLE' value='35341'/>
-<enum name='GL_ELEMENT_BUFFER_BINDING_APPLE' value='35345'/>
 <enum name='GL_EMISSION' value='5632'/>
 <enum name='GL_ENABLE_BIT' value='8192'/>
 <enum name='GL_EQUAL' value='514'/>
@@ -711,8 +692,6 @@
 <enum name='GL_EVAL_BIT' value='65536'/>
 <enum name='GL_EXP' value='2048'/>
 <enum name='GL_EXP2' value='2049'/>
-<enum name='GL_EXPAND_NEGATE_NV' value='34105'/>
-<enum name='GL_EXPAND_NORMAL_NV' value='34104'/>
 <enum name='GL_EXTENSIONS' value='7939'/>
 <enum name='GL_EXT_abgr' value='1'/>
 <enum name='GL_EXT_bgra' value='1'/>
@@ -726,23 +705,27 @@
 <enum name='GL_EXT_compiled_vertex_array' value='1'/>
 <enum name='GL_EXT_depth_bounds_test' value='1'/>
 <enum name='GL_EXT_draw_buffers2' value='1'/>
+<enum name='GL_EXT_draw_instanced' value='0'/>
 <enum name='GL_EXT_draw_range_elements' value='1'/>
 <enum name='GL_EXT_fog_coord' value='1'/>
 <enum name='GL_EXT_framebuffer_blit' value='1'/>
 <enum name='GL_EXT_framebuffer_multisample' value='1'/>
 <enum name='GL_EXT_framebuffer_object' value='1'/>
+<enum name='GL_EXT_framebuffer_sRGB' value='1'/>
 <enum name='GL_EXT_geometry_shader4' value='1'/>
 <enum name='GL_EXT_gpu_program_parameters' value='1'/>
 <enum name='GL_EXT_gpu_shader4' value='1'/>
 <enum name='GL_EXT_multi_draw_arrays' value='1'/>
 <enum name='GL_EXT_packed_depth_stencil' value='1'/>
-<enum name='GL_EXT_paletted_texture' value='1'/>
+<enum name='GL_EXT_packed_float' value='1'/>
+<enum name='GL_EXT_provoking_vertex' value='1'/>
 <enum name='GL_EXT_rescale_normal' value='1'/>
 <enum name='GL_EXT_secondary_color' value='1'/>
 <enum name='GL_EXT_separate_specular_color' value='1'/>
 <enum name='GL_EXT_shadow_funcs' value='1'/>
 <enum name='GL_EXT_stencil_two_side' value='1'/>
 <enum name='GL_EXT_stencil_wrap' value='1'/>
+<enum name='GL_EXT_texture_array' value='1'/>
 <enum name='GL_EXT_texture_compression_dxt1' value='1'/>
 <enum name='GL_EXT_texture_compression_s3tc' value='1'/>
 <enum name='GL_EXT_texture_env_add' value='1'/>
@@ -752,12 +735,13 @@
 <enum name='GL_EXT_texture_mirror_clamp' value='1'/>
 <enum name='GL_EXT_texture_rectangle' value='1'/>
 <enum name='GL_EXT_texture_sRGB' value='1'/>
+<enum name='GL_EXT_texture_shared_exponent' value='1'/>
 <enum name='GL_EXT_transform_feedback' value='1'/>
+<enum name='GL_EXT_vertex_array_bgra' value='1'/>
 <enum name='GL_EYE_LINEAR' value='9216'/>
 <enum name='GL_EYE_PLANE' value='9474'/>
 <enum name='GL_EYE_PLANE_ABSOLUTE_NV' value='34140'/>
 <enum name='GL_EYE_RADIAL_NV' value='34139'/>
-<enum name='GL_E_TIMES_F_NV' value='34097'/>
 <enum name='GL_FALSE' value='0'/>
 <enum name='GL_FASTEST' value='4353'/>
 <enum name='GL_FEEDBACK' value='7169'/>
@@ -766,8 +750,11 @@
 <enum name='GL_FEEDBACK_BUFFER_TYPE' value='3570'/>
 <enum name='GL_FENCE_APPLE' value='35339'/>
 <enum name='GL_FILL' value='6914'/>
+<enum name='GL_FIRST_VERTEX_CONVENTION_EXT' value='36429'/>
+<enum name='GL_FIXED_ONLY_ARB' value='35101'/>
 <enum name='GL_FLAT' value='7424'/>
 <enum name='GL_FLOAT' value='5126'/>
+<enum name='GL_FLOAT_32_UNSIGNED_INT_24_8_REV' value='36269'/>
 <enum name='GL_FLOAT_MAT2' value='35674'/>
 <enum name='GL_FLOAT_MAT2_ARB' value='35674'/>
 <enum name='GL_FLOAT_MAT2x3' value='35685'/>
@@ -818,7 +805,6 @@
 <enum name='GL_FOG_INDEX' value='2913'/>
 <enum name='GL_FOG_MODE' value='2917'/>
 <enum name='GL_FOG_START' value='2915'/>
-<enum name='GL_FORCE_BLUE_TO_ONE_NV' value='34912'/>
 <enum name='GL_FRAGMENT_DEPTH' value='33874'/>
 <enum name='GL_FRAGMENT_DEPTH_EXT' value='33874'/>
 <enum name='GL_FRAGMENT_PROGRAM_ARB' value='34820'/>
@@ -826,25 +812,51 @@
 <enum name='GL_FRAGMENT_SHADER_ARB' value='35632'/>
 <enum name='GL_FRAGMENT_SHADER_DERIVATIVE_HINT' value='35723'/>
 <enum name='GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB' value='35723'/>
+<enum name='GL_FRAMEBUFFER' value='36160'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE' value='33301'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_BLUE_SIZE' value='33300'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING' value='33296'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE' value='33297'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE' value='33302'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_GREEN_SIZE' value='33299'/>
 <enum name='GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT' value='36263'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME' value='36049'/>
 <enum name='GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_EXT' value='36049'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE' value='36048'/>
 <enum name='GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_EXT' value='36048'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_RED_SIZE' value='33298'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE' value='33303'/>
 <enum name='GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_EXT' value='36052'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE' value='36051'/>
 <enum name='GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_EXT' value='36051'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER' value='36052'/>
 <enum name='GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT' value='36052'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL' value='36050'/>
 <enum name='GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT' value='36050'/>
+<enum name='GL_FRAMEBUFFER_BINDING' value='36006'/>
 <enum name='GL_FRAMEBUFFER_BINDING_EXT' value='36006'/>
+<enum name='GL_FRAMEBUFFER_COMPLETE' value='36053'/>
 <enum name='GL_FRAMEBUFFER_COMPLETE_EXT' value='36053'/>
+<enum name='GL_FRAMEBUFFER_DEFAULT' value='33304'/>
 <enum name='GL_FRAMEBUFFER_EXT' value='36160'/>
+<enum name='GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT' value='36054'/>
 <enum name='GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT' value='36054'/>
 <enum name='GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT' value='36057'/>
+<enum name='GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER' value='36059'/>
 <enum name='GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT' value='36059'/>
 <enum name='GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT' value='36058'/>
 <enum name='GL_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_EXT' value='36265'/>
 <enum name='GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT' value='36264'/>
+<enum name='GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT' value='36055'/>
 <enum name='GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT' value='36055'/>
+<enum name='GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE' value='36182'/>
 <enum name='GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT' value='36182'/>
+<enum name='GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER' value='36060'/>
 <enum name='GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_EXT' value='36060'/>
+<enum name='GL_FRAMEBUFFER_SRGB_CAPABLE_EXT' value='36282'/>
+<enum name='GL_FRAMEBUFFER_SRGB_EXT' value='36281'/>
+<enum name='GL_FRAMEBUFFER_UNDEFINED' value='33305'/>
+<enum name='GL_FRAMEBUFFER_UNSUPPORTED' value='36061'/>
 <enum name='GL_FRAMEBUFFER_UNSUPPORTED_EXT' value='36061'/>
 <enum name='GL_FRONT' value='1028'/>
 <enum name='GL_FRONT_AND_BACK' value='1032'/>
@@ -874,12 +886,8 @@
 <enum name='GL_GREEN_INTEGER_EXT' value='36245'/>
 <enum name='GL_GREEN_SCALE' value='3352'/>
 <enum name='GL_HALF_APPLE' value='5131'/>
-<enum name='GL_HALF_BIAS_NEGATE_NV' value='34107'/>
-<enum name='GL_HALF_BIAS_NORMAL_NV' value='34106'/>
+<enum name='GL_HALF_FLOAT' value='5131'/>
 <enum name='GL_HALF_FLOAT_ARB' value='5131'/>
-<enum name='GL_HILO16_NV' value='34552'/>
-<enum name='GL_HILO8_NV' value='34910'/>
-<enum name='GL_HILO_NV' value='34548'/>
 <enum name='GL_HINT_BIT' value='32768'/>
 <enum name='GL_HISTOGRAM' value='32804'/>
 <enum name='GL_HISTOGRAM_ALPHA_SIZE' value='32811'/>
@@ -890,8 +898,6 @@
 <enum name='GL_HISTOGRAM_RED_SIZE' value='32808'/>
 <enum name='GL_HISTOGRAM_SINK' value='32813'/>
 <enum name='GL_HISTOGRAM_WIDTH' value='32806'/>
-<enum name='GL_HI_BIAS_NV' value='34580'/>
-<enum name='GL_HI_SCALE_NV' value='34574'/>
 <enum name='GL_IBM_rasterpos_clip' value='1'/>
 <enum name='GL_INCR' value='7682'/>
 <enum name='GL_INCR_WRAP' value='34055'/>
@@ -946,11 +952,14 @@
 <enum name='GL_INT_VEC4' value='35669'/>
 <enum name='GL_INT_VEC4_ARB' value='35669'/>
 <enum name='GL_INVALID_ENUM' value='1280'/>
+<enum name='GL_INVALID_FRAMEBUFFER_OPERATION' value='1286'/>
 <enum name='GL_INVALID_FRAMEBUFFER_OPERATION_EXT' value='1286'/>
+<enum name='GL_INVALID_INDEX' value='4294967295'/>
 <enum name='GL_INVALID_OPERATION' value='1282'/>
 <enum name='GL_INVALID_VALUE' value='1281'/>
 <enum name='GL_INVERT' value='5386'/>
 <enum name='GL_KEEP' value='7680'/>
+<enum name='GL_LAST_VERTEX_CONVENTION_EXT' value='36430'/>
 <enum name='GL_LEFT' value='1030'/>
 <enum name='GL_LEQUAL' value='515'/>
 <enum name='GL_LESS' value='513'/>
@@ -1000,8 +1009,6 @@
 <enum name='GL_LOGIC_OP' value='3057'/>
 <enum name='GL_LOGIC_OP_MODE' value='3056'/>
 <enum name='GL_LOWER_LEFT' value='36001'/>
-<enum name='GL_LO_BIAS_NV' value='34581'/>
-<enum name='GL_LO_SCALE_NV' value='34575'/>
 <enum name='GL_LUMINANCE' value='6409'/>
 <enum name='GL_LUMINANCE12' value='32833'/>
 <enum name='GL_LUMINANCE12_ALPHA12' value='32839'/>
@@ -1040,8 +1047,6 @@
 <enum name='GL_LUMINANCE_FLOAT32_APPLE' value='34840'/>
 <enum name='GL_LUMINANCE_FLOAT32_ATI' value='34840'/>
 <enum name='GL_LUMINANCE_INTEGER_EXT' value='36252'/>
-<enum name='GL_MAGNITUDE_BIAS_NV' value='34584'/>
-<enum name='GL_MAGNITUDE_SCALE_NV' value='34578'/>
 <enum name='GL_MAP1_COLOR_4' value='3472'/>
 <enum name='GL_MAP1_GRID_DOMAIN' value='3536'/>
 <enum name='GL_MAP1_GRID_SEGMENTS' value='3537'/>
@@ -1101,15 +1106,21 @@
 <enum name='GL_MATRIX_MODE' value='2976'/>
 <enum name='GL_MAX' value='32776'/>
 <enum name='GL_MAX_3D_TEXTURE_SIZE' value='32883'/>
+<enum name='GL_MAX_ARRAY_TEXTURE_LAYERS_EXT' value='35071'/>
 <enum name='GL_MAX_ATTRIB_STACK_DEPTH' value='3381'/>
 <enum name='GL_MAX_BINDABLE_UNIFORM_SIZE_EXT' value='36333'/>
 <enum name='GL_MAX_CLIENT_ATTRIB_STACK_DEPTH' value='3387'/>
 <enum name='GL_MAX_CLIP_PLANES' value='3378'/>
+<enum name='GL_MAX_COLOR_ATTACHMENTS' value='36063'/>
 <enum name='GL_MAX_COLOR_ATTACHMENTS_EXT' value='36063'/>
 <enum name='GL_MAX_COLOR_MATRIX_STACK_DEPTH' value='32947'/>
 <enum name='GL_MAX_COLOR_MATRIX_STACK_DEPTH_SGI' value='32947'/>
+<enum name='GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS' value='35379'/>
+<enum name='GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS' value='35378'/>
 <enum name='GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS' value='35661'/>
 <enum name='GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS_ARB' value='35661'/>
+<enum name='GL_MAX_COMBINED_UNIFORM_BLOCKS' value='35374'/>
+<enum name='GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS' value='35377'/>
 <enum name='GL_MAX_CONVOLUTION_HEIGHT' value='32795'/>
 <enum name='GL_MAX_CONVOLUTION_WIDTH' value='32794'/>
 <enum name='GL_MAX_CUBE_MAP_TEXTURE_SIZE' value='34076'/>
@@ -1123,13 +1134,14 @@
 <enum name='GL_MAX_EVAL_ORDER' value='3376'/>
 <enum name='GL_MAX_EXT' value='32776'/>
 <enum name='GL_MAX_FRAGMENT_BINDABLE_UNIFORMS_EXT' value='36323'/>
+<enum name='GL_MAX_FRAGMENT_UNIFORM_BLOCKS' value='35373'/>
 <enum name='GL_MAX_FRAGMENT_UNIFORM_COMPONENTS' value='35657'/>
 <enum name='GL_MAX_FRAGMENT_UNIFORM_COMPONENTS_ARB' value='35657'/>
-<enum name='GL_MAX_GENERAL_COMBINERS_NV' value='34125'/>
 <enum name='GL_MAX_GEOMETRY_BINDABLE_UNIFORMS_EXT' value='36324'/>
 <enum name='GL_MAX_GEOMETRY_OUTPUT_VERTICES_EXT' value='36320'/>
 <enum name='GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT' value='35881'/>
 <enum name='GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_EXT' value='36321'/>
+<enum name='GL_MAX_GEOMETRY_UNIFORM_BLOCKS' value='35372'/>
 <enum name='GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_EXT' value='36319'/>
 <enum name='GL_MAX_GEOMETRY_VARYING_COMPONENTS_EXT' value='36317'/>
 <enum name='GL_MAX_LIGHTS' value='3377'/>
@@ -1168,7 +1180,9 @@
 <enum name='GL_MAX_PROJECTION_STACK_DEPTH' value='3384'/>
 <enum name='GL_MAX_RECTANGLE_TEXTURE_SIZE_ARB' value='34040'/>
 <enum name='GL_MAX_RECTANGLE_TEXTURE_SIZE_EXT' value='34040'/>
+<enum name='GL_MAX_RENDERBUFFER_SIZE' value='34024'/>
 <enum name='GL_MAX_RENDERBUFFER_SIZE_EXT' value='34024'/>
+<enum name='GL_MAX_SAMPLES' value='36183'/>
 <enum name='GL_MAX_SAMPLES_EXT' value='36183'/>
 <enum name='GL_MAX_SHININESS_NV' value='34052'/>
 <enum name='GL_MAX_SPOT_EXPONENT_NV' value='34053'/>
@@ -1186,6 +1200,8 @@
 <enum name='GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_EXT' value='35978'/>
 <enum name='GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_EXT' value='35979'/>
 <enum name='GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_EXT' value='35968'/>
+<enum name='GL_MAX_UNIFORM_BLOCK_SIZE' value='35376'/>
+<enum name='GL_MAX_UNIFORM_BUFFER_BINDINGS' value='35375'/>
 <enum name='GL_MAX_VARYING_COMPONENTS_EXT' value='35659'/>
 <enum name='GL_MAX_VARYING_FLOATS' value='35659'/>
 <enum name='GL_MAX_VARYING_FLOATS_ARB' value='35659'/>
@@ -1195,6 +1211,7 @@
 <enum name='GL_MAX_VERTEX_BINDABLE_UNIFORMS_EXT' value='36322'/>
 <enum name='GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS' value='35660'/>
 <enum name='GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB' value='35660'/>
+<enum name='GL_MAX_VERTEX_UNIFORM_BLOCKS' value='35371'/>
 <enum name='GL_MAX_VERTEX_UNIFORM_COMPONENTS' value='35658'/>
 <enum name='GL_MAX_VERTEX_UNIFORM_COMPONENTS_ARB' value='35658'/>
 <enum name='GL_MAX_VERTEX_UNITS_ARB' value='34468'/>
@@ -1286,8 +1303,8 @@
 <enum name='GL_NO_ERROR' value='0'/>
 <enum name='GL_NUM_COMPRESSED_TEXTURE_FORMATS' value='34466'/>
 <enum name='GL_NUM_COMPRESSED_TEXTURE_FORMATS_ARB' value='34466'/>
-<enum name='GL_NUM_GENERAL_COMBINERS_NV' value='34126'/>
 <enum name='GL_NV_blend_square' value='1'/>
+<enum name='GL_NV_conditional_render' value='1'/>
 <enum name='GL_NV_depth_clamp' value='1'/>
 <enum name='GL_NV_fog_distance' value='1'/>
 <enum name='GL_NV_fragment_program2' value='1'/>
@@ -1295,12 +1312,7 @@
 <enum name='GL_NV_light_max_exponent' value='1'/>
 <enum name='GL_NV_multisample_filter_hint' value='1'/>
 <enum name='GL_NV_point_sprite' value='1'/>
-<enum name='GL_NV_register_combiners' value='1'/>
-<enum name='GL_NV_register_combiners2' value='1'/>
 <enum name='GL_NV_texgen_reflection' value='1'/>
-<enum name='GL_NV_texture_shader' value='1'/>
-<enum name='GL_NV_texture_shader2' value='1'/>
-<enum name='GL_NV_texture_shader3' value='1'/>
 <enum name='GL_NV_vertex_program2_option' value='1'/>
 <enum name='GL_NV_vertex_program3' value='1'/>
 <enum name='GL_OBJECT_ACTIVE_ATTRIBUTES_ARB' value='35721'/>
@@ -1318,23 +1330,6 @@
 <enum name='GL_OBJECT_SUBTYPE_ARB' value='35663'/>
 <enum name='GL_OBJECT_TYPE_ARB' value='35662'/>
 <enum name='GL_OBJECT_VALIDATE_STATUS_ARB' value='35715'/>
-<enum name='GL_OFFSET_HILO_PROJECTIVE_TEXTURE_2D_NV' value='34902'/>
-<enum name='GL_OFFSET_HILO_PROJECTIVE_TEXTURE_RECTANGLE_NV' value='34903'/>
-<enum name='GL_OFFSET_HILO_TEXTURE_2D_NV' value='34900'/>
-<enum name='GL_OFFSET_HILO_TEXTURE_RECTANGLE_NV' value='34901'/>
-<enum name='GL_OFFSET_PROJECTIVE_TEXTURE_2D_NV' value='34896'/>
-<enum name='GL_OFFSET_PROJECTIVE_TEXTURE_2D_SCALE_NV' value='34897'/>
-<enum name='GL_OFFSET_PROJECTIVE_TEXTURE_RECTANGLE_NV' value='34898'/>
-<enum name='GL_OFFSET_PROJECTIVE_TEXTURE_RECTANGLE_SCALE_NV' value='34899'/>
-<enum name='GL_OFFSET_TEXTURE_2D_BIAS_NV' value='34531'/>
-<enum name='GL_OFFSET_TEXTURE_2D_MATRIX_NV' value='34529'/>
-<enum name='GL_OFFSET_TEXTURE_2D_NV' value='34536'/>
-<enum name='GL_OFFSET_TEXTURE_2D_SCALE_NV' value='34530'/>
-<enum name='GL_OFFSET_TEXTURE_BIAS_NV' value='34531'/>
-<enum name='GL_OFFSET_TEXTURE_MATRIX_NV' value='34529'/>
-<enum name='GL_OFFSET_TEXTURE_RECTANGLE_NV' value='34380'/>
-<enum name='GL_OFFSET_TEXTURE_RECTANGLE_SCALE_NV' value='34381'/>
-<enum name='GL_OFFSET_TEXTURE_SCALE_NV' value='34530'/>
 <enum name='GL_ONE' value='1'/>
 <enum name='GL_ONE_MINUS_CONSTANT_ALPHA' value='32772'/>
 <enum name='GL_ONE_MINUS_CONSTANT_ALPHA_EXT' value='32772'/>
@@ -1391,10 +1386,8 @@
 <enum name='GL_PACK_SKIP_PIXELS' value='3332'/>
 <enum name='GL_PACK_SKIP_ROWS' value='3331'/>
 <enum name='GL_PACK_SWAP_BYTES' value='3328'/>
-<enum name='GL_PASS_THROUGH_NV' value='34534'/>
 <enum name='GL_PASS_THROUGH_TOKEN' value='1792'/>
 <enum name='GL_PERSPECTIVE_CORRECTION_HINT' value='3152'/>
-<enum name='GL_PER_STAGE_CONSTANTS_NV' value='34101'/>
 <enum name='GL_PIXEL_MAP_A_TO_A' value='3193'/>
 <enum name='GL_PIXEL_MAP_A_TO_A_SIZE' value='3257'/>
 <enum name='GL_PIXEL_MAP_B_TO_B' value='3192'/>
@@ -1507,10 +1500,8 @@
 <enum name='GL_POST_CONVOLUTION_RED_SCALE' value='32796'/>
 <enum name='GL_PREVIOUS' value='34168'/>
 <enum name='GL_PREVIOUS_ARB' value='34168'/>
-<enum name='GL_PREVIOUS_TEXTURE_INPUT_NV' value='34532'/>
 <enum name='GL_PRIMARY_COLOR' value='34167'/>
 <enum name='GL_PRIMARY_COLOR_ARB' value='34167'/>
-<enum name='GL_PRIMARY_COLOR_NV' value='34092'/>
 <enum name='GL_PRIMITIVES_GENERATED_EXT' value='35975'/>
 <enum name='GL_PROGRAM_ADDRESS_REGISTERS_ARB' value='34992'/>
 <enum name='GL_PROGRAM_ALU_INSTRUCTIONS_ARB' value='34821'/>
@@ -1542,12 +1533,15 @@
 <enum name='GL_PROJECTION' value='5889'/>
 <enum name='GL_PROJECTION_MATRIX' value='2983'/>
 <enum name='GL_PROJECTION_STACK_DEPTH' value='2980'/>
+<enum name='GL_PROVOKING_VERTEX_EXT' value='36431'/>
 <enum name='GL_PROXY_COLOR_TABLE' value='32979'/>
 <enum name='GL_PROXY_HISTOGRAM' value='32805'/>
 <enum name='GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE' value='32981'/>
 <enum name='GL_PROXY_POST_CONVOLUTION_COLOR_TABLE' value='32980'/>
 <enum name='GL_PROXY_TEXTURE_1D' value='32867'/>
+<enum name='GL_PROXY_TEXTURE_1D_ARRAY_EXT' value='35865'/>
 <enum name='GL_PROXY_TEXTURE_2D' value='32868'/>
+<enum name='GL_PROXY_TEXTURE_2D_ARRAY_EXT' value='35867'/>
 <enum name='GL_PROXY_TEXTURE_3D' value='32880'/>
 <enum name='GL_PROXY_TEXTURE_CUBE_MAP' value='34075'/>
 <enum name='GL_PROXY_TEXTURE_CUBE_MAP_ARB' value='34075'/>
@@ -1557,18 +1551,36 @@
 <enum name='GL_Q' value='8195'/>
 <enum name='GL_QUADRATIC_ATTENUATION' value='4617'/>
 <enum name='GL_QUADS' value='7'/>
+<enum name='GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION_EXT' value='36428'/>
 <enum name='GL_QUAD_STRIP' value='8'/>
+<enum name='GL_QUERY_BY_REGION_NO_WAIT_NV' value='36374'/>
+<enum name='GL_QUERY_BY_REGION_WAIT_NV' value='36373'/>
 <enum name='GL_QUERY_COUNTER_BITS' value='34916'/>
 <enum name='GL_QUERY_COUNTER_BITS_ARB' value='34916'/>
+<enum name='GL_QUERY_NO_WAIT_NV' value='36372'/>
 <enum name='GL_QUERY_RESULT' value='34918'/>
 <enum name='GL_QUERY_RESULT_ARB' value='34918'/>
 <enum name='GL_QUERY_RESULT_AVAILABLE' value='34919'/>
 <enum name='GL_QUERY_RESULT_AVAILABLE_ARB' value='34919'/>
+<enum name='GL_QUERY_WAIT_NV' value='36371'/>
 <enum name='GL_R' value='8194'/>
+<enum name='GL_R11F_G11F_B10F_EXT' value='35898'/>
+<enum name='GL_R16' value='33322'/>
+<enum name='GL_R16F' value='33325'/>
+<enum name='GL_R16I' value='33331'/>
+<enum name='GL_R16UI' value='33332'/>
+<enum name='GL_R32F' value='33326'/>
+<enum name='GL_R32I' value='33333'/>
+<enum name='GL_R32UI' value='33334'/>
 <enum name='GL_R3_G3_B2' value='10768'/>
+<enum name='GL_R8' value='33321'/>
+<enum name='GL_R8I' value='33329'/>
+<enum name='GL_R8UI' value='33330'/>
 <enum name='GL_RASTERIZER_DISCARD_EXT' value='35977'/>
 <enum name='GL_RASTER_POSITION_UNCLIPPED_IBM' value='103010'/>
 <enum name='GL_READ_BUFFER' value='3074'/>
+<enum name='GL_READ_FRAMEBUFFER' value='36008'/>
+<enum name='GL_READ_FRAMEBUFFER_BINDING' value='36010'/>
 <enum name='GL_READ_FRAMEBUFFER_BINDING_EXT' value='36010'/>
 <enum name='GL_READ_FRAMEBUFFER_EXT' value='36008'/>
 <enum name='GL_READ_ONLY' value='35000'/>
@@ -1584,20 +1596,31 @@
 <enum name='GL_REFLECTION_MAP' value='34066'/>
 <enum name='GL_REFLECTION_MAP_ARB' value='34066'/>
 <enum name='GL_REFLECTION_MAP_NV' value='34066'/>
-<enum name='GL_REGISTER_COMBINERS_NV' value='34082'/>
 <enum name='GL_RELEASED_APPLE' value='35353'/>
 <enum name='GL_RENDER' value='7168'/>
+<enum name='GL_RENDERBUFFER' value='36161'/>
+<enum name='GL_RENDERBUFFER_ALPHA_SIZE' value='36179'/>
 <enum name='GL_RENDERBUFFER_ALPHA_SIZE_EXT' value='36179'/>
+<enum name='GL_RENDERBUFFER_BINDING' value='36007'/>
 <enum name='GL_RENDERBUFFER_BINDING_EXT' value='36007'/>
+<enum name='GL_RENDERBUFFER_BLUE_SIZE' value='36178'/>
 <enum name='GL_RENDERBUFFER_BLUE_SIZE_EXT' value='36178'/>
+<enum name='GL_RENDERBUFFER_DEPTH_SIZE' value='36180'/>
 <enum name='GL_RENDERBUFFER_DEPTH_SIZE_EXT' value='36180'/>
 <enum name='GL_RENDERBUFFER_EXT' value='36161'/>
+<enum name='GL_RENDERBUFFER_GREEN_SIZE' value='36177'/>
 <enum name='GL_RENDERBUFFER_GREEN_SIZE_EXT' value='36177'/>
+<enum name='GL_RENDERBUFFER_HEIGHT' value='36163'/>
 <enum name='GL_RENDERBUFFER_HEIGHT_EXT' value='36163'/>
+<enum name='GL_RENDERBUFFER_INTERNAL_FORMAT' value='36164'/>
 <enum name='GL_RENDERBUFFER_INTERNAL_FORMAT_EXT' value='36164'/>
+<enum name='GL_RENDERBUFFER_RED_SIZE' value='36176'/>
 <enum name='GL_RENDERBUFFER_RED_SIZE_EXT' value='36176'/>
+<enum name='GL_RENDERBUFFER_SAMPLES' value='36011'/>
 <enum name='GL_RENDERBUFFER_SAMPLES_EXT' value='36011'/>
+<enum name='GL_RENDERBUFFER_STENCIL_SIZE' value='36181'/>
 <enum name='GL_RENDERBUFFER_STENCIL_SIZE_EXT' value='36181'/>
+<enum name='GL_RENDERBUFFER_WIDTH' value='36162'/>
 <enum name='GL_RENDERBUFFER_WIDTH_EXT' value='36162'/>
 <enum name='GL_RENDERER' value='7937'/>
 <enum name='GL_RENDER_MODE' value='3136'/>
@@ -1608,6 +1631,17 @@
 <enum name='GL_RESCALE_NORMAL_EXT' value='32826'/>
 <enum name='GL_RETAINED_APPLE' value='35355'/>
 <enum name='GL_RETURN' value='258'/>
+<enum name='GL_RG' value='33319'/>
+<enum name='GL_RG16' value='33324'/>
+<enum name='GL_RG16F' value='33327'/>
+<enum name='GL_RG16I' value='33337'/>
+<enum name='GL_RG16UI' value='33338'/>
+<enum name='GL_RG32F' value='33328'/>
+<enum name='GL_RG32I' value='33339'/>
+<enum name='GL_RG32UI' value='33340'/>
+<enum name='GL_RG8' value='33323'/>
+<enum name='GL_RG8I' value='33335'/>
+<enum name='GL_RG8UI' value='33336'/>
 <enum name='GL_RGB' value='6407'/>
 <enum name='GL_RGB10' value='32850'/>
 <enum name='GL_RGB10_A2' value='32857'/>
@@ -1625,6 +1659,7 @@
 <enum name='GL_RGB8' value='32849'/>
 <enum name='GL_RGB8I_EXT' value='36239'/>
 <enum name='GL_RGB8UI_EXT' value='36221'/>
+<enum name='GL_RGB9_E5_EXT' value='35901'/>
 <enum name='GL_RGBA' value='6408'/>
 <enum name='GL_RGBA12' value='32858'/>
 <enum name='GL_RGBA16' value='32859'/>
@@ -1643,10 +1678,12 @@
 <enum name='GL_RGBA_FLOAT16_ATI' value='34842'/>
 <enum name='GL_RGBA_FLOAT32_APPLE' value='34836'/>
 <enum name='GL_RGBA_FLOAT32_ATI' value='34836'/>
+<enum name='GL_RGBA_FLOAT_MODE_ARB' value='34848'/>
 <enum name='GL_RGBA_INTEGER_EXT' value='36249'/>
 <enum name='GL_RGBA_INTEGER_MODE_EXT' value='36254'/>
 <enum name='GL_RGBA_MODE' value='3121'/>
-<enum name='GL_RGBA_UNSIGNED_DOT_PRODUCT_MAPPING_NV' value='34521'/>
+<enum name='GL_RGBA_SIGNED_COMPONENTS_EXT' value='35900'/>
+<enum name='GL_RGB_422_APPLE' value='35359'/>
 <enum name='GL_RGB_FLOAT16_APPLE' value='34843'/>
 <enum name='GL_RGB_FLOAT16_ATI' value='34843'/>
 <enum name='GL_RGB_FLOAT32_APPLE' value='34837'/>
@@ -1654,6 +1691,7 @@
 <enum name='GL_RGB_INTEGER_EXT' value='36248'/>
 <enum name='GL_RGB_SCALE' value='34163'/>
 <enum name='GL_RGB_SCALE_ARB' value='34163'/>
+<enum name='GL_RG_INTEGER' value='33320'/>
 <enum name='GL_RIGHT' value='1031'/>
 <enum name='GL_S' value='8192'/>
 <enum name='GL_SAMPLER_1D' value='35677'/>
@@ -1692,9 +1730,6 @@
 <enum name='GL_SAMPLE_COVERAGE_INVERT_ARB' value='32939'/>
 <enum name='GL_SAMPLE_COVERAGE_VALUE' value='32938'/>
 <enum name='GL_SAMPLE_COVERAGE_VALUE_ARB' value='32938'/>
-<enum name='GL_SCALE_BY_FOUR_NV' value='34111'/>
-<enum name='GL_SCALE_BY_ONE_HALF_NV' value='34112'/>
-<enum name='GL_SCALE_BY_TWO_NV' value='34110'/>
 <enum name='GL_SCISSOR_BIT' value='524288'/>
 <enum name='GL_SCISSOR_BOX' value='3088'/>
 <enum name='GL_SCISSOR_TEST' value='3089'/>
@@ -1710,7 +1745,6 @@
 <enum name='GL_SECONDARY_COLOR_ARRAY_STRIDE_EXT' value='33884'/>
 <enum name='GL_SECONDARY_COLOR_ARRAY_TYPE' value='33883'/>
 <enum name='GL_SECONDARY_COLOR_ARRAY_TYPE_EXT' value='33883'/>
-<enum name='GL_SECONDARY_COLOR_NV' value='34093'/>
 <enum name='GL_SELECT' value='7170'/>
 <enum name='GL_SELECTION_BUFFER_POINTER' value='3571'/>
 <enum name='GL_SELECTION_BUFFER_SIZE' value='3572'/>
@@ -1723,9 +1757,7 @@
 <enum name='GL_SGIS_texture_edge_clamp' value='1'/>
 <enum name='GL_SGIS_texture_lod' value='1'/>
 <enum name='GL_SGI_color_matrix' value='1'/>
-<enum name='GL_SHADER_CONSISTENT_NV' value='34525'/>
 <enum name='GL_SHADER_OBJECT_ARB' value='35656'/>
-<enum name='GL_SHADER_OPERATION_NV' value='34527'/>
 <enum name='GL_SHADER_SOURCE_LENGTH' value='35720'/>
 <enum name='GL_SHADER_TYPE' value='35663'/>
 <enum name='GL_SHADE_MODEL' value='2900'/>
@@ -1733,25 +1765,6 @@
 <enum name='GL_SHADING_LANGUAGE_VERSION_ARB' value='35724'/>
 <enum name='GL_SHININESS' value='5633'/>
 <enum name='GL_SHORT' value='5122'/>
-<enum name='GL_SIGNED_ALPHA8_NV' value='34566'/>
-<enum name='GL_SIGNED_ALPHA_NV' value='34565'/>
-<enum name='GL_SIGNED_HILO16_NV' value='34554'/>
-<enum name='GL_SIGNED_HILO8_NV' value='34911'/>
-<enum name='GL_SIGNED_HILO_NV' value='34553'/>
-<enum name='GL_SIGNED_IDENTITY_NV' value='34108'/>
-<enum name='GL_SIGNED_INTENSITY8_NV' value='34568'/>
-<enum name='GL_SIGNED_INTENSITY_NV' value='34567'/>
-<enum name='GL_SIGNED_LUMINANCE8_ALPHA8_NV' value='34564'/>
-<enum name='GL_SIGNED_LUMINANCE8_NV' value='34562'/>
-<enum name='GL_SIGNED_LUMINANCE_ALPHA_NV' value='34563'/>
-<enum name='GL_SIGNED_LUMINANCE_NV' value='34561'/>
-<enum name='GL_SIGNED_NEGATE_NV' value='34109'/>
-<enum name='GL_SIGNED_RGB8_NV' value='34559'/>
-<enum name='GL_SIGNED_RGB8_UNSIGNED_ALPHA8_NV' value='34573'/>
-<enum name='GL_SIGNED_RGBA8_NV' value='34556'/>
-<enum name='GL_SIGNED_RGBA_NV' value='34555'/>
-<enum name='GL_SIGNED_RGB_NV' value='34558'/>
-<enum name='GL_SIGNED_RGB_UNSIGNED_ALPHA_NV' value='34572'/>
 <enum name='GL_SINGLE_COLOR' value='33273'/>
 <enum name='GL_SINGLE_COLOR_EXT' value='33273'/>
 <enum name='GL_SLUMINANCE' value='35910'/>
@@ -1799,9 +1812,6 @@
 <enum name='GL_SOURCE7_ALPHA_ARB' value='34191'/>
 <enum name='GL_SOURCE7_RGB' value='34183'/>
 <enum name='GL_SOURCE7_RGB_ARB' value='34183'/>
-<enum name='GL_SPARE0_NV' value='34094'/>
-<enum name='GL_SPARE0_PLUS_SECONDARY_COLOR_NV' value='34098'/>
-<enum name='GL_SPARE1_NV' value='34095'/>
 <enum name='GL_SPECULAR' value='4610'/>
 <enum name='GL_SPHERE_MAP' value='9218'/>
 <enum name='GL_SPOT_CUTOFF' value='4614'/>
@@ -1843,6 +1853,7 @@
 <enum name='GL_STATIC_READ' value='35045'/>
 <enum name='GL_STATIC_READ_ARB' value='35045'/>
 <enum name='GL_STENCIL' value='6146'/>
+<enum name='GL_STENCIL_ATTACHMENT' value='36128'/>
 <enum name='GL_STENCIL_ATTACHMENT_EXT' value='36128'/>
 <enum name='GL_STENCIL_BACK_FAIL' value='34817'/>
 <enum name='GL_STENCIL_BACK_FAIL_ATI' value='34817'/>
@@ -1861,9 +1872,13 @@
 <enum name='GL_STENCIL_FAIL' value='2964'/>
 <enum name='GL_STENCIL_FUNC' value='2962'/>
 <enum name='GL_STENCIL_INDEX' value='6401'/>
+<enum name='GL_STENCIL_INDEX1' value='36166'/>
+<enum name='GL_STENCIL_INDEX16' value='36169'/>
 <enum name='GL_STENCIL_INDEX16_EXT' value='36169'/>
 <enum name='GL_STENCIL_INDEX1_EXT' value='36166'/>
+<enum name='GL_STENCIL_INDEX4' value='36167'/>
 <enum name='GL_STENCIL_INDEX4_EXT' value='36167'/>
+<enum name='GL_STENCIL_INDEX8' value='36168'/>
 <enum name='GL_STENCIL_INDEX8_EXT' value='36168'/>
 <enum name='GL_STENCIL_PASS_DEPTH_FAIL' value='2965'/>
 <enum name='GL_STENCIL_PASS_DEPTH_PASS' value='2966'/>
@@ -1961,14 +1976,19 @@
 <enum name='GL_TEXTURE9' value='33993'/>
 <enum name='GL_TEXTURE9_ARB' value='33993'/>
 <enum name='GL_TEXTURE_1D' value='3552'/>
+<enum name='GL_TEXTURE_1D_ARRAY_EXT' value='35864'/>
 <enum name='GL_TEXTURE_2D' value='3553'/>
+<enum name='GL_TEXTURE_2D_ARRAY_EXT' value='35866'/>
 <enum name='GL_TEXTURE_3D' value='32879'/>
 <enum name='GL_TEXTURE_ALPHA_SIZE' value='32863'/>
+<enum name='GL_TEXTURE_ALPHA_TYPE' value='35859'/>
 <enum name='GL_TEXTURE_ALPHA_TYPE_ARB' value='35859'/>
 <enum name='GL_TEXTURE_BASE_LEVEL' value='33084'/>
 <enum name='GL_TEXTURE_BASE_LEVEL_SGIS' value='33084'/>
 <enum name='GL_TEXTURE_BINDING_1D' value='32872'/>
+<enum name='GL_TEXTURE_BINDING_1D_ARRAY_EXT' value='35868'/>
 <enum name='GL_TEXTURE_BINDING_2D' value='32873'/>
+<enum name='GL_TEXTURE_BINDING_2D_ARRAY_EXT' value='35869'/>
 <enum name='GL_TEXTURE_BINDING_3D' value='32874'/>
 <enum name='GL_TEXTURE_BINDING_CUBE_MAP' value='34068'/>
 <enum name='GL_TEXTURE_BINDING_CUBE_MAP_ARB' value='34068'/>
@@ -1976,10 +1996,10 @@
 <enum name='GL_TEXTURE_BINDING_RECTANGLE_EXT' value='34038'/>
 <enum name='GL_TEXTURE_BIT' value='262144'/>
 <enum name='GL_TEXTURE_BLUE_SIZE' value='32862'/>
+<enum name='GL_TEXTURE_BLUE_TYPE' value='35858'/>
 <enum name='GL_TEXTURE_BLUE_TYPE_ARB' value='35858'/>
 <enum name='GL_TEXTURE_BORDER' value='4101'/>
 <enum name='GL_TEXTURE_BORDER_COLOR' value='4100'/>
-<enum name='GL_TEXTURE_BORDER_VALUES_NV' value='34586'/>
 <enum name='GL_TEXTURE_COMPARE_FAIL_VALUE_ARB' value='32959'/>
 <enum name='GL_TEXTURE_COMPARE_FUNC' value='34893'/>
 <enum name='GL_TEXTURE_COMPARE_FUNC_ARB' value='34893'/>
@@ -2016,9 +2036,8 @@
 <enum name='GL_TEXTURE_DEPTH' value='32881'/>
 <enum name='GL_TEXTURE_DEPTH_SIZE' value='34890'/>
 <enum name='GL_TEXTURE_DEPTH_SIZE_ARB' value='34890'/>
+<enum name='GL_TEXTURE_DEPTH_TYPE' value='35862'/>
 <enum name='GL_TEXTURE_DEPTH_TYPE_ARB' value='35862'/>
-<enum name='GL_TEXTURE_DS_SIZE_NV' value='34589'/>
-<enum name='GL_TEXTURE_DT_SIZE_NV' value='34590'/>
 <enum name='GL_TEXTURE_ENV' value='8960'/>
 <enum name='GL_TEXTURE_ENV_COLOR' value='8705'/>
 <enum name='GL_TEXTURE_ENV_MODE' value='8704'/>
@@ -2030,20 +2049,17 @@
 <enum name='GL_TEXTURE_GEN_S' value='3168'/>
 <enum name='GL_TEXTURE_GEN_T' value='3169'/>
 <enum name='GL_TEXTURE_GREEN_SIZE' value='32861'/>
+<enum name='GL_TEXTURE_GREEN_TYPE' value='35857'/>
 <enum name='GL_TEXTURE_GREEN_TYPE_ARB' value='35857'/>
 <enum name='GL_TEXTURE_HEIGHT' value='4097'/>
-<enum name='GL_TEXTURE_HI_SIZE_NV' value='34587'/>
-<enum name='GL_TEXTURE_INDEX_SIZE_EXT' value='33005'/>
 <enum name='GL_TEXTURE_INTENSITY_SIZE' value='32865'/>
 <enum name='GL_TEXTURE_INTENSITY_TYPE_ARB' value='35861'/>
 <enum name='GL_TEXTURE_INTERNAL_FORMAT' value='4099'/>
 <enum name='GL_TEXTURE_LOD_BIAS' value='34049'/>
 <enum name='GL_TEXTURE_LOD_BIAS_EXT' value='34049'/>
-<enum name='GL_TEXTURE_LO_SIZE_NV' value='34588'/>
 <enum name='GL_TEXTURE_LUMINANCE_SIZE' value='32864'/>
 <enum name='GL_TEXTURE_LUMINANCE_TYPE_ARB' value='35860'/>
 <enum name='GL_TEXTURE_MAG_FILTER' value='10240'/>
-<enum name='GL_TEXTURE_MAG_SIZE_NV' value='34591'/>
 <enum name='GL_TEXTURE_MATRIX' value='2984'/>
 <enum name='GL_TEXTURE_MAX_ANISOTROPY_EXT' value='34046'/>
 <enum name='GL_TEXTURE_MAX_LEVEL' value='33085'/>
@@ -2060,17 +2076,18 @@
 <enum name='GL_TEXTURE_RECTANGLE_ARB' value='34037'/>
 <enum name='GL_TEXTURE_RECTANGLE_EXT' value='34037'/>
 <enum name='GL_TEXTURE_RED_SIZE' value='32860'/>
+<enum name='GL_TEXTURE_RED_TYPE' value='35856'/>
 <enum name='GL_TEXTURE_RED_TYPE_ARB' value='35856'/>
 <enum name='GL_TEXTURE_RESIDENT' value='32871'/>
-<enum name='GL_TEXTURE_SHADER_NV' value='34526'/>
+<enum name='GL_TEXTURE_SHARED_SIZE_EXT' value='35903'/>
 <enum name='GL_TEXTURE_STACK_DEPTH' value='2981'/>
+<enum name='GL_TEXTURE_STENCIL_SIZE' value='35057'/>
 <enum name='GL_TEXTURE_STENCIL_SIZE_EXT' value='35057'/>
 <enum name='GL_TEXTURE_STORAGE_HINT_APPLE' value='34236'/>
 <enum name='GL_TEXTURE_WIDTH' value='4096'/>
 <enum name='GL_TEXTURE_WRAP_R' value='32882'/>
 <enum name='GL_TEXTURE_WRAP_S' value='10242'/>
 <enum name='GL_TEXTURE_WRAP_T' value='10243'/>
-<enum name='GL_TEXT_FRAGMENT_SHADER_ATI' value='33280'/>
 <enum name='GL_TRANSFORM_BIT' value='4096'/>
 <enum name='GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_EXT' value='35983'/>
 <enum name='GL_TRANSFORM_FEEDBACK_BUFFER_EXT' value='35982'/>
@@ -2097,8 +2114,29 @@
 <enum name='GL_TRIANGLE_STRIP_ADJACENCY_EXT' value='13'/>
 <enum name='GL_TRUE' value='1'/>
 <enum name='GL_UNDEFINED_APPLE' value='35356'/>
+<enum name='GL_UNIFORM_ARRAY_STRIDE' value='35388'/>
+<enum name='GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS' value='35394'/>
+<enum name='GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES' value='35395'/>
+<enum name='GL_UNIFORM_BLOCK_BINDING' value='35391'/>
+<enum name='GL_UNIFORM_BLOCK_DATA_SIZE' value='35392'/>
+<enum name='GL_UNIFORM_BLOCK_INDEX' value='35386'/>
+<enum name='GL_UNIFORM_BLOCK_NAME_LENGTH' value='35393'/>
+<enum name='GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER' value='35398'/>
+<enum name='GL_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER' value='35397'/>
+<enum name='GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER' value='35396'/>
+<enum name='GL_UNIFORM_BUFFER' value='35345'/>
+<enum name='GL_UNIFORM_BUFFER_BINDING' value='35368'/>
 <enum name='GL_UNIFORM_BUFFER_BINDING_EXT' value='36335'/>
 <enum name='GL_UNIFORM_BUFFER_EXT' value='36334'/>
+<enum name='GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT' value='35380'/>
+<enum name='GL_UNIFORM_BUFFER_SIZE' value='35370'/>
+<enum name='GL_UNIFORM_BUFFER_START' value='35369'/>
+<enum name='GL_UNIFORM_IS_ROW_MAJOR' value='35390'/>
+<enum name='GL_UNIFORM_MATRIX_STRIDE' value='35389'/>
+<enum name='GL_UNIFORM_NAME_LENGTH' value='35385'/>
+<enum name='GL_UNIFORM_OFFSET' value='35387'/>
+<enum name='GL_UNIFORM_SIZE' value='35384'/>
+<enum name='GL_UNIFORM_TYPE' value='35383'/>
 <enum name='GL_UNPACK_ALIGNMENT' value='3317'/>
 <enum name='GL_UNPACK_CLIENT_STORAGE_APPLE' value='34226'/>
 <enum name='GL_UNPACK_IMAGE_BYTES_APPLE' value='35352'/>
@@ -2113,15 +2151,15 @@
 <enum name='GL_UNSIGNED_BYTE' value='5121'/>
 <enum name='GL_UNSIGNED_BYTE_2_3_3_REV' value='33634'/>
 <enum name='GL_UNSIGNED_BYTE_3_3_2' value='32818'/>
-<enum name='GL_UNSIGNED_IDENTITY_NV' value='34102'/>
 <enum name='GL_UNSIGNED_INT' value='5125'/>
+<enum name='GL_UNSIGNED_INT_10F_11F_11F_REV_EXT' value='35899'/>
 <enum name='GL_UNSIGNED_INT_10_10_10_2' value='32822'/>
+<enum name='GL_UNSIGNED_INT_24_8' value='34042'/>
 <enum name='GL_UNSIGNED_INT_24_8_EXT' value='34042'/>
 <enum name='GL_UNSIGNED_INT_2_10_10_10_REV' value='33640'/>
+<enum name='GL_UNSIGNED_INT_5_9_9_9_REV_EXT' value='35902'/>
 <enum name='GL_UNSIGNED_INT_8_8_8_8' value='32821'/>
 <enum name='GL_UNSIGNED_INT_8_8_8_8_REV' value='33639'/>
-<enum name='GL_UNSIGNED_INT_8_8_S8_S8_REV_NV' value='34523'/>
-<enum name='GL_UNSIGNED_INT_S8_S8_8_8_NV' value='34522'/>
 <enum name='GL_UNSIGNED_INT_SAMPLER_1D_ARRAY_EXT' value='36310'/>
 <enum name='GL_UNSIGNED_INT_SAMPLER_1D_EXT' value='36305'/>
 <enum name='GL_UNSIGNED_INT_SAMPLER_2D_ARRAY_EXT' value='36311'/>
@@ -2133,7 +2171,7 @@
 <enum name='GL_UNSIGNED_INT_VEC2_EXT' value='36294'/>
 <enum name='GL_UNSIGNED_INT_VEC3_EXT' value='36295'/>
 <enum name='GL_UNSIGNED_INT_VEC4_EXT' value='36296'/>
-<enum name='GL_UNSIGNED_INVERT_NV' value='34103'/>
+<enum name='GL_UNSIGNED_NORMALIZED' value='35863'/>
 <enum name='GL_UNSIGNED_NORMALIZED_ARB' value='35863'/>
 <enum name='GL_UNSIGNED_SHORT' value='5123'/>
 <enum name='GL_UNSIGNED_SHORT_1_5_5_5_REV' value='33638'/>
@@ -2148,13 +2186,6 @@
 <enum name='GL_V2F' value='10784'/>
 <enum name='GL_V3F' value='10785'/>
 <enum name='GL_VALIDATE_STATUS' value='35715'/>
-<enum name='GL_VARIABLE_A_NV' value='34083'/>
-<enum name='GL_VARIABLE_B_NV' value='34084'/>
-<enum name='GL_VARIABLE_C_NV' value='34085'/>
-<enum name='GL_VARIABLE_D_NV' value='34086'/>
-<enum name='GL_VARIABLE_E_NV' value='34087'/>
-<enum name='GL_VARIABLE_F_NV' value='34088'/>
-<enum name='GL_VARIABLE_G_NV' value='34089'/>
 <enum name='GL_VENDOR' value='7936'/>
 <enum name='GL_VERSION' value='7938'/>
 <enum name='GL_VERSION_1_1' value='1'/>
@@ -2178,6 +2209,7 @@
 <enum name='GL_VERTEX_ARRAY_TYPE' value='32891'/>
 <enum name='GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING' value='34975'/>
 <enum name='GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB' value='34975'/>
+<enum name='GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ARB' value='35070'/>
 <enum name='GL_VERTEX_ATTRIB_ARRAY_ENABLED' value='34338'/>
 <enum name='GL_VERTEX_ATTRIB_ARRAY_ENABLED_ARB' value='34338'/>
 <enum name='GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT' value='35069'/>
@@ -2209,8 +2241,6 @@
 <enum name='GL_VERTEX_PROGRAM_TWO_SIDE_ARB' value='34371'/>
 <enum name='GL_VERTEX_SHADER' value='35633'/>
 <enum name='GL_VERTEX_SHADER_ARB' value='35633'/>
-<enum name='GL_VIBRANCE_BIAS_NV' value='34585'/>
-<enum name='GL_VIBRANCE_SCALE_NV' value='34579'/>
 <enum name='GL_VIEWPORT' value='2978'/>
 <enum name='GL_VIEWPORT_BIT' value='2048'/>
 <enum name='GL_VOLATILE_APPLE' value='35354'/>
@@ -2333,7 +2363,7 @@
 <enum name='kCGLFECGLSetVirtualScreen' value='34'/>
 <enum name='kCGLFECGLTexImagePBuffer' value='35'/>
 <enum name='kCGLFECGLUpdateContext' value='36'/>
-<enum name='kCGLFENumFunctions' value='736'/>
+<enum name='kCGLFENumFunctions' value='802'/>
 <enum name='kCGLFEglAccum' value='37'/>
 <enum name='kCGLFEglActiveStencilFaceEXT' value='38'/>
 <enum name='kCGLFEglActiveTexture' value='39'/>
@@ -2341,10 +2371,17 @@
 <enum name='kCGLFEglAreTexturesResident' value='41'/>
 <enum name='kCGLFEglArrayElement' value='42'/>
 <enum name='kCGLFEglAttachObjectARB' value='43'/>
+<enum name='kCGLFEglAttachUniformBufferAPPLE' value='795'/>
 <enum name='kCGLFEglBegin' value='44'/>
+<enum name='kCGLFEglBeginConditionalRenderNV' value='792'/>
 <enum name='kCGLFEglBeginQuery' value='45'/>
+<enum name='kCGLFEglBeginTransformFeedbackEXT' value='731'/>
 <enum name='kCGLFEglBindAttribLocationARB' value='46'/>
 <enum name='kCGLFEglBindBuffer' value='47'/>
+<enum name='kCGLFEglBindBufferBaseEXT' value='730'/>
+<enum name='kCGLFEglBindBufferOffsetEXT' value='729'/>
+<enum name='kCGLFEglBindBufferRangeEXT' value='728'/>
+<enum name='kCGLFEglBindFragDataLocationEXT' value='778'/>
 <enum name='kCGLFEglBindFramebufferEXT' value='48'/>
 <enum name='kCGLFEglBindProgramARB' value='49'/>
 <enum name='kCGLFEglBindRenderbufferEXT' value='50'/>
@@ -2356,7 +2393,7 @@
 <enum name='kCGLFEglBlendEquationSeparateEXT' value='56'/>
 <enum name='kCGLFEglBlendFunc' value='57'/>
 <enum name='kCGLFEglBlendFuncSeparate' value='58'/>
-<enum name='kCGLFEglBlitFramebufferEXT' value='724'/>
+<enum name='kCGLFEglBlitFramebufferEXT' value='790'/>
 <enum name='kCGLFEglBufferData' value='59'/>
 <enum name='kCGLFEglBufferParameteriAPPLE' value='717'/>
 <enum name='kCGLFEglBufferSubData' value='60'/>
@@ -2366,6 +2403,8 @@
 <enum name='kCGLFEglClear' value='64'/>
 <enum name='kCGLFEglClearAccum' value='65'/>
 <enum name='kCGLFEglClearColor' value='66'/>
+<enum name='kCGLFEglClearColorIiEXT' value='740'/>
+<enum name='kCGLFEglClearColorIuiEXT' value='741'/>
 <enum name='kCGLFEglClearDepth' value='67'/>
 <enum name='kCGLFEglClearIndex' value='68'/>
 <enum name='kCGLFEglClearStencil' value='69'/>
@@ -2404,6 +2443,7 @@
 <enum name='kCGLFEglColor4us' value='102'/>
 <enum name='kCGLFEglColor4usv' value='103'/>
 <enum name='kCGLFEglColorMask' value='104'/>
+<enum name='kCGLFEglColorMaskIndexedEXT' value='780'/>
 <enum name='kCGLFEglColorMaterial' value='105'/>
 <enum name='kCGLFEglColorPointer' value='106'/>
 <enum name='kCGLFEglColorSubTable' value='107'/>
@@ -2460,6 +2500,7 @@
 <enum name='kCGLFEglDetachObjectARB' value='158'/>
 <enum name='kCGLFEglDisable' value='159'/>
 <enum name='kCGLFEglDisableClientState' value='160'/>
+<enum name='kCGLFEglDisableIndexedEXT' value='782'/>
 <enum name='kCGLFEglDisableVertexAttribARB' value='161'/>
 <enum name='kCGLFEglDisableVertexAttribArrayARB' value='162'/>
 <enum name='kCGLFEglDrawArrays' value='163'/>
@@ -2476,11 +2517,14 @@
 <enum name='kCGLFEglElementPointerAPPLE' value='174'/>
 <enum name='kCGLFEglEnable' value='175'/>
 <enum name='kCGLFEglEnableClientState' value='176'/>
+<enum name='kCGLFEglEnableIndexedEXT' value='781'/>
 <enum name='kCGLFEglEnableVertexAttribARB' value='177'/>
 <enum name='kCGLFEglEnableVertexAttribArrayARB' value='178'/>
 <enum name='kCGLFEglEnd' value='179'/>
+<enum name='kCGLFEglEndConditionalRenderNV' value='793'/>
 <enum name='kCGLFEglEndList' value='180'/>
 <enum name='kCGLFEglEndQuery' value='181'/>
+<enum name='kCGLFEglEndTransformFeedbackEXT' value='732'/>
 <enum name='kCGLFEglEvalCoord1d' value='182'/>
 <enum name='kCGLFEglEvalCoord1dv' value='183'/>
 <enum name='kCGLFEglEvalCoord1f' value='184'/>
@@ -2516,6 +2560,9 @@
 <enum name='kCGLFEglFramebufferTexture1DEXT' value='213'/>
 <enum name='kCGLFEglFramebufferTexture2DEXT' value='214'/>
 <enum name='kCGLFEglFramebufferTexture3DEXT' value='215'/>
+<enum name='kCGLFEglFramebufferTextureEXT' value='725'/>
+<enum name='kCGLFEglFramebufferTextureFaceEXT' value='727'/>
+<enum name='kCGLFEglFramebufferTextureLayerEXT' value='726'/>
 <enum name='kCGLFEglFrontFace' value='216'/>
 <enum name='kCGLFEglFrustum' value='217'/>
 <enum name='kCGLFEglGenBuffers' value='218'/>
@@ -2529,9 +2576,15 @@
 <enum name='kCGLFEglGenVertexArraysEXT' value='227'/>
 <enum name='kCGLFEglGenerateMipmapEXT' value='219'/>
 <enum name='kCGLFEglGetActiveAttribARB' value='228'/>
+<enum name='kCGLFEglGetActivePartitionNameAPPLE' value='797'/>
+<enum name='kCGLFEglGetActivePartitionivAPPLE' value='796'/>
 <enum name='kCGLFEglGetActiveUniformARB' value='229'/>
+<enum name='kCGLFEglGetActiveUniformsNamesAPPLE' value='799'/>
+<enum name='kCGLFEglGetActiveUniformsivAPPLE' value='798'/>
 <enum name='kCGLFEglGetAttachedObjectsARB' value='230'/>
+<enum name='kCGLFEglGetAttachedShaders' value='794'/>
 <enum name='kCGLFEglGetAttribLocationARB' value='231'/>
+<enum name='kCGLFEglGetBooleanIndexedvEXT' value='736'/>
 <enum name='kCGLFEglGetBooleanv' value='232'/>
 <enum name='kCGLFEglGetBufferParameteriv' value='233'/>
 <enum name='kCGLFEglGetBufferPointerv' value='234'/>
@@ -2554,12 +2607,14 @@
 <enum name='kCGLFEglGetFinalCombinerInputParameterfvNV' value='251'/>
 <enum name='kCGLFEglGetFinalCombinerInputParameterivNV' value='252'/>
 <enum name='kCGLFEglGetFloatv' value='253'/>
+<enum name='kCGLFEglGetFragDataLocationEXT' value='779'/>
 <enum name='kCGLFEglGetFramebufferAttachmentParameterivEXT' value='254'/>
 <enum name='kCGLFEglGetHandleARB' value='255'/>
 <enum name='kCGLFEglGetHistogram' value='256'/>
 <enum name='kCGLFEglGetHistogramParameterfv' value='257'/>
 <enum name='kCGLFEglGetHistogramParameteriv' value='258'/>
 <enum name='kCGLFEglGetInfoLogARB' value='259'/>
+<enum name='kCGLFEglGetIntegerIndexedvEXT' value='735'/>
 <enum name='kCGLFEglGetIntegerv' value='260'/>
 <enum name='kCGLFEglGetLightfv' value='261'/>
 <enum name='kCGLFEglGetLightiv' value='262'/>
@@ -2574,6 +2629,7 @@
 <enum name='kCGLFEglGetObjectParameterfvARB' value='271'/>
 <enum name='kCGLFEglGetObjectParameterivAPPLE' value='723'/>
 <enum name='kCGLFEglGetObjectParameterivARB' value='272'/>
+<enum name='kCGLFEglGetPartitionIndexAPPLE' value='800'/>
 <enum name='kCGLFEglGetPixelMapfv' value='273'/>
 <enum name='kCGLFEglGetPixelMapuiv' value='274'/>
 <enum name='kCGLFEglGetPixelMapusv' value='275'/>
@@ -2591,10 +2647,8 @@
 <enum name='kCGLFEglGetQueryObjectuiv' value='287'/>
 <enum name='kCGLFEglGetQueryiv' value='288'/>
 <enum name='kCGLFEglGetRenderbufferParameterivEXT' value='289'/>
-<enum name='kCGLFEglGetRenderbufferStorageFormatOES' value='735'/>
 <enum name='kCGLFEglGetSeparableFilter' value='290'/>
 <enum name='kCGLFEglGetShaderInfoLog' value='291'/>
-<enum name='kCGLFEglGetShaderPrecisionFormatOES' value='733'/>
 <enum name='kCGLFEglGetShaderSourceARB' value='292'/>
 <enum name='kCGLFEglGetShaderiv' value='293'/>
 <enum name='kCGLFEglGetString' value='294'/>
@@ -2606,12 +2660,21 @@
 <enum name='kCGLFEglGetTexImage' value='300'/>
 <enum name='kCGLFEglGetTexLevelParameterfv' value='301'/>
 <enum name='kCGLFEglGetTexLevelParameteriv' value='302'/>
+<enum name='kCGLFEglGetTexParameterIivEXT' value='744'/>
+<enum name='kCGLFEglGetTexParameterIuivEXT' value='745'/>
 <enum name='kCGLFEglGetTexParameterPointervAPPLE' value='303'/>
 <enum name='kCGLFEglGetTexParameterfv' value='304'/>
 <enum name='kCGLFEglGetTexParameteriv' value='305'/>
+<enum name='kCGLFEglGetTransformFeedbackVaryingEXT' value='734'/>
+<enum name='kCGLFEglGetUniformBufferSizeEXT' value='738'/>
+<enum name='kCGLFEglGetUniformIndicesAPPLE' value='801'/>
 <enum name='kCGLFEglGetUniformLocationARB' value='306'/>
+<enum name='kCGLFEglGetUniformOffsetEXT' value='739'/>
 <enum name='kCGLFEglGetUniformfvARB' value='307'/>
 <enum name='kCGLFEglGetUniformivARB' value='308'/>
+<enum name='kCGLFEglGetUniformuivEXT' value='777'/>
+<enum name='kCGLFEglGetVertexAttribIivEXT' value='767'/>
+<enum name='kCGLFEglGetVertexAttribIuivEXT' value='768'/>
 <enum name='kCGLFEglGetVertexAttribPointervARB' value='309'/>
 <enum name='kCGLFEglGetVertexAttribdvARB' value='310'/>
 <enum name='kCGLFEglGetVertexAttribfvARB' value='311'/>
@@ -2634,6 +2697,7 @@
 <enum name='kCGLFEglInterleavedArrays' value='328'/>
 <enum name='kCGLFEglIsBuffer' value='329'/>
 <enum name='kCGLFEglIsEnabled' value='330'/>
+<enum name='kCGLFEglIsEnabledIndexedEXT' value='783'/>
 <enum name='kCGLFEglIsFenceAPPLE' value='331'/>
 <enum name='kCGLFEglIsFramebufferEXT' value='332'/>
 <enum name='kCGLFEglIsList' value='333'/>
@@ -2773,6 +2837,7 @@
 <enum name='kCGLFEglProgramLocalParameter4fARB' value='464'/>
 <enum name='kCGLFEglProgramLocalParameter4fvARB' value='465'/>
 <enum name='kCGLFEglProgramLocalParameters4fvEXT' value='720'/>
+<enum name='kCGLFEglProgramParameteriEXT' value='724'/>
 <enum name='kCGLFEglProgramStringARB' value='466'/>
 <enum name='kCGLFEglPushAttrib' value='467'/>
 <enum name='kCGLFEglPushClientAttrib' value='468'/>
@@ -2812,10 +2877,9 @@
 <enum name='kCGLFEglRectiv' value='502'/>
 <enum name='kCGLFEglRects' value='503'/>
 <enum name='kCGLFEglRectsv' value='504'/>
-<enum name='kCGLFEglReleaseShaderCompilerOES' value='734'/>
 <enum name='kCGLFEglRenderMode' value='506'/>
 <enum name='kCGLFEglRenderbufferStorageEXT' value='505'/>
-<enum name='kCGLFEglRenderbufferStorageMultisampleEXT' value='725'/>
+<enum name='kCGLFEglRenderbufferStorageMultisampleEXT' value='791'/>
 <enum name='kCGLFEglResetHistogram' value='507'/>
 <enum name='kCGLFEglResetMinmax' value='508'/>
 <enum name='kCGLFEglRotated' value='509'/>
@@ -2846,7 +2910,6 @@
 <enum name='kCGLFEglSeparableFilter2D' value='534'/>
 <enum name='kCGLFEglSetFenceAPPLE' value='535'/>
 <enum name='kCGLFEglShadeModel' value='536'/>
-<enum name='kCGLFEglShaderBinaryOES' value='732'/>
 <enum name='kCGLFEglShaderSourceARB' value='537'/>
 <enum name='kCGLFEglStencilFunc' value='538'/>
 <enum name='kCGLFEglStencilFuncSeparate' value='539'/>
@@ -2903,6 +2966,8 @@
 <enum name='kCGLFEglTexImage1D' value='590'/>
 <enum name='kCGLFEglTexImage2D' value='591'/>
 <enum name='kCGLFEglTexImage3D' value='592'/>
+<enum name='kCGLFEglTexParameterIivEXT' value='742'/>
+<enum name='kCGLFEglTexParameterIuivEXT' value='743'/>
 <enum name='kCGLFEglTexParameterf' value='593'/>
 <enum name='kCGLFEglTexParameterfv' value='594'/>
 <enum name='kCGLFEglTexParameteri' value='595'/>
@@ -2911,33 +2976,43 @@
 <enum name='kCGLFEglTexSubImage2D' value='598'/>
 <enum name='kCGLFEglTexSubImage3D' value='599'/>
 <enum name='kCGLFEglTextureRangeAPPLE' value='600'/>
+<enum name='kCGLFEglTransformFeedbackVaryingsEXT' value='733'/>
 <enum name='kCGLFEglTranslated' value='601'/>
 <enum name='kCGLFEglTranslatef' value='602'/>
 <enum name='kCGLFEglUniform1fARB' value='603'/>
 <enum name='kCGLFEglUniform1fvARB' value='604'/>
 <enum name='kCGLFEglUniform1iARB' value='605'/>
 <enum name='kCGLFEglUniform1ivARB' value='606'/>
+<enum name='kCGLFEglUniform1uiEXT' value='769'/>
+<enum name='kCGLFEglUniform1uivEXT' value='773'/>
 <enum name='kCGLFEglUniform2fARB' value='607'/>
 <enum name='kCGLFEglUniform2fvARB' value='608'/>
 <enum name='kCGLFEglUniform2iARB' value='609'/>
 <enum name='kCGLFEglUniform2ivARB' value='610'/>
+<enum name='kCGLFEglUniform2uiEXT' value='770'/>
+<enum name='kCGLFEglUniform2uivEXT' value='774'/>
 <enum name='kCGLFEglUniform3fARB' value='611'/>
 <enum name='kCGLFEglUniform3fvARB' value='612'/>
 <enum name='kCGLFEglUniform3iARB' value='613'/>
 <enum name='kCGLFEglUniform3ivARB' value='614'/>
+<enum name='kCGLFEglUniform3uiEXT' value='771'/>
+<enum name='kCGLFEglUniform3uivEXT' value='775'/>
 <enum name='kCGLFEglUniform4fARB' value='615'/>
 <enum name='kCGLFEglUniform4fvARB' value='616'/>
 <enum name='kCGLFEglUniform4iARB' value='617'/>
 <enum name='kCGLFEglUniform4ivARB' value='618'/>
+<enum name='kCGLFEglUniform4uiEXT' value='772'/>
+<enum name='kCGLFEglUniform4uivEXT' value='776'/>
+<enum name='kCGLFEglUniformBufferEXT' value='737'/>
 <enum name='kCGLFEglUniformMatrix2fvARB' value='619'/>
-<enum name='kCGLFEglUniformMatrix2x3fv' value='726'/>
-<enum name='kCGLFEglUniformMatrix2x4fv' value='728'/>
+<enum name='kCGLFEglUniformMatrix2x3fv' value='784'/>
+<enum name='kCGLFEglUniformMatrix2x4fv' value='786'/>
 <enum name='kCGLFEglUniformMatrix3fvARB' value='620'/>
-<enum name='kCGLFEglUniformMatrix3x2fv' value='727'/>
-<enum name='kCGLFEglUniformMatrix3x4fv' value='730'/>
+<enum name='kCGLFEglUniformMatrix3x2fv' value='785'/>
+<enum name='kCGLFEglUniformMatrix3x4fv' value='788'/>
 <enum name='kCGLFEglUniformMatrix4fvARB' value='621'/>
-<enum name='kCGLFEglUniformMatrix4x2fv' value='729'/>
-<enum name='kCGLFEglUniformMatrix4x3fv' value='731'/>
+<enum name='kCGLFEglUniformMatrix4x2fv' value='787'/>
+<enum name='kCGLFEglUniformMatrix4x3fv' value='789'/>
 <enum name='kCGLFEglUnlockArraysEXT' value='622'/>
 <enum name='kCGLFEglUnmapBuffer' value='623'/>
 <enum name='kCGLFEglUseProgramObjectARB' value='624'/>
@@ -3004,6 +3079,27 @@
 <enum name='kCGLFEglVertexAttrib4ubvARB' value='685'/>
 <enum name='kCGLFEglVertexAttrib4uivARB' value='686'/>
 <enum name='kCGLFEglVertexAttrib4usvARB' value='687'/>
+<enum name='kCGLFEglVertexAttribI1iEXT' value='746'/>
+<enum name='kCGLFEglVertexAttribI1ivEXT' value='754'/>
+<enum name='kCGLFEglVertexAttribI1uiEXT' value='750'/>
+<enum name='kCGLFEglVertexAttribI1uivEXT' value='758'/>
+<enum name='kCGLFEglVertexAttribI2iEXT' value='747'/>
+<enum name='kCGLFEglVertexAttribI2ivEXT' value='755'/>
+<enum name='kCGLFEglVertexAttribI2uiEXT' value='751'/>
+<enum name='kCGLFEglVertexAttribI2uivEXT' value='759'/>
+<enum name='kCGLFEglVertexAttribI3iEXT' value='748'/>
+<enum name='kCGLFEglVertexAttribI3ivEXT' value='756'/>
+<enum name='kCGLFEglVertexAttribI3uiEXT' value='752'/>
+<enum name='kCGLFEglVertexAttribI3uivEXT' value='760'/>
+<enum name='kCGLFEglVertexAttribI4bvEXT' value='762'/>
+<enum name='kCGLFEglVertexAttribI4iEXT' value='749'/>
+<enum name='kCGLFEglVertexAttribI4ivEXT' value='757'/>
+<enum name='kCGLFEglVertexAttribI4svEXT' value='763'/>
+<enum name='kCGLFEglVertexAttribI4ubvEXT' value='764'/>
+<enum name='kCGLFEglVertexAttribI4uiEXT' value='753'/>
+<enum name='kCGLFEglVertexAttribI4uivEXT' value='761'/>
+<enum name='kCGLFEglVertexAttribI4usvEXT' value='765'/>
+<enum name='kCGLFEglVertexAttribIPointerEXT' value='766'/>
 <enum name='kCGLFEglVertexAttribPointerARB' value='688'/>
 <enum name='kCGLFEglVertexBlendARB' value='689'/>
 <enum name='kCGLFEglVertexPointer' value='690'/>
@@ -3085,6 +3181,7 @@
 <enum name='kCGLMultisampleBit' value='2'/>
 <enum name='kCGLNoError' value='0'/>
 <enum name='kCGLPFAAccelerated' value='73'/>
+<enum name='kCGLPFAAcceleratedCompute' value='97'/>
 <enum name='kCGLPFAAccumSize' value='14'/>
 <enum name='kCGLPFAAllRenderers' value='1'/>
 <enum name='kCGLPFAAllowOfflineRenderers' value='96'/>
@@ -3142,6 +3239,7 @@
 <enum name='kCGLRGBFloat256Bit' value='268435456'/>
 <enum name='kCGLRGBFloat64Bit' value='16777216'/>
 <enum name='kCGLRPAccelerated' value='73'/>
+<enum name='kCGLRPAcceleratedCompute' value='130'/>
 <enum name='kCGLRPAccumModes' value='104'/>
 <enum name='kCGLRPBackingStore' value='76'/>
 <enum name='kCGLRPBufferModes' value='100'/>
@@ -3182,6 +3280,7 @@
 <enum name='kCGLRendererGeForceFXID' value='140288'/>
 <enum name='kCGLRendererGenericFloatID' value='132096'/>
 <enum name='kCGLRendererGenericID' value='131584'/>
+<enum name='kCGLRendererIDMatchingMask' value='16678656'/>
 <enum name='kCGLRendererIntel900ID' value='147456'/>
 <enum name='kCGLRendererIntelX3100ID' value='147968'/>
 <enum name='kCGLRendererMesa3DFXID' value='262144'/>
@@ -3284,6 +3383,11 @@
 <function name='CGLGetCurrentContext'>
 <retval type='^{_CGLContextObject=}'/>
 </function>
+<function name='CGLGetGlobalOption'>
+<arg type='i'/>
+<arg type='^i'/>
+<retval type='i'/>
+</function>
 <function name='CGLGetOffScreen'>
 <arg type='^{_CGLContextObject=}'/>
 <arg type='^i'/>
@@ -3322,6 +3426,10 @@
 <function name='CGLGetPixelFormatRetainCount'>
 <arg type='^{_CGLPixelFormatObject=}'/>
 <retval type='I'/>
+</function>
+<function name='CGLGetShareGroup'>
+<arg type='^{_CGLContextObject=}'/>
+<retval type='^{CGLShareGroupRec=}'/>
 </function>
 <function name='CGLGetVersion'>
 <arg type='^i'/>
@@ -3382,6 +3490,11 @@
 <arg type='I'/>
 <retval type='i'/>
 </function>
+<function name='CGLSetGlobalOption'>
+<arg type='i'/>
+<arg type='^i'/>
+<retval type='i'/>
+</function>
 <function name='CGLSetOffScreen'>
 <arg type='^{_CGLContextObject=}'/>
 <arg type='i'/>
@@ -3412,6 +3525,18 @@
 <function name='CGLSetVirtualScreen'>
 <arg type='^{_CGLContextObject=}'/>
 <arg type='i'/>
+<retval type='i'/>
+</function>
+<function name='CGLTexImageIOSurface2D'>
+<arg type='^{_CGLContextObject=}'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^{__IOSurface=}'/>
+<arg type='I'/>
 <retval type='i'/>
 </function>
 <function name='CGLTexImagePBuffer'>
@@ -3461,6 +3586,10 @@
 <function name='glBegin'>
 <arg type='I'/>
 </function>
+<function name='glBeginConditionalRenderNV'>
+<arg type='I'/>
+<arg type='I'/>
+</function>
 <function name='glBeginQuery'>
 <arg type='I'/>
 <arg type='I'/>
@@ -3490,6 +3619,11 @@
 <arg type='I'/>
 <arg type='I'/>
 </function>
+<function name='glBindBufferBase'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+</function>
 <function name='glBindBufferBaseEXT'>
 <arg type='I'/>
 <arg type='I'/>
@@ -3499,25 +3633,40 @@
 <arg type='I'/>
 <arg type='I'/>
 <arg type='I'/>
-<arg type='l' type64='q'/>
+<arg type64='q' type='l'/>
+</function>
+<function name='glBindBufferRange'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type64='q' type='l'/>
+<arg type64='q' type='l'/>
 </function>
 <function name='glBindBufferRangeEXT'>
 <arg type='I'/>
 <arg type='I'/>
 <arg type='I'/>
-<arg type='l' type64='q'/>
-<arg type='l' type64='q'/>
+<arg type64='q' type='l'/>
+<arg type64='q' type='l'/>
 </function>
 <function name='glBindFragDataLocationEXT'>
 <arg type='I'/>
 <arg type='I'/>
 <arg type='*'/>
 </function>
+<function name='glBindFramebuffer'>
+<arg type='I'/>
+<arg type='I'/>
+</function>
 <function name='glBindFramebufferEXT'>
 <arg type='I'/>
 <arg type='I'/>
 </function>
 <function name='glBindProgramARB'>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='glBindRenderbuffer'>
 <arg type='I'/>
 <arg type='I'/>
 </function>
@@ -3587,6 +3736,18 @@
 <arg type='I'/>
 <arg type='I'/>
 </function>
+<function name='glBlitFramebuffer'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='I'/>
+</function>
 <function name='glBlitFramebufferEXT'>
 <arg type='i'/>
 <arg type='i'/>
@@ -3601,13 +3762,13 @@
 </function>
 <function name='glBufferData'>
 <arg type='I'/>
-<arg type='l' type64='q'/>
+<arg type64='q' type='l'/>
 <arg type='^v'/>
 <arg type='I'/>
 </function>
 <function name='glBufferDataARB'>
 <arg type='I'/>
-<arg type='l' type64='q'/>
+<arg type64='q' type='l'/>
 <arg type='^v'/>
 <arg type='I'/>
 </function>
@@ -3618,14 +3779,14 @@
 </function>
 <function name='glBufferSubData'>
 <arg type='I'/>
-<arg type='l' type64='q'/>
-<arg type='l' type64='q'/>
+<arg type64='q' type='l'/>
+<arg type64='q' type='l'/>
 <arg type='^v'/>
 </function>
 <function name='glBufferSubDataARB'>
 <arg type='I'/>
-<arg type='l' type64='q'/>
-<arg type='l' type64='q'/>
+<arg type64='q' type='l'/>
+<arg type64='q' type='l'/>
 <arg type='^v'/>
 </function>
 <function name='glCallList'>
@@ -3636,9 +3797,17 @@
 <arg type='I'/>
 <arg type='^v'/>
 </function>
+<function name='glCheckFramebufferStatus'>
+<arg type='I'/>
+<retval type='I'/>
+</function>
 <function name='glCheckFramebufferStatusEXT'>
 <arg type='I'/>
 <retval type='I'/>
+</function>
+<function name='glClampColorARB'>
+<arg type='I'/>
+<arg type='I'/>
 </function>
 <function name='glClear'>
 <arg type='I'/>
@@ -3853,23 +4022,7 @@
 <arg type='I'/>
 <arg type='^v'/>
 </function>
-<function name='glColorSubTableEXT'>
-<arg type='I'/>
-<arg type='i'/>
-<arg type='i'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^v'/>
-</function>
 <function name='glColorTable'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='i'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^v'/>
-</function>
-<function name='glColorTableEXT'>
 <arg type='I'/>
 <arg type='I'/>
 <arg type='i'/>
@@ -3886,47 +4039,6 @@
 <arg type='I'/>
 <arg type='I'/>
 <arg type='^i'/>
-</function>
-<function name='glCombinerInputNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-</function>
-<function name='glCombinerOutputNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='C'/>
-<arg type='C'/>
-<arg type='C'/>
-</function>
-<function name='glCombinerParameterfNV'>
-<arg type='I'/>
-<arg type='f'/>
-</function>
-<function name='glCombinerParameterfvNV'>
-<arg type='I'/>
-<arg type='^f'/>
-</function>
-<function name='glCombinerParameteriNV'>
-<arg type='I'/>
-<arg type='i'/>
-</function>
-<function name='glCombinerParameterivNV'>
-<arg type='I'/>
-<arg type='^i'/>
-</function>
-<function name='glCombinerStageParameterfvNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^f'/>
 </function>
 <function name='glCompileShader'>
 <arg type='I'/>
@@ -4210,6 +4322,10 @@
 <arg type='i'/>
 <arg type='^I'/>
 </function>
+<function name='glDeleteFramebuffers'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
 <function name='glDeleteFramebuffersEXT'>
 <arg type='i'/>
 <arg type='^I'/>
@@ -4233,6 +4349,10 @@
 <arg type='^I'/>
 </function>
 <function name='glDeleteQueriesARB'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
+<function name='glDeleteRenderbuffers'>
 <arg type='i'/>
 <arg type='^I'/>
 </function>
@@ -4298,6 +4418,12 @@
 <arg type='i'/>
 <arg type='i'/>
 </function>
+<function name='glDrawArraysInstancedARB'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
 <function name='glDrawBuffer'>
 <arg type='I'/>
 </function>
@@ -4319,6 +4445,13 @@
 <arg type='i'/>
 <arg type='I'/>
 <arg type='^v'/>
+</function>
+<function name='glDrawElementsInstancedARB'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='^v'/>
+<arg type='i'/>
 </function>
 <function name='glDrawPixels'>
 <arg type='i'/>
@@ -4385,6 +4518,7 @@
 <arg type='I'/>
 </function>
 <function name='glEnd'/>
+<function name='glEndConditionalRenderNV'/>
 <function name='glEndList'/>
 <function name='glEndQuery'>
 <arg type='I'/>
@@ -4443,12 +4577,6 @@
 <arg type='I'/>
 <arg type='^f'/>
 </function>
-<function name='glFinalCombinerInputNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-</function>
 <function name='glFinish'/>
 <function name='glFinishFenceAPPLE'>
 <arg type='I'/>
@@ -4461,8 +4589,8 @@
 <function name='glFlush'/>
 <function name='glFlushMappedBufferRangeAPPLE'>
 <arg type='I'/>
-<arg type='l' type64='q'/>
-<arg type='l' type64='q'/>
+<arg type64='q' type='l'/>
+<arg type64='q' type='l'/>
 </function>
 <function name='glFlushRenderAPPLE'/>
 <function name='glFlushVertexArrayRangeAPPLE'>
@@ -4519,13 +4647,33 @@
 <arg type='I'/>
 <arg type='^i'/>
 </function>
+<function name='glFramebufferRenderbuffer'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+</function>
 <function name='glFramebufferRenderbufferEXT'>
 <arg type='I'/>
 <arg type='I'/>
 <arg type='I'/>
 <arg type='I'/>
 </function>
+<function name='glFramebufferTexture1D'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+</function>
 <function name='glFramebufferTexture1DEXT'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glFramebufferTexture2D'>
 <arg type='I'/>
 <arg type='I'/>
 <arg type='I'/>
@@ -4537,6 +4685,14 @@
 <arg type='I'/>
 <arg type='I'/>
 <arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glFramebufferTexture3D'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
 <arg type='i'/>
 </function>
 <function name='glFramebufferTexture3DEXT'>
@@ -4559,6 +4715,13 @@
 <arg type='I'/>
 <arg type='i'/>
 <arg type='I'/>
+</function>
+<function name='glFramebufferTextureLayer'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
 </function>
 <function name='glFramebufferTextureLayerEXT'>
 <arg type='I'/>
@@ -4590,6 +4753,10 @@
 <arg type='i'/>
 <arg type='^I'/>
 </function>
+<function name='glGenFramebuffers'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
 <function name='glGenFramebuffersEXT'>
 <arg type='i'/>
 <arg type='^I'/>
@@ -4610,6 +4777,10 @@
 <arg type='i'/>
 <arg type='^I'/>
 </function>
+<function name='glGenRenderbuffers'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
 <function name='glGenRenderbuffersEXT'>
 <arg type='i'/>
 <arg type='^I'/>
@@ -4621,6 +4792,9 @@
 <function name='glGenVertexArraysAPPLE'>
 <arg type='i'/>
 <arg type='^I'/>
+</function>
+<function name='glGenerateMipmap'>
+<arg type='I'/>
 </function>
 <function name='glGenerateMipmapEXT'>
 <arg type='I'/>
@@ -4660,6 +4834,33 @@
 <arg type='^i'/>
 <arg type='^I'/>
 <arg type='*'/>
+</function>
+<function name='glGetActiveUniformBlockName'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^i'/>
+<arg type='*'/>
+</function>
+<function name='glGetActiveUniformBlockiv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetActiveUniformName'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^i'/>
+<arg type='*'/>
+</function>
+<function name='glGetActiveUniformsiv'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^I'/>
+<arg type='I'/>
+<arg type='^i'/>
 </function>
 <function name='glGetAttachedObjectsARB'>
 <arg type='^v'/>
@@ -4714,14 +4915,14 @@
 </function>
 <function name='glGetBufferSubData'>
 <arg type='I'/>
-<arg type='l' type64='q'/>
-<arg type='l' type64='q'/>
+<arg type64='q' type='l'/>
+<arg type64='q' type='l'/>
 <arg type='^v'/>
 </function>
 <function name='glGetBufferSubDataARB'>
 <arg type='I'/>
-<arg type='l' type64='q'/>
-<arg type='l' type64='q'/>
+<arg type64='q' type='l'/>
+<arg type64='q' type='l'/>
 <arg type='^v'/>
 </function>
 <function name='glGetClipPlane'>
@@ -4734,18 +4935,7 @@
 <arg type='I'/>
 <arg type='^v'/>
 </function>
-<function name='glGetColorTableEXT'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^v'/>
-</function>
 <function name='glGetColorTableParameterfv'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^f'/>
-</function>
-<function name='glGetColorTableParameterfvEXT'>
 <arg type='I'/>
 <arg type='I'/>
 <arg type='^f'/>
@@ -4754,42 +4944,6 @@
 <arg type='I'/>
 <arg type='I'/>
 <arg type='^i'/>
-</function>
-<function name='glGetColorTableParameterivEXT'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^i'/>
-</function>
-<function name='glGetCombinerInputParameterfvNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^f'/>
-</function>
-<function name='glGetCombinerInputParameterivNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^i'/>
-</function>
-<function name='glGetCombinerOutputParameterfvNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^f'/>
-</function>
-<function name='glGetCombinerOutputParameterivNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^i'/>
-</function>
-<function name='glGetCombinerStageParameterfvNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^f'/>
 </function>
 <function name='glGetCompressedTexImage'>
 <arg type='I'/>
@@ -4824,16 +4978,6 @@
 <function name='glGetError'>
 <retval type='I'/>
 </function>
-<function name='glGetFinalCombinerInputParameterfvNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^f'/>
-</function>
-<function name='glGetFinalCombinerInputParameterivNV'>
-<arg type='I'/>
-<arg type='I'/>
-<arg type='^i'/>
-</function>
 <function name='glGetFloatv'>
 <arg type='I'/>
 <arg type='^f'/>
@@ -4842,6 +4986,12 @@
 <arg type='I'/>
 <arg type='*'/>
 <retval type='i'/>
+</function>
+<function name='glGetFramebufferAttachmentParameteriv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
 </function>
 <function name='glGetFramebufferAttachmentParameterivEXT'>
 <arg type='I'/>
@@ -4877,6 +5027,11 @@
 <arg type='*'/>
 </function>
 <function name='glGetIntegerIndexedvEXT'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetIntegeri_v'>
 <arg type='I'/>
 <arg type='I'/>
 <arg type='^i'/>
@@ -5043,6 +5198,11 @@
 <arg type='I'/>
 <arg type='^i'/>
 </function>
+<function name='glGetRenderbufferParameteriv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
 <function name='glGetRenderbufferParameterivEXT'>
 <arg type='I'/>
 <arg type='I'/>
@@ -5161,10 +5321,21 @@
 <arg type='^I'/>
 <arg type='*'/>
 </function>
+<function name='glGetUniformBlockIndex'>
+<arg type='I'/>
+<arg type='*'/>
+<retval type='I'/>
+</function>
 <function name='glGetUniformBufferSizeEXT'>
 <arg type='I'/>
 <arg type='i'/>
 <retval type='i'/>
+</function>
+<function name='glGetUniformIndices'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^*'/>
+<arg type='^I'/>
 </function>
 <function name='glGetUniformLocation'>
 <arg type='I'/>
@@ -5179,7 +5350,7 @@
 <function name='glGetUniformOffsetEXT'>
 <arg type='I'/>
 <arg type='i'/>
-<retval type='l' type64='q'/>
+<retval type64='q' type='l'/>
 </function>
 <function name='glGetUniformfv'>
 <arg type='I'/>
@@ -5331,6 +5502,10 @@
 <arg type='I'/>
 <retval type='C'/>
 </function>
+<function name='glIsFramebuffer'>
+<arg type='I'/>
+<retval type='C'/>
+</function>
 <function name='glIsFramebufferEXT'>
 <arg type='I'/>
 <retval type='C'/>
@@ -5352,6 +5527,10 @@
 <retval type='C'/>
 </function>
 <function name='glIsQueryARB'>
+<arg type='I'/>
+<retval type='C'/>
+</function>
+<function name='glIsRenderbuffer'>
 <arg type='I'/>
 <retval type='C'/>
 </function>
@@ -6220,6 +6399,9 @@
 <arg type='i'/>
 <arg type='^v'/>
 </function>
+<function name='glProvokingVertexEXT'>
+<arg type='I'/>
+</function>
 <function name='glPushAttrib'>
 <arg type='I'/>
 </function>
@@ -6382,8 +6564,21 @@
 <arg type='I'/>
 <retval type='i'/>
 </function>
+<function name='glRenderbufferStorage'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
 <function name='glRenderbufferStorageEXT'>
 <arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glRenderbufferStorageMultisample'>
+<arg type='I'/>
+<arg type='i'/>
 <arg type='I'/>
 <arg type='i'/>
 <arg type='i'/>
@@ -7169,6 +7364,11 @@
 <arg type='i'/>
 <arg type='^I'/>
 </function>
+<function name='glUniformBlockBinding'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+</function>
 <function name='glUniformBufferEXT'>
 <arg type='I'/>
 <arg type='i'/>
@@ -7700,6 +7900,10 @@
 <function name='glVertexAttrib4usvARB'>
 <arg type='I'/>
 <arg type='^S'/>
+</function>
+<function name='glVertexAttribDivisorARB'>
+<arg type='I'/>
+<arg type='I'/>
 </function>
 <function name='glVertexAttribI1iEXT'>
 <arg type='I'/>

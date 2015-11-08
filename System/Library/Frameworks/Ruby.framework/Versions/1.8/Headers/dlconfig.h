@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0/dlconfig.h
+../usr/lib/ruby/1.8//universal-darwin10.0/dlconfig.h
