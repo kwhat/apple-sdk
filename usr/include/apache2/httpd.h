@@ -337,9 +337,9 @@ extern "C" {
 #define AP_MAX_SENDFILE 16777216  /* 2^24 */
 
 /**
- * Special Apache error codes. These are basically used
- *  in http_main.c so we can keep track of various errors.
- *        
+ * MPM child process exit status values
+ * The MPM parent process may check the status to see if special
+ * error handling is required.
  */
 /** a normal exit */
 #define APEXIT_OK		0x0
@@ -1582,7 +1582,7 @@ AP_DECLARE(char *) ap_make_dirstr_parent(apr_pool_t *p, const char *s);
 
 /**
  * Given a directory and filename, create a single path from them.  This
- * function is smart enough to ensure that there is a sinlge '/' between the
+ * function is smart enough to ensure that there is a single '/' between the
  * directory and file names
  * @param a The pool to allocate from
  * @param dir The directory name
@@ -1699,6 +1699,26 @@ AP_DECLARE(void) ap_pregfree(apr_pool_t *p, ap_regex_t *reg);
  */
 AP_DECLARE(char *) ap_pregsub(apr_pool_t *p, const char *input, const char *source,
                               size_t nmatch, ap_regmatch_t pmatch[]);
+
+/**
+ * After performing a successful regex match, you may use this function to
+ * perform a series of string substitutions based on subexpressions that were
+ * matched during the call to ap_regexec
+ * @param p The pool to allocate from
+ * @param result where to store the result, will be set to NULL on error
+ * @param input An arbitrary string containing $1 through $9.  These are
+ *              replaced with the corresponding matched sub-expressions
+ * @param source The string that was originally matched to the regex
+ * @param nmatch the nmatch returned from ap_pregex
+ * @param pmatch the pmatch array returned from ap_pregex
+ * @param maxlen the maximum string length to return, 0 for unlimited
+ * @return APR_SUCCESS if successful, APR_ENOMEM or other error code otherwise.
+ */
+AP_DECLARE(apr_status_t) ap_pregsub_ex(apr_pool_t *p, char **result,
+                                       const char *input, const char *source,
+                                       apr_size_t nmatch,
+                                       ap_regmatch_t pmatch[],
+                                       apr_size_t maxlen);
 
 /**
  * We want to downcase the type/subtype for comparison purposes
@@ -1866,6 +1886,19 @@ extern int raise_sigstop_flags;
  * @return HTML describing the server, allocated in @a r's pool.
  */
 AP_DECLARE(const char *) ap_psignature(const char *prefix, request_rec *r);
+
+
+/**
+ * Short function to execute a command and return the first line of
+ * output minus \r \n. Useful for "obscuring" passwords via exec calls
+ * @param p the pool to allocate from
+ * @param cmd the command to execute
+ * @param argv the arguments to pass to the cmd
+ * @return ptr to characters or NULL on any error
+ */
+AP_DECLARE(char *) ap_get_exec_line(apr_pool_t *p,
+                                    const char *cmd,
+                                    const char * const *argv);
 
 /** strtoul does not exist on sunos4. */
 #ifdef strtoul

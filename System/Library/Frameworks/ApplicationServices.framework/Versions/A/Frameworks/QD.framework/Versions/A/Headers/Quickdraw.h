@@ -3,7 +3,7 @@
  
      Contains:   Interface to Quickdraw Graphics
  
-     Version:    Quickdraw-285~150
+     Version:    Quickdraw-291~1
  
      Copyright:  © 1985-2008 by Apple, Inc., all rights reserved
  
@@ -32,6 +32,8 @@
 
 #include <AvailabilityMacros.h>
 
+#include <QD/ColorSyncDeprecated.h>
+
 #if PRAGMA_ONCE
 #pragma once
 #endif
@@ -48,6 +50,7 @@ typedef GrafPtr                         CGrafPtr;
 typedef CGrafPtr                        GWorldPtr;
 typedef short                           QDErr;
 typedef unsigned long                   GWorldFlags;
+
 /* For the convenience of QuickTime */
 enum {
   srcCopy                       = 0

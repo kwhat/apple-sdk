@@ -1,7 +1,7 @@
 /*
     NSTableHeaderView.h
     Application Kit
-    Copyright (c) 1995-2012, Apple Inc.
+    Copyright (c) 1995-2013, Apple Inc.
     All rights reserved.
 */
 
@@ -26,7 +26,7 @@
     unsigned int _toolTipRectsDirty:1;
     unsigned int _alignTitleWithDataCell:1;
     unsigned int _nextColumnAfterDrawnOneIsSelected:1;
-    unsigned int _reserved:27;    
+    unsigned int _reserved:27;
     BOOL _skipDrawingSeparator;
     id _viewDataX;
 }

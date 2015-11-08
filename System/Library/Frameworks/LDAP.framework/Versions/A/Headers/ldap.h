@@ -163,6 +163,7 @@ LDAP_BEGIN_DECL
 #define LDAP_OPT_X_TLS_NEWCTX		0x600f
 #define LDAP_OPT_X_TLS_CRLFILE		0x6010	/* GNUtls only */
 #define LDAP_OPT_X_TLS_PACKAGE		0x6011
+#define LDAP_OPT_X_TLS_CERT_IDENTITY 0x60fe /*Apple Specific code*/
 #define LDAP_OPT_X_TLS_PASSPHRASE	0x60ff  /*Apple Specific code*/
 
 #define LDAP_OPT_X_TLS_NEVER	0
@@ -2543,7 +2544,7 @@ LDAP_F( int )
 ldap_parse_deref_control LDAP_P((
 	LDAP		*ld,
 	LDAPControl	**ctrls,
-	LDAPDerefRes	**drp ));
+	LDAÿPDerefRes	**drp ));
 
 LDAP_END_DECL
 #endif /* _LDAP_H */

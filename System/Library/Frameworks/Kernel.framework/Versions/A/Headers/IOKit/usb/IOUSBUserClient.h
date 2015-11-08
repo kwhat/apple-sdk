@@ -1,5 +1,5 @@
 /*
- * Copyright © 1998-2012 Apple Inc. All rights reserved.
+ * Copyright © 1998-2013 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -47,6 +47,10 @@ enum {
 	kUSBDeviceUserClientReturnExtraPower,
 	kUSBDeviceUserClientGetExtraPowerAllocated,
 	kUSBDeviceUserClientGetBandwidthAvailableForDevice,
+    kUSBDeviceUserClientSetConfigurationV2,
+    kUSBDeviceUserClientRegisterForNotification,
+    kUSBDeviceUserClientUnregisterNotification,
+    kUSBDeviceUserClientAcknowledgeNotification,
     kIOUSBLibDeviceUserClientNumCommands
     };
 
@@ -89,6 +93,9 @@ enum {
 	kUSBInterfaceUserClientReadStreamsPipe,
 	kUSBInterfaceUserClientWriteStreamsPipe,
 	kUSBInterfaceUserClientAbortStreamsPipe,
+    kUSBInterfaceUserClientRegisterForNotification,
+    kUSBInterfaceUserClientUnregisterNotification,
+    kUSBInterfaceUserClientAcknowledgeNotification,
 	kIOUSBLibInterfaceUserClientV3NumCommands
    };
 
@@ -97,6 +104,8 @@ enum {
 #include <IOKit/IOService.h>
 #include <IOKit/IOUserClient.h>
 #include <IOKit/usb/USB.h>
+#include <IOKit/usb/IOUSBDevice.h>
+#include <IOKit/usb/IOUSBInterface.h>
 
 //================================================================================================
 //
@@ -129,6 +138,46 @@ struct IOUSBInterfaceUserClientISOAsyncParamBlock
 };
 
 
+// this class declaration may want to move to another header file (and maybe not)
+class IOUSBNotification : public OSObject
+{
+    OSDeclareDefaultStructors(IOUSBNotification);
+
+    IOUserClient *              fpIOUserClient;              // the IOUserClient object which created this IOUSBNotification
+    IOUSBDevice *               fpIOUSBDevice;               // the device whose user client created this note (or the parent of the interface user client)
+    IOUSBInterface *            fpIOUSBInterface;            // the interface whose user client create this note (could be NULL)
+    UInt64                      fbmNotificationMask;         // a bitmask of the desired bits for this notification
+    OSAsyncReference64          fAsyncRef;                   // this contains the callback routine and the refCon in user space
+    UInt64                      fToken;                      // this token is unique for each user client
+    
+public:
+    static IOUSBNotification*   withUserClient(IOUserClient *pIOUserClient);
+
+    // Accessors
+    inline IOUserClient *              GetIOUserClient(void)                                        {return fpIOUserClient;}
+    inline IOUSBDevice *               GetIOUSBDevice(void)                                         {return fpIOUSBDevice;}
+    inline IOUSBInterface *            GetIOUSBInterface(void)                                      {return fpIOUSBInterface;}
+    inline UInt64                      GetNotificationMask(void)                                    {return fbmNotificationMask;}
+    inline OSAsyncReference64 *        GetAsyncRefPtr(void)                                         {return &fAsyncRef;}
+    inline UInt64                      GetToken(void)                                               {return fToken;}
+    
+    inline void                        SetIOUSBDevice(IOUSBDevice *iousbdevice)                     {fpIOUSBDevice = iousbdevice;}
+    inline void                        SetIOUSBInterface(IOUSBInterface *iousbinterface)            {fpIOUSBInterface = iousbinterface;}
+    inline void                        SetNotificationMask(UInt64 notificationmask)                 {fbmNotificationMask = notificationmask;}
+    inline void                        SetAsyncRef(OSAsyncReference64 *pAsyncRef)                   {bcopy(pAsyncRef, &fAsyncRef, sizeof(OSAsyncReference64));}
+    inline void                        SetToken(UInt64 token)                                       {fToken = token;}
+    
+    // public methods
+    IOReturn                            SendNotification(UInt64 notificationmask, void* pToken);
+};
+
+enum {
+    // values used to talk between the UserClient KEXT and a device or interface
+    kUSBProcessNotificationRegisterNotification      = 1,
+    kUSBProcessNotificationUnregisterNotification    = 2,
+    kUSBProcessNotificationAcknowledgeNotification   = 3
+};
+
 //================================================================================================
 //
 // This class is used to add an IOProviderMergeProperties dictionary entry to a provider's
@@ -138,7 +187,7 @@ struct IOUSBInterfaceUserClientISOAsyncParamBlock
 //
 //================================================================================================
 //
-class IOUSBUserClientInit : public IOService 
+class IOUSBUserClientInit : public IOService
 {
     OSDeclareDefaultStructors(IOUSBUserClientInit);
 

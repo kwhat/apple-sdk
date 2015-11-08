@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000-2010 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 2000-2014 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  * 
@@ -350,7 +350,7 @@ typedef struct vol_attributes_attr {
  */
 #define ATTR_CMN_RETURNED_ATTRS			0x80000000
 
-#define ATTR_CMN_VALIDMASK			0x9FE7FFFF
+#define ATTR_CMN_VALIDMASK			0xBFFFFFFF
 #define ATTR_CMN_SETMASK			0x01C7FF00
 #define ATTR_CMN_VOLSETMASK			0x00006700
 
@@ -480,11 +480,11 @@ struct user32_fssearchblock {
 };
 
 
-
 struct searchstate {
-	u_char				reserved[556];		//	sizeof( SearchState )
-};
-
+	uint32_t			ss_union_flags;		// for SRCHFS_START
+	uint32_t			ss_union_layer;		// 0 = top
+	u_char				ss_fsstate[548];	// fs private
+} __attribute__((packed));
 
 #define FST_EOF (-1)				/* end-of-file offset */
 

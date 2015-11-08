@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.8.sdk/usr/include/AssertMacros.h
+../../../../../../../usr/include/AssertMacros.h

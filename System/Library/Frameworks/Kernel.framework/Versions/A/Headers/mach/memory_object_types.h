@@ -267,6 +267,9 @@ typedef struct memory_object_attr_info	memory_object_attr_info_data_t;
 #define MAP_MEM_NAMED_CREATE	0x020000 /* create extant object      */
 #define MAP_MEM_PURGABLE	0x040000 /* create a purgable VM object */
 #define MAP_MEM_NAMED_REUSE	0x080000 /* reuse provided entry if identical */
+#define MAP_MEM_USE_DATA_ADDR	0x100000 /* preserve address of data, rather than base of page */
+#define MAP_MEM_VM_COPY		0x200000 /* make a copy of a VM range */
+#define MAP_MEM_VM_SHARE	0x400000 /* extract a VM range for remap */
 
 
 /*
@@ -326,9 +329,12 @@ typedef uint32_t	upl_size_t;	/* page-aligned byte size */
 #define UPL_UBC_PAGEOUT		0x04000000
 #define UPL_UBC_PAGEIN		0x08000000
 #define UPL_REQUEST_SET_DIRTY	0x10000000
+#define UPL_REQUEST_NO_FAULT	0x20000000 /* fail if pages not all resident */
+#define UPL_NOZEROFILLIO	0x40000000 /* allow non zerofill pages present */
+#define UPL_REQUEST_FORCE_COHERENCY	0x80000000
 
 /* UPL flags known by this kernel */
-#define UPL_VALID_FLAGS		0x1FFFFFFF
+#define UPL_VALID_FLAGS		0xFFFFFFFF
 
 
 /* upl abort error flags */
@@ -409,6 +415,15 @@ typedef uint32_t	upl_size_t;	/* page-aligned byte size */
  */
 #define UPL_IOSTREAMING		0x100
 
+/*
+ * Currently, it's only used for the swap pagein path.
+ * Since the swap + compressed pager layer manage their
+ * pages, these pages are not marked "absent" i.e. these
+ * are "valid" pages. The pagein path will _not_ issue an
+ * I/O (correctly) for valid pages. So, this flag is used
+ * to override that logic in the vnode I/O path.
+ */
+#define UPL_IGNORE_VALID_PAGE_CHECK	0x200
 
 
 
@@ -423,6 +438,7 @@ typedef uint32_t	upl_size_t;	/* page-aligned byte size */
 #define UPL_COMMIT_CLEAR_PRECIOUS	0x80
 #define UPL_COMMIT_SPECULATE		0x100
 #define UPL_COMMIT_FREE_ABSENT		0x200
+#define UPL_COMMIT_WRITTEN_BY_KERNEL	0x400
 
 #define UPL_COMMIT_KERNEL_ONLY_FLAGS	(UPL_COMMIT_CS_VALIDATED | UPL_COMMIT_FREE_ABSENT)
 

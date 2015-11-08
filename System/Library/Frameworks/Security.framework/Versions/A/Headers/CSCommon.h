@@ -93,6 +93,22 @@ enum {
 	errSecCSFileHardQuarantined =		-67026,	/* File created by an AppSandbox, exec/open not allowed */
 	errSecCSOutdated =					-67025,	/* presented data is out of date */
 	errSecCSDbCorrupt =					-67024,	/* a system database or file is corrupt */
+	errSecCSResourceDirectoryFailed =	-67023,	/* invalid resource directory (directory or signature have been modified) */
+	errSecCSUnsignedNestedCode =		-67022,	/* nested code is unsigned */
+	errSecCSBadNestedCode =				-67021,	/* nested code is modified or invalid */
+	errSecCSBadCallbackValue =			-67020,	/* monitor callback returned invalid value */
+	errSecCSHelperFailed =				-67019,	/* the codesign_allocate helper tool cannot be found or used */
+	errSecCSVetoed =					-67018,
+	errSecCSBadLVArch =					-67017, /* library validation flag cannot be used with an i386 binary */
+	errSecCSResourceNotSupported =		-67016, /* unsupported resource found (something not a directory, file or symlink) */
+	errSecCSRegularFile =				-67015, /* the main executable or Info.plist must be a regular file (no symlinks, etc.) */
+	errSecCSUnsealedAppRoot	=			-67014, /* unsealed contents present in the bundle root */
+	errSecCSWeakResourceRules =			-67013, /* resource envelope is obsolete */
+	errSecCSDSStoreSymlink =			-67012, /* .DS_Store files cannot be a symlink */ 
+	errSecCSAmbiguousBundleFormat =		-67011, /* bundle format is ambiguous (could be app or framework) */
+	errSecCSBadMainExecutable =			-67010, /* main executable failed strict validation */
+	errSecCSBadFrameworkVersion = 		-67009, /* embedded framework contains modified or invalid version */
+	errSecCSUnsealedFrameworkRoot =		-67008, /* unsealed contents present in the root directory of an embedded framework */
 };
 
 
@@ -223,6 +239,9 @@ enum {
 	kSecCodeSignatureForceHard = 0x0100,	/* always set HARD mode on launch */
 	kSecCodeSignatureForceKill = 0x0200,	/* always set KILL mode on launch */
 	kSecCodeSignatureForceExpiration = 0x0400, /* force certificate expiration checks */
+	kSecCodeSignatureRestrict = 0x0800, /* restrict dyld loading */
+	kSecCodeSignatureEnforcement = 0x1000, /* enforce code signing */
+	kSecCodeSignatureLibraryValidation = 0x2000, /* library validation required */
 };
 
 

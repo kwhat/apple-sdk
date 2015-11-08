@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.8.sdk/usr/include/TargetConditionals.h
+../../../../../../../usr/include/TargetConditionals.h

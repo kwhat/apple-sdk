@@ -11,8 +11,8 @@
 
 /*!
 	@class		AVB17221AECPMessage
-	@abstract	AVB17221AECPMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol message.
-	@discussion	AVB17221AECPMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol (AECP) message.
+	@abstract	AVB17221AECPMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol message.
+	@discussion	AVB17221AECPMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol (AECP) message.
 				This class is a abstract class providing the support for the common format shared between the different
 				AECP message types.
  */
@@ -23,8 +23,8 @@ NS_CLASS_AVAILABLE(10_8, NA)
 @private
 	AVB17221AECPMessageType messageType;
 	AVB17221AECPStatusCode status;
-	uint64_t targetGUID;
-	uint64_t controllerGUID;
+	uint64_t targetEntityID;
+	uint64_t controllerEntityID;
 	uint16_t sequenceID;
 	
 	AVBMACAddress *sourceMAC;
@@ -45,12 +45,22 @@ NS_CLASS_AVAILABLE(10_8, NA)
 	@property	targetGUID
 	@abstract	The target_guid field of the AECP message.
  */
-@property (assign) uint64_t targetGUID;
+@property (assign) uint64_t targetGUID NS_DEPRECATED(10_8, 10_9, NA, NA);
+/*!
+	@property	targetEntityID
+	@abstract	The target_entity_id field of the AECP message.
+ */
+@property (assign) uint64_t targetEntityID NS_AVAILABLE(10_9, NA);
 /*!
 	@property	controllerGUID
 	@abstract	The controller_guid field of the AECP message.
  */
-@property (assign) uint64_t controllerGUID;
+@property (assign) uint64_t controllerGUID NS_DEPRECATED(10_8, 10_9, NA, NA);
+/*!
+	@property	controllerEntityID
+	@abstract	The controller_entity_id field of the AECP message.
+ */
+@property (assign) uint64_t controllerEntityID NS_AVAILABLE(10_9, NA);
 /*!
 	@property	sequenceID
 	@abstract	The sequence_id field of the AECP message.
@@ -73,8 +83,8 @@ NS_CLASS_AVAILABLE(10_8, NA)
 
 /*!
  @class		AVB17221AECPAEMMessage
- @abstract	AVB17221AECPAEMMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol, AVDECC Entity Model message.
- @discussion	AVB17221AECPAEMMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol (AECP), AVDECC Entity Model (AEM) message.
+ @abstract	AVB17221AECPAEMMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol, AVDECC Entity Model message.
+ @discussion	AVB17221AECPAEMMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol (AECP), AVDECC Entity Model (AEM) message.
  This class is a concrete subclass of AVB17221AECPMessage which provides support for the AEM messages.
  */
 NS_CLASS_AVAILABLE(10_8, NA)
@@ -98,6 +108,12 @@ NS_CLASS_AVAILABLE(10_8, NA)
 	@abstract	The u field of the AECP AEM message.
  */
 @property (assign, getter=isUnsolicited) BOOL unsolicited;
+/*!
+ @property	controllerRequest
+ @abstract	The cr field of the AECP AEM message.
+ */
+@property (assign, getter=isControllerRequest) BOOL controllerRequest NS_AVAILABLE(10_9, NA);
+
 /*!
 	@property	commandSpecificData
 	@abstract	The command_specific_data field of the AECP AEM message.
@@ -127,8 +143,8 @@ NS_CLASS_AVAILABLE(10_8, NA)
 
 /*!
 	@class		AVB17221AECPAddressAccessMessage
-	@abstract	AVB17221AECPAddressAccessMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol, Address Access message.
-	@discussion	AVB17221AECPAddressAccessMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol (AECP), Address Access message.
+	@abstract	AVB17221AECPAddressAccessMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol, Address Access message.
+	@discussion	AVB17221AECPAddressAccessMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol (AECP), Address Access message.
 				This class is a concrete subclass of AVB17221AECPMessage which provides support for the Address Access messages.
  */
 NS_CLASS_AVAILABLE(10_8, NA)
@@ -169,15 +185,15 @@ NS_CLASS_AVAILABLE(10_8, NA)
 
 /*!
 	@class		AVB17221AECPAddressAccessTLV
-	@abstract	AVB17221AECPAddressAccessTLV encapsulates a TLV from an IEEE P1722.1 AVDECC Enumeration and Control Protocol, Address Access message.
-	@discussion	AVB17221AECPAddressAccessTLV encapsulates a TLV from an IEEE P1722.1 AVDECC Enumeration and Control Protocol (AECP), Address Access message.
+	@abstract	AVB17221AECPAddressAccessTLV encapsulates a TLV from an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol, Address Access message.
+	@discussion	AVB17221AECPAddressAccessTLV encapsulates a TLV from an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol (AECP), Address Access message.
  */
 NS_CLASS_AVAILABLE(10_8, NA)
 @interface AVB17221AECPAddressAccessTLV : NSObject
 #ifndef _LP64
 {
 @private
-	uint8_t mode;
+	AVB17221AECPAddressAccessTLVMode mode;
 	uint64_t address;
 	NSData *memoryData;
 }
@@ -187,7 +203,7 @@ NS_CLASS_AVAILABLE(10_8, NA)
 	@property	mode
 	@abstract	The mode field of the Address Access TLV.
  */
-@property (assign) uint8_t mode;
+@property (assign) AVB17221AECPAddressAccessTLVMode mode;
 /*!
 	@property	address
 	@abstract	The address field of the Address Access TLV.
@@ -208,8 +224,8 @@ NS_CLASS_AVAILABLE(10_8, NA)
 
 /*!
 	@class		AVB17221AECPAVCMessage
-	@abstract	AVB17221AECPAVCMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol, Legacy AV/C message.
-	@discussion	AVB17221AECPAVCMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol (AECP), Legacy AV/C message.
+	@abstract	AVB17221AECPAVCMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol, Legacy AV/C message.
+	@discussion	AVB17221AECPAVCMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol (AECP), Legacy AV/C message.
 				This class is a concrete subclass of AVB17221AECPMessage which provides support for the Legacy AV/C messages.
  */
 NS_CLASS_AVAILABLE(10_8, NA)
@@ -236,8 +252,8 @@ NS_CLASS_AVAILABLE(10_8, NA)
 
 /*!
 	@class		AVB17221AECPVendorMessage
-	@abstract	AVB17221AECPVendorMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol, Vendor Unique message.
-	@discussion	AVB17221AECPVendorMessage encapsulates an IEEE P1722.1 AVDECC Enumeration and Control Protocol (AECP), Vendor Unique message.
+	@abstract	AVB17221AECPVendorMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol, Vendor Unique message.
+	@discussion	AVB17221AECPVendorMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol (AECP), Vendor Unique message.
 				This class is a concrete subclass of AVB17221AECPMessage which provides support for the AEM messages.
  */
 NS_CLASS_AVAILABLE(10_8, NA)
