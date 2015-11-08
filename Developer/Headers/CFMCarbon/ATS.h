@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/Headers/ATS.h
+../../../System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/Headers/ATS.h

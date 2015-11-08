@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/usr/include/gcc/darwin/default/stdarg.h
+gcc/darwin/default/stdarg.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/ColorSync.framework/Headers/CMTypes.h
+../../../System/Library/Frameworks/ApplicationServices.framework/Frameworks/ColorSync.framework/Headers/CMTypes.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/FindByContent.framework/Headers/FindByContent.r
+../../../System/Library/Frameworks/ApplicationServices.framework/Frameworks/FindByContent.framework/Headers/FindByContent.r

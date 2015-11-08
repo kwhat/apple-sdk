@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/AE.framework/Headers/AEUserTermTypes.h
+../../../../System/Library/Frameworks/ApplicationServices.framework/Frameworks/AE.framework/Headers/AEUserTermTypes.h

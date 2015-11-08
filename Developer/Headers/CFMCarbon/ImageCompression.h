@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/QuickTime.framework/Headers/ImageCompression.h
+../../../System/Library/Frameworks/QuickTime.framework/Headers/ImageCompression.h

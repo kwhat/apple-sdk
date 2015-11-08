@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/Tcl.framework/Versions/8.4/Headers/tclPlatDecls.h
+../../System/Library/Frameworks/Tcl.framework/Versions/8.4/Headers/tclPlatDecls.h

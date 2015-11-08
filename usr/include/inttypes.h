@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/usr/include/gcc/darwin/default/inttypes.h
+gcc/darwin/default/inttypes.h

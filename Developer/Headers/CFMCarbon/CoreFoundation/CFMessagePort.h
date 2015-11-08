@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFMessagePort.h
+../../../../System/Library/Frameworks/CoreFoundation.framework/Headers/CFMessagePort.h

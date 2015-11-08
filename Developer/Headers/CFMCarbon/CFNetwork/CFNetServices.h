@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/CoreServices.framework/Frameworks/CFNetwork.framework/Headers/CFNetServices.h
+../../../../System/Library/Frameworks/CoreServices.framework/Frameworks/CFNetwork.framework/Headers/CFNetServices.h

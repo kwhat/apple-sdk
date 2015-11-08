@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/CoreServices.framework/Frameworks/OSServices.framework/Headers/OpenTransportProviders.r
+../../../System/Library/Frameworks/CoreServices.framework/Frameworks/OSServices.framework/Headers/OpenTransportProviders.r

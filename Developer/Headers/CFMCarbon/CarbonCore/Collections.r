@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Headers/Collections.r
+../../../../System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Headers/Collections.r

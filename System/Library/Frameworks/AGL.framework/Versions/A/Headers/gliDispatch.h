@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gliDispatch.h
+../../../../OpenGL.framework/Headers/gliDispatch.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/usr/include/gcc/darwin/default/float.h
+gcc/darwin/default/float.h

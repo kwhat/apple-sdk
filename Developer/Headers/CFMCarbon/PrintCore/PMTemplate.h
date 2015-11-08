@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/PrintCore.framework/Headers/PMTemplate.h
+../../../../System/Library/Frameworks/ApplicationServices.framework/Frameworks/PrintCore.framework/Headers/PMTemplate.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.3.9.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/OpenScripting.r
+../../../../System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/OpenScripting.r
