@@ -228,15 +228,6 @@ enum {
 #define	NOTE_EXITSTATUS		0x04000000	/* exit status to be returned, valid for child process only */
 #define	NOTE_EXIT_DETAIL	0x02000000	/* provide details on reasons for exit */
 
-#if CONFIG_EMBEDDED
-/* App states notification */
-#define	NOTE_APPACTIVE		0x00800000	/* app went to active state */
-#define	NOTE_APPBACKGROUND	0x00400000	/* app went to background */
-#define	NOTE_APPNONUI		0x00200000	/* app went to active with no UI */
-#define	NOTE_APPINACTIVE	0x00100000	/* app went to inactive state */
-#define NOTE_APPALLSTATES	0x00f00000
-#endif /* CONFIG_EMBEDDED */
-
 #define	NOTE_PDATAMASK	0x000fffff		/* mask for signal & exit status */
 #define	NOTE_PCTRLMASK	(~NOTE_PDATAMASK)
 

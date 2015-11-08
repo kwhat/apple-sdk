@@ -68,6 +68,9 @@ extern NSString *PDFViewDisplayBoxChangedNotification;	// Notification when the 
 
 #endif	// MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5
 
+extern NSString *PDFViewVisiblePagesChangedNotification;  // Notification when the scroll view has scrolled into the bounds of a new page.
+
+
 @interface PDFView : NSView <NSAnimationDelegate>
 {
 @private

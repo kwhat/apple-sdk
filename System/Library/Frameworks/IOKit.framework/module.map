@@ -189,6 +189,7 @@ framework module IOKit [system] {
     header "storage/IOCDPartitionScheme.h"
     header "storage/IOStorageDeviceCharacteristics.h"
     header "storage/IOCDTypes.h"
+    header "storage/IOStorageControllerCharacteristics.h"
     header "storage/IOStorageProtocolCharacteristics.h"
     header "storage/IODVDBlockStorageDevice.h"
     header "storage/IODVDMedia.h"
@@ -228,3 +229,4 @@ framework module IOKit [system] {
     export *
   }
 }
+

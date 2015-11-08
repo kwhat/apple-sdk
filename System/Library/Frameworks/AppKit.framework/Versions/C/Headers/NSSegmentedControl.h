@@ -1,7 +1,7 @@
 /*
 	NSSegmentedControl.h
 	Application Kit
-	Copyright (c) 2003-2013, Apple Inc.
+	Copyright (c) 2003-2014, Apple Inc.
 	All rights reserved.
 */
 
@@ -11,17 +11,18 @@
 
 @class NSImage;
 
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5
-enum {
+typedef NS_ENUM(NSInteger, NSSegmentStyle) {
     NSSegmentStyleAutomatic = 0, //Appearance is chosen depending on the type of window and the control's position inside it
     NSSegmentStyleRounded = 1,
     NSSegmentStyleRoundRect = 3,
     NSSegmentStyleTexturedSquare = 4,
-    NSSegmentStyleSmallSquare = 6
-};
-#endif
-
-typedef NSInteger NSSegmentStyle;
+    NSSegmentStyleSmallSquare = 6,
+    NSSegmentStyleSeparated NS_ENUM_AVAILABLE_MAC(10_10) = 8,
+    
+    /* In Mac OS X 10.7, the following styles have artwork identical to NSSegmentStyleTexturedSquare, and their usage is discouraged.  Use NSSegmentStyleTexturedSquare instead because it has the correct metrics for this artwork. */
+    NSSegmentStyleTexturedRounded NS_ENUM_AVAILABLE_MAC(10_5) = 2,
+    NSSegmentStyleCapsule NS_ENUM_AVAILABLE_MAC(10_5) = 5
+} NS_ENUM_AVAILABLE_MAC(10_5);
 
 @interface NSSegmentedControl : NSControl {
   @private
@@ -31,11 +32,9 @@ typedef NSInteger NSSegmentStyle;
     NSInteger _reserved4;
 }
 
-- (void)setSegmentCount:(NSInteger)count;
-- (NSInteger)segmentCount;
+@property NSInteger segmentCount;
 
-- (void)setSelectedSegment:(NSInteger)selectedSegment;
-- (NSInteger)selectedSegment;
+@property NSInteger selectedSegment;
 
 - (BOOL)selectSegmentWithTag:(NSInteger)tag;
 
@@ -62,15 +61,6 @@ typedef NSInteger NSSegmentStyle;
 - (void)setEnabled:(BOOL)enabled forSegment:(NSInteger)segment;
 - (BOOL)isEnabledForSegment:(NSInteger)segment;
 
-- (void)setSegmentStyle:(NSSegmentStyle)segmentStyle NS_AVAILABLE_MAC(10_5);
-- (NSSegmentStyle)segmentStyle NS_AVAILABLE_MAC(10_5);
+@property NSSegmentStyle segmentStyle NS_AVAILABLE_MAC(10_5);
 
 @end
-
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5
-/* In Mac OS X 10.7, the following styles have artwork identical with NSSegmentStyleTexturedSquare, and their usage is discouraged.  Prefer to use NSSegmentStyleTexturedSquare because it has the correct metrics for this artwork. */
-enum {
-    NSSegmentStyleTexturedRounded = 2,
-    NSSegmentStyleCapsule = 5
-};
-#endif

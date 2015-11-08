@@ -1,12 +1,13 @@
 /*
         NSResponder.h
         Application Kit
-        Copyright (c) 1994-2013, Apple Inc.
+        Copyright (c) 1994-2014, Apple Inc.
         All rights reserved.
 */
 
 #import <Foundation/NSObject.h>
 #import <AppKit/NSEvent.h>
+#import <AppKit/NSAccessibilityProtocols.h>
 
 @class NSArray, NSError, NSEvent, NSMenu, NSUndoManager, NSWindow;
 
@@ -16,8 +17,10 @@
     id _nextResponder;
 }
 
-- (NSResponder *)nextResponder;
-- (void)setNextResponder:(NSResponder *)aResponder;
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
+
+@property (assign) NSResponder *nextResponder;
 - (BOOL)tryToPerform:(SEL)anAction with:(id)anObject;
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent;
 - (id)validRequestorForSendType:(NSString *)sendType returnType:(NSString *)returnType;
@@ -71,15 +74,14 @@
 - (void)quickLookWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_8);
 
 - (void)noResponderFor:(SEL)eventSelector;
-- (BOOL)acceptsFirstResponder;
+@property (readonly) BOOL acceptsFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)resignFirstResponder;
 
 - (void)interpretKeyEvents:(NSArray *)eventArray;
 - (void)flushBufferedKeyEvents;
 
-- (void)setMenu:(NSMenu *)menu;
-- (NSMenu *)menu;
+@property (strong) NSMenu *menu;
 
 - (void)showContextHelp:(id)sender;
 
@@ -251,7 +253,7 @@
 @end
 
 @interface NSResponder(NSUndoSupport)
-- (NSUndoManager *)undoManager;
+@property (readonly, strong) NSUndoManager *undoManager;
 @end
 
 @interface NSResponder (NSControlEditingSupport)

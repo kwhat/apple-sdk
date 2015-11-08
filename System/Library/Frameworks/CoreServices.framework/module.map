@@ -32,6 +32,14 @@ framework module CoreServices [system] {
     }
   }
 
+  framework module FSEvents [system] {
+    umbrella header "FSEvents.h"
+    export *
+    module * {
+      export *
+    }
+  }
+
   framework module LaunchServices [system] {
     umbrella header "LaunchServices.h"
     export *

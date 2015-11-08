@@ -514,6 +514,7 @@ enum {
 #define kUSBProductID               "idProduct"         // good name
 #define kUSBProductName             kUSBProductID       // bad name - keep for backward compatibility
 #define kUSBDeviceReleaseNumber     "bcdDevice"
+#define kUSBSpecReleaseNumber       "bcdUSB"
 #define kUSBManufacturerStringIndex "iManufacturer"
 #define kUSBProductStringIndex      "iProduct"
 #define kUSBSerialNumberStringIndex "iSerialNumber"

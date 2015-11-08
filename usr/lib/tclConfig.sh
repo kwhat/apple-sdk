@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Tcl.framework/Versions/8.5/tclConfig.sh
+/tmp/MacOSX-SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Tcl.framework/Versions/8.5/tclConfig.sh

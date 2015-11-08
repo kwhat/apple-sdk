@@ -14,9 +14,12 @@
 .Fl h
 .Nm
 .Op Fl f Ar results_directory
+.Op Fl A Ar archive_name
 .Op Fl t
 .Op Fl q
 .Op Fl b
+.Op Fl p
+.Op Fl d
 .Op Ar process_name | pid
 .\" =========================== END SYNOPSIS SECTION ===========================
 .\" ============================================================================
@@ -79,12 +82,18 @@ If a specific process is supplied as an argument: data about the virtual memory 
 Print full usage.
 .It Fl f Ar results_directory
 Specify the directory where the results will be stored. The default results directory is /var/tmp.
+.It Fl A Ar archive_name
+Specify the name of the archive created in the results directory.
 .It Fl q
 Skips calling footprint.
 .It Fl t
 Enable "Thorough Mode". See below.
 .It Fl b
 Do not show the resulting archive in a Finder window upon completion.
+.It Fl p
+Request only time-sensitive data to be collected (performance issues).
+.It Fl d
+Request only log data to be collected (historical issues).
 .It Ar process_name | pid
 If a single process appears to be slowing down the system, passing in the process name or ID as the argument gathers additional process-specific diagnostic data.
 .El

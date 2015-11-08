@@ -5,6 +5,9 @@ framework module * [system] {
   
   exclude Tk
   exclude Ruby
+  exclude SocialPlugin
+  exclude LDAP
+
 
 
 

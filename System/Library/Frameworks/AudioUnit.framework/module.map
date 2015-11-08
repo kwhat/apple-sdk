@@ -15,10 +15,5 @@ framework module AudioUnit [system] {
     export *
   }
 
-  explicit module LogicAUProperties {
-    header "LogicAUProperties.h"
-    export *
-  }
-
 }
 
