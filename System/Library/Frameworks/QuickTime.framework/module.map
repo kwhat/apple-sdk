@@ -1,4 +1,4 @@
-framework module QuickTime [system] {
+framework module QuickTime [extern_c] {
   umbrella header "QuickTime.h"
 
   export *

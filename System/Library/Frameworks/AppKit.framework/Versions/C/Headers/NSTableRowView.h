@@ -1,7 +1,7 @@
 /*
     NSTableRowView.h
     Application Kit
-    Copyright (c) 2008-2014, Apple Inc.
+    Copyright (c) 2008-2015, Apple Inc.
     All rights reserved.
 */
 
@@ -13,6 +13,8 @@
 
 /* View Based TableView: The NSTableRowView is the view shown for a row in the table. It is responsible for drawing things associated with the row, including the selection highlight, and group row look. Properties can be changed on a row-by-row basis by using the table delegate method -tableView:didAddRowView:forRow:. Modifications of the properties are NOT reflected by the NSTableView instance; the NSTableRowView is simply a representation of the state. In other words, setting rowView.selected will NOT change the -selectedRowIndexes in NSTableView.
  */
+NS_ASSUME_NONNULL_BEGIN
+
 NS_CLASS_AVAILABLE(10_7, NA)
 @interface NSTableRowView : NSView <NSAccessibilityRow> {
 @private
@@ -43,11 +45,12 @@ NS_CLASS_AVAILABLE(10_7, NA)
     unsigned int _locationNeedsUpdating:1;
     unsigned int _isStatic:1;
     unsigned int _hasSelectedBackgroundView:1;
-    unsigned int _hasDropTargetBackgroundView:1;
     unsigned int _selectionBlendingMode:1;
     unsigned int _checkingFontRefColor:1;
+    unsigned int _forDeletion:1;
+    unsigned int _emphasizedForDropOperation:1;
 #if !__LP64__    
-    unsigned int _reserved2:8;
+    unsigned int _reserved2:7;
 #endif
 }
 
@@ -76,7 +79,7 @@ NS_CLASS_AVAILABLE(10_7, NA)
  */
 @property(getter=isFloating) BOOL floating;
 
-/* Drag and drop state. When targetForDropOperation is set to YES, the NSTableRowView will draw a drop on indicator based on the current draggingDestinationFeedbackStyle. The indentationForDropOperation is set appropriately by NSOutlineView if the drop target row should be indented. Otherwise it is 0.
+/* Drag and drop state. When targetForDropOperation is set to YES, the NSTableRowView will draw a drop on indicator based on the current draggingDestinationFeedbackStyle. The indentationForDropOperation is set appropriately by NSOutlineView if the drop target row should be indented. Otherwise it is 0. On Mac OS 10.0.2, the indentation is always 0, and the feedback style is now drawn similar to selection.
 */ 
 @property(getter=isTargetForDropOperation) BOOL targetForDropOperation;
 @property NSTableViewDraggingDestinationFeedbackStyle draggingDestinationFeedbackStyle;
@@ -127,7 +130,7 @@ NS_CLASS_AVAILABLE(10_7, NA)
 
 /* Provides access to the given view at a particular column. This is the only way to access cell views after the row view has been removed from the table. 
  */
-- (id)viewAtColumn:(NSInteger)column;
+- (nullable id)viewAtColumn:(NSInteger)column;
 
 /* Provides access to the number of columns represented by views in this NSTableRowView. This may not be equal to the number of columns in the enclosing NSTableView, if this row view is a group style and has a single view that spans the entire width of the row.
  */
@@ -137,3 +140,5 @@ NS_CLASS_AVAILABLE(10_7, NA)
 
 
 @end
+
+NS_ASSUME_NONNULL_END

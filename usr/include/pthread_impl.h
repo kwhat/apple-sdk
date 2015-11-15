@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.10.sdk/usr/include/pthread/pthread_impl.h
+pthread/pthread_impl.h

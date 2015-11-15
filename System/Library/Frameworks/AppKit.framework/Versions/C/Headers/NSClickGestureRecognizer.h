@@ -1,12 +1,14 @@
 /*
     NSClickGestureRecognizer.h
     Application Kit
-    Copyright (c) 2013-2014, Apple Inc.
+    Copyright (c) 2013-2015, Apple Inc.
     All rights reserved.
 */
 
 #import <Foundation/Foundation.h>
 #import <AppKit/NSGestureRecognizer.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 NS_CLASS_AVAILABLE(10_10, NA)
 @interface NSClickGestureRecognizer : NSGestureRecognizer <NSCoding> {
@@ -18,8 +20,8 @@ NS_CLASS_AVAILABLE(10_10, NA)
     NSInteger _currentButtonCount;
     NSInteger _activeButtonCount;
     NSInteger _currentClickCount;
+    id _reserved0;
 #ifndef __OBJC2__
-    NSInteger _reserved0;
     NSInteger _reserved1;
 #endif
 }
@@ -33,3 +35,5 @@ NS_CLASS_AVAILABLE(10_10, NA)
 @property NSInteger numberOfClicksRequired; // Defaults to 1
 
 @end
+
+NS_ASSUME_NONNULL_END

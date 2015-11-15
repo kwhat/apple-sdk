@@ -99,6 +99,11 @@ SMJobCopyDictionary(CFStringRef domain, CFStringRef jobLabel);
  * for all jobs in the given domain, or NULL if an error occurred. This routine
  * is deprecated and will be removed in a future release. There will be no
  * provided replacement.
+ *
+ * For the specific use of testing the state of a login item that may have been
+ * enabled with SMLoginItemSetEnabled() in order to show that state to the
+ * user, this function remains the recommended API. A replacement API for this
+ * specific use will be provided before this function is removed.
  */
 __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_6, __MAC_10_10, __IPHONE_3_0, __IPHONE_8_0)
 XPC_EXPORT
@@ -122,9 +127,9 @@ SMCopyAllJobDictionaries(CFStringRef domain);
  * if the given domain is kSMDomainSystemLaunchd. Otherwise, NULL may be passed.
  *
  * @param outError
- * Upon unsuccessful return, a new CFError object describing the error. This
- * argument may be NULL. It is the responsibility of the application to release
- * the error reference.
+ * Upon unsuccessful return, a new CFError object describing the error.  Upon 
+ * successful return, this argument is set to NULL.  This argument may be NULL. 
+ * It is the responsibility of the application to release the error reference.
  *
  * @result 
  * True if the job was submitted successfully, otherwise false.
@@ -160,9 +165,9 @@ SMJobSubmit(CFStringRef domain, CFDictionaryRef job, AuthorizationRef auth,
  * Pass true to block until the process for the given job has exited.
  *
  * @param outError
- * Upon unsuccessful return, a new CFError object describing the error. This
- * argument may be NULL. It is the responsibility of the application to release
- * the error reference.
+ * Upon unsuccessful return, a new CFError object describing the error.  Upon 
+ * successful return, this argument is set to NULL.  This argument may be NULL. 
+ * It is the responsibility of the application to release the error reference.
  *
  * @result
  * True if the job was removed successfully, otherwise false.
@@ -233,9 +238,9 @@ SMJobRemove(CFStringRef domain, CFStringRef jobLabel,
  * {@link kSMRightBlessPrivilegedHelper} right.
  *
  * @param outError
- * Upon unsuccessful return, a new CFError object describing the error. This
- * argument may be NULL. It is the responsibility of the application to release
- * the error reference.
+ * Upon unsuccessful return, a new CFError object describing the error.  Upon 
+ * successful return, this argument is set to NULL.  This argument may be NULL. 
+ * It is the responsibility of the application to release the error reference.
  *
  * @result
  * True if the helper tool was successfully bootstrapped, otherwise false.

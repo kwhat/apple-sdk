@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.10.sdk/usr/include/bootstrap.h
+../bootstrap.h

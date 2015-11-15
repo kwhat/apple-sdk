@@ -38,6 +38,8 @@
 extern "C" {
 #endif
 
+CF_ASSUME_NONNULL_BEGIN
+
 #pragma pack(push, 2)
 
 #if PRAGMA_ENUM_ALWAYSINT
@@ -257,7 +259,9 @@ enum {
    * only useful if your process might modify the file system hierarchy
    * beneath the path(s) being monitored. Note: this has no effect on
    * historical events, i.e., those delivered before the HistoryDone
-   * sentinel event.
+   * sentinel event.  Also, this does not apply to RootChanged events
+   * because the WatchRoot feature uses a separate mechanism that is
+   * unable to provide information about the responsible process.
    */
   kFSEventStreamCreateFlagIgnoreSelf __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_6_0) = 0x00000008,
 
@@ -477,7 +481,19 @@ enum {
    * Indicates the event was triggered by the current process.
    * (This flag is only ever set if you specified the MarkSelf flag when creating the stream.)
    */
-  kFSEventStreamEventFlagOwnEvent __OSX_AVAILABLE_STARTING(__MAC_10_9, __IPHONE_7_0) = 0x00080000
+  kFSEventStreamEventFlagOwnEvent __OSX_AVAILABLE_STARTING(__MAC_10_9, __IPHONE_7_0) = 0x00080000,
+
+  /* 
+   * Indicates the object at the specified path supplied in this event is a hard link.
+   * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
+   */
+  kFSEventStreamEventFlagItemIsHardlink __OSX_AVAILABLE_STARTING(__MAC_10_10, __IPHONE_9_0) = 0x00100000,
+
+  /* Indicates the object at the specific path supplied in this event was the last hard link.
+   * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
+   */
+  kFSEventStreamEventFlagItemIsLastHardlink __OSX_AVAILABLE_STARTING(__MAC_10_10, __IPHONE_9_0) = 0x00200000,
+
 };
 
 
@@ -536,25 +552,25 @@ struct FSEventStreamContext {
    * deallocated it will be used to release this value.  This can be
    * NULL.
    */
-  void *              info;
+  void * __nullable   info;
 
   /*
    * The callback used retain the info pointer.  This can be NULL.
    */
-  CFAllocatorRetainCallBack  retain;
+  CFAllocatorRetainCallBack __nullable  retain;
 
   /*
    * The callback used release a retain on the info pointer.  This can
    * be NULL.
    */
-  CFAllocatorReleaseCallBack  release;
+  CFAllocatorReleaseCallBack __nullable  release;
 
   /*
    * The callback used to create a descriptive string representation of
    * the info pointer (or the data pointed to by the info pointer) for
    * debugging purposes.  This can be NULL.
    */
-  CFAllocatorCopyDescriptionCallBack  copyDescription;
+  CFAllocatorCopyDescriptionCallBack __nullable  copyDescription;
 };
 typedef struct FSEventStreamContext     FSEventStreamContext;
 
@@ -620,7 +636,7 @@ typedef struct FSEventStreamContext     FSEventStreamContext;
  *      pass for the sinceWhen parameter to the
  *      FSEventStreamCreate...() function.
  */
-typedef CALLBACK_API_C( void , FSEventStreamCallback )(ConstFSEventStreamRef streamRef, void *clientCallBackInfo, size_t numEvents, void *eventPaths, const FSEventStreamEventFlags eventFlags[], const FSEventStreamEventId eventIds[]);
+typedef CALLBACK_API_C( void , FSEventStreamCallback )(ConstFSEventStreamRef streamRef, void * __nullable clientCallBackInfo, size_t numEvents, void *eventPaths, const FSEventStreamEventFlags eventFlags[], const FSEventStreamEventId eventIds[]);
 /*
  *  Create
  */
@@ -685,11 +701,11 @@ typedef CALLBACK_API_C( void , FSEventStreamCallback )(ConstFSEventStreamRef str
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern FSEventStreamRef 
+extern FSEventStreamRef __nullable
 FSEventStreamCreate(
-  CFAllocatorRef             allocator,
+  CFAllocatorRef __nullable  allocator,
   FSEventStreamCallback      callback,
-  FSEventStreamContext *     context,
+  FSEventStreamContext * __nullable context,
   CFArrayRef                 pathsToWatch,
   FSEventStreamEventId       sinceWhen,
   CFTimeInterval             latency,
@@ -769,11 +785,11 @@ FSEventStreamCreate(
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern FSEventStreamRef 
+extern FSEventStreamRef __nullable
 FSEventStreamCreateRelativeToDevice(
-  CFAllocatorRef             allocator,
+  CFAllocatorRef __nullable  allocator,
   FSEventStreamCallback      callback,
-  FSEventStreamContext *     context,
+  FSEventStreamContext * __nullable context,
   dev_t                      deviceToWatch,
   CFArrayRef                 pathsToWatchRelativeToDevice,
   FSEventStreamEventId       sinceWhen,
@@ -855,7 +871,7 @@ FSEventStreamGetDeviceBeingWatched(ConstFSEventStreamRef streamRef) __OSX_AVAILA
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern CFArrayRef 
+extern CF_RETURNS_RETAINED CFArrayRef 
 FSEventStreamCopyPathsBeingWatched(ConstFSEventStreamRef streamRef) __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_6_0);
 
 
@@ -911,7 +927,7 @@ FSEventsGetCurrentEventId(void)                               __OSX_AVAILABLE_ST
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern CFUUIDRef 
+extern CF_RETURNS_RETAINED CFUUIDRef __nullable
 FSEventsCopyUUIDForDevice(dev_t dev)                          __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_6_0);
 
 
@@ -1134,8 +1150,8 @@ FSEventStreamUnscheduleFromRunLoop(
  */
 extern void 
 FSEventStreamSetDispatchQueue(
-  FSEventStreamRef   streamRef,
-  dispatch_queue_t   q)                                      __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_6_0);
+  FSEventStreamRef              streamRef,
+  dispatch_queue_t __nullable   q)                                      __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_6_0);
 
 
 /*
@@ -1318,7 +1334,7 @@ FSEventStreamShow(ConstFSEventStreamRef streamRef)            __OSX_AVAILABLE_ST
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern CFStringRef 
+extern CF_RETURNS_RETAINED CFStringRef 
 FSEventStreamCopyDescription(ConstFSEventStreamRef streamRef) __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_6_0);
 
 
@@ -1337,7 +1353,6 @@ FSEventStreamCopyDescription(ConstFSEventStreamRef streamRef) __OSX_AVAILABLE_ST
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-
 extern Boolean 
 FSEventStreamSetExclusionPaths(FSEventStreamRef streamRef, CFArrayRef pathsToExclude) __OSX_AVAILABLE_STARTING(__MAC_10_9, __IPHONE_8_0);
 
@@ -1347,6 +1362,8 @@ FSEventStreamSetExclusionPaths(FSEventStreamRef streamRef, CFArrayRef pathsToExc
 #endif
 
 #pragma pack(pop)
+
+CF_ASSUME_NONNULL_END
 
 #ifdef __cplusplus
 }

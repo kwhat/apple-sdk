@@ -31,6 +31,12 @@
 #ifndef _USBSPEC_H
 #define _USBSPEC_H
 
+#if KERNEL
+#ifndef __IOUSBFAMILY__
+#warning "Deprecated header file.  See IOUSBHostFamily for USB-Host KPI."
+#endif
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -252,6 +258,7 @@ enum {
     kUSBHubClass                	= 9,
     kUSBDataClass               	= 10,
 	kUSBPersonalHealthcareClass		= 15,
+    kUSBBillBoardClass              = 17,
     kUSBDiagnosticClass				= 220,
     kUSBWirelessControllerClass 	= 224,
     kUSBMiscellaneousClass			= 239,

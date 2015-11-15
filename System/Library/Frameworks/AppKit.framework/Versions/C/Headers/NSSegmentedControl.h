@@ -1,15 +1,23 @@
 /*
 	NSSegmentedControl.h
 	Application Kit
-	Copyright (c) 2003-2014, Apple Inc.
+	Copyright (c) 2003-2015, Apple Inc.
 	All rights reserved.
 */
 
 #import <AppKit/NSControl.h>
 #import <AppKit/NSCell.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 @class NSImage;
+
+typedef NS_ENUM(NSUInteger, NSSegmentSwitchTracking) {
+    NSSegmentSwitchTrackingSelectOne = 0,  // only one button can be selected
+    NSSegmentSwitchTrackingSelectAny = 1,  // any button can be selected
+    NSSegmentSwitchTrackingMomentary = 2,  // only selected while tracking
+    NSSegmentSwitchTrackingMomentaryAccelerator NS_ENUM_AVAILABLE_MAC(10_10_3) = 3, // accelerator behavior, only selected while tracking
+};
 
 typedef NS_ENUM(NSInteger, NSSegmentStyle) {
     NSSegmentStyleAutomatic = 0, //Appearance is chosen depending on the type of window and the control's position inside it
@@ -41,8 +49,8 @@ typedef NS_ENUM(NSInteger, NSSegmentStyle) {
 - (void)setWidth:(CGFloat)width forSegment:(NSInteger)segment;
 - (CGFloat)widthForSegment:(NSInteger)segment;
 
-- (void)setImage:(NSImage *)image forSegment:(NSInteger)segment;
-- (NSImage *)imageForSegment:(NSInteger)segment;
+- (void)setImage:(nullable NSImage *)image forSegment:(NSInteger)segment;
+- (nullable NSImage *)imageForSegment:(NSInteger)segment;
 
 
 - (void)setImageScaling:(NSImageScaling)scaling forSegment:(NSInteger)segment NS_AVAILABLE_MAC(10_5);
@@ -50,10 +58,10 @@ typedef NS_ENUM(NSInteger, NSSegmentStyle) {
 
 
 - (void)setLabel:(NSString *)label forSegment:(NSInteger)segment;
-- (NSString *)labelForSegment:(NSInteger)segment;
+- (nullable NSString *)labelForSegment:(NSInteger)segment;
 
-- (void)setMenu:(NSMenu *)menu forSegment:(NSInteger)segment;
-- (NSMenu *)menuForSegment:(NSInteger)segment;
+- (void)setMenu:(nullable NSMenu *)menu forSegment:(NSInteger)segment;
+- (nullable NSMenu *)menuForSegment:(NSInteger)segment;
 
 - (void)setSelected:(BOOL)selected forSegment:(NSInteger)segment;
 - (BOOL)isSelectedForSegment:(NSInteger)segment;
@@ -63,4 +71,14 @@ typedef NS_ENUM(NSInteger, NSSegmentStyle) {
 
 @property NSSegmentStyle segmentStyle NS_AVAILABLE_MAC(10_5);
 
+@property (getter=isSpringLoaded) BOOL springLoaded NS_AVAILABLE_MAC(10_10_3); // sends action on deep-press or extended hover while dragging. Defaults to NO.
+
+@property NSSegmentSwitchTracking trackingMode NS_AVAILABLE_MAC(10_10_3);
+
+/*  This message is valid only for trackingMode=NSSegmentSwitchTrackingMomentaryAccelerator and provides the double value for the selected segment.
+ */
+@property (readonly) double doubleValueForSelectedSegment NS_AVAILABLE_MAC(10_10_3);
+
 @end
+
+NS_ASSUME_NONNULL_END

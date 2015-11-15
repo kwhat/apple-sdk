@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.10.sdk/usr/include/pthread/sched.h
+pthread/sched.h

@@ -481,7 +481,7 @@ class IOStreamBuffer : public OSObject
 protected:
     IOMemoryDescriptor *     _dataBuffer;        // The data buffer is expected to be filled by hardware.
     IOMemoryDescriptor *     _controlBuffer;     // The control buffer is expected to be defined by the hardware driver.
-    
+        
     IOStreamBufferID         _bufferID;          // Client handle for this buffer.
     
     OSArray *                _clientMemoryMaps;  // Maps for clients who are sharing these buffers.

@@ -380,6 +380,7 @@ enum
     kBluetoothL2CAPPSMHIDInterrupt				= 0x0013,	// HID profile - interrupt interface
     kBluetoothL2CAPPSMAVCTP						= 0x0017,	// Audio/Video Control Transport Protocol
     kBluetoothL2CAPPSMAVDTP						= 0x0019,	// Audio/Video Distribution Transport Protocol
+    kBluetoothL2CAPPSMAVCTP_Browsing			= 0x001B,	// AVTCP (AVRCP) Browsing
     kBluetoothL2CAPPSMUID_C_Plane				= 0x001D,	// Unrestricted Digital Information Profile (UDI)
     kBluetoothL2CAPPSMATT						= 0x001F,	// Attribute Protocol
 	
@@ -456,7 +457,7 @@ enum SDPServiceClasses
     kBluetoothSDPUUID16ServiceClassAVRemoteControlTarget					= 0x110C,
     kBluetoothSDPUUID16ServiceClassAdvancedAudioDistribution				= 0x110D,
     kBluetoothSDPUUID16ServiceClassAVRemoteControl							= 0x110E,
-    kBluetoothSDPUUID16ServiceClassVideoConferencing						= 0x110F,
+    kBluetoothSDPUUID16ServiceClassAVRemoteControlController				= 0x110F,
 	kBluetoothSDPUUID16ServiceClassIntercom									= 0x1110,	// 00001110-0000-1000-8000-00805f9b34fb
 	kBluetoothSDPUUID16ServiceClassFax										= 0x1111,	// 00001111-0000-1000-8000-00805f9b34fb
 	kBluetoothSDPUUID16ServiceClassHeadsetAudioGateway						= 0x1112,	// 00001112-0000-1000-8000-00805f9b34fb

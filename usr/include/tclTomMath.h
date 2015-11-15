@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Tcl.framework/Versions/8.5/Headers/tclTomMath.h
+../../System/Library/Frameworks/Tcl.framework/Versions/8.5/Headers/tclTomMath.h

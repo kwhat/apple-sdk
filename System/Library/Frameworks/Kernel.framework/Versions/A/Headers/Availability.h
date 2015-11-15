@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.10.sdk/usr/include/Availability.h
+../../../../../../../usr/include/Availability.h

@@ -1,1 +1,1 @@
-/tmp/MacOSX-SDKs/MacOSX10.10.sdk/usr/include/pthread/pthread_spis.h
+pthread/pthread_spis.h

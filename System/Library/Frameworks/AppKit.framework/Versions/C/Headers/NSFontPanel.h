@@ -1,11 +1,13 @@
 /*
 	NSFontPanel.h
 	Application Kit
-	Copyright (c) 1994-2014, Apple Inc.
+	Copyright (c) 1994-2015, Apple Inc.
 	All rights reserved.
 */
 
 #import <AppKit/NSPanel.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @class NSFontPanel, NSMutableDictionary, NSFontManager, NSMutableArray, NSTableView, NSFontDescriptor, NSFont;
 
@@ -93,7 +95,7 @@ NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 + (NSFontPanel *)sharedFontPanel;
 + (BOOL)sharedFontPanelExists;
 
-@property (strong) NSView *accessoryView;
+@property (nullable, strong) NSView *accessoryView;
 - (void)setPanelFont:(NSFont *)fontObj isMultiple:(BOOL)flag;
 - (NSFont *)panelConvertFont:(NSFont *)fontObj;
 @property BOOL worksWhenModal;
@@ -132,3 +134,5 @@ enum {
     NSFPSizeTitle			= 133,
     NSFPCurrentField			= 134
 } NS_ENUM_DEPRECATED_MAC(10_0, 10_0);
+
+NS_ASSUME_NONNULL_END

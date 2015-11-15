@@ -648,6 +648,9 @@ struct ap_method_list_t {
 #define INCLUDES_MAGIC_TYPE3 "text/x-server-parsed-html3"
 /** Magic for mod_dir */
 #define DIR_MAGIC_TYPE "httpd/unix-directory"
+/** Default for r->handler if no content-type set by type_checker */
+#define AP_DEFAULT_HANDLER_NAME ""
+#define AP_IS_DEFAULT_HANDLER_NAME(x) (*x == '\0')
 
 /** @} */
 /* Just in case your linefeed isn't the one the other end is expecting. */
@@ -950,8 +953,9 @@ struct request_rec {
     char *uri;
     /** The filename on disk corresponding to this response */
     char *filename;
-    /* XXX: What does this mean? Please define "canonicalize" -aaron */
-    /** The true filename, we canonicalize r->filename if these don't match */
+    /** The true filename stored in the filesystem, as in the true alpha case
+     *  and alias correction, e.g. "Image.jpeg" not "IMAGE$1.JPE" on Windows.
+     *  The core map_to_storage canonicalizes r->filename when they mismatch */
     char *canonical_filename;
     /** The PATH_INFO extracted from this request */
     char *path_info;
@@ -1032,6 +1036,11 @@ struct request_rec {
      */
     apr_sockaddr_t *useragent_addr;
     char *useragent_ip;
+
+    /** MIME trailer environment from the request */
+    apr_table_t *trailers_in;
+    /** MIME trailer environment from the response */
+    apr_table_t *trailers_out;
 };
 
 /**
@@ -1301,9 +1310,13 @@ struct server_rec {
     /** limit on number of request header fields  */
     int limit_req_fields;
 
-
     /** Opaque storage location */
     void *context;
+
+    /** Whether the keepalive timeout is explicit (1) or
+     *  inherited (0) from the base server (either first
+     *  server on the same IP:port or main server) */
+    unsigned int keep_alive_timeout_set:1;
 };
 
 /**
