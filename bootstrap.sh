@@ -77,9 +77,7 @@ rm -Rf Xcode
 # Xcode 4.3.1 for Lion
 # https://developer.apple.com/downloads/
 7z x xcode_431_lion.dmg
-7z x -so "Install Xcode/InstallXcodeLion.pkg" | cpio -i -u
-rm -Rf "Install Xcode"
-cp -Rf Xcode/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/* ./SDKs/
+cp -Rf Xcode/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk ./SDKs/
 rm -Rf Xcode
 
 # Xcode 4.3.2 for Lion
@@ -87,7 +85,7 @@ rm -Rf Xcode
 7z x xcode_432_lion.dmg
 7z x -so "Install Xcode/InstallXcodeLion.pkg" | cpio -i -u
 rm -Rf "Install Xcode"
-cp -Rf Xcode/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/* ./SDKs/
+cp -Rf Xcode/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk ./SDKs/
 rm -Rf Xcode
 
 # FIXME
