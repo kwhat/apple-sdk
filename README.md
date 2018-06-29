@@ -4,7 +4,7 @@ Use [bootstrap.sh](bootstrap.sh) to regenerate after downloading.
 * Xcode 4.4 (xcode446938108a.dmg)
 * Xcode 4.4.1 (xcode_5.0.1.dmg)
 * Xcode 4.4.1 (xcode_4.4.1_6938145.dmg)
-* Xcode 4.5(xcode_4.5.dmg)
+* Xcode 4.5 (xcode_4.5.dmg)
 * Xcode 4.5.1 (xcode4510417539a.dmg)
 * Xcode 4.5.2 (xcode4520418508a.dmg)
 * Xcode 4.6 (xcode460417218a.dmg)
