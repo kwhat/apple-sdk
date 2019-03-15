@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>An Interface Builder document for creating a Carbon window.
+
+To customize this document, drag controls from the Library onto the window and use the Inspector to set properties.</string>
+	<key>Icon</key>
+	<string>Window.tiff</string>
+	<key>Title</key>
+	<string>Carbon Window Template</string>
+</dict>
+</plist>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.apple.dtrace.instrument.18AA7A73_E672_4DFA_97BE_60816C181C1A" 
+	name="18AA7A73-E672-4DFA-97BE-60816C181C1A" 
+	version="1.0">
+
+	<activation>
+		<rule kind="extension" 
+			id="com.apple.powertrace.dtrace-instrument-plugin.main"/>
+	</activation>
+	<extension end_silent="" 
+		helpURL="" 
+		version="1.0" 
+		defaultBrushName="default" 
+		category="Core Data" 
+		point="com.apple.xray.dtrace-instrument-type" 
+		iconURL="rsrc://CoreData.icns" 
+		pluginIdentifier="com.apple.powertrace.dtrace-instrument-plugin.main" 
+		begin_silent="" 
+		deletable="false" 
+		deckUnits="1" 
+		name="Core Data Faults" 
+		runClass="PFTDTraceRun" 
+		instrumentDescription="Displays information about fault firing in Core Data." 
+		instrumentClass="PFTDTraceInstrument" 
+		data_silent="" 
+		id="18AA7A73-E672-4DFA-97BE-60816C181C1A" >
+			<targetType launched="true" 
+				existing="true" 
+				all="true" />
+			<brush name="Default"/>
+			<stack ustack="true"
+				kstack="false" 
+				jstack="false" />
+			<probe_definition index="0" 
+				event_name="Begin Fault" 
+				probe="CoreData*:CoreData:*:BeginFault" 
+				silent_script="self->faultStart = vtimestamp;" 
+				predicate="" 
+				attach_debugger="">
+					<field index="0" 
+						name="Fault object" 
+						code="arg0" 
+						type="%s" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+			<probe_definition index="1" 
+				event_name="End Fault" 
+				probe="CoreData*:CoreData:*:EndFault" 
+				silent_script="self->faultEnd= (vtimestamp - self->faultStart) / 1000;" 
+				predicate="" 
+				attach_debugger="">			
+					<field index="0" 
+						name="Fault duration" 
+						code="self->faultEnd" 
+						type="%d" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+			<probe_definition index="2" 
+				event_name="Begin Relationship Fault" 
+				probe="CoreData*:CoreData:*:BeginRelationshipFault" 
+				silent_script="self->relationshipFaultStart = vtimestamp;" 
+				predicate="" 
+				attach_debugger="">			
+					<field index="0" 
+						name="Relationship fault source" 
+						code="arg0" 
+						type="%s" 
+						width="(null)" 
+						truncation="(null)"/>
+					<field index="1" 
+						name="Relationship" 
+						code="arg1" 
+						type="%s" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+			<probe_definition index="3" 
+				event_name="End Relationship Fault" 
+				probe="CoreData*:CoreData:*:EndRelationshipFault" 
+				silent_script="self->relationshipFaultEnd= (vtimestamp - self->relationshipFaultStart) / 1000;" 
+				predicate="" 
+				attach_debugger="">			
+					<field index="0" 
+						name="Relationship fault duration" 
+						code="self->relationshipFaultEnd" 
+						type="%d" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+	</extension>
+</plugin>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>An Interface Builder document for creating an inspector panel as part of an Interface Builder Plug-in.
+
+To customize, use the sample controls and the guides in the view as examples for setting up your inspector.</string>
+	<key>Icon</key>
+	<string>Inspector.tiff</string>
+	<key>Title</key>
+	<string>IB SDK Inspector Template</string>
+</dict>
+</plist>

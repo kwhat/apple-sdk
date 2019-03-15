@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>HorizontalBottomSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BDGFIEID</string>
+		<key>MaximumSize</key>
+		<string>{10000, 18}</string>
+		<key>MinimumSize</key>
+		<string>{19, 18}</string>
+	</dict>
+	<key>HorizontalTickBottomSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BDGFIEID</string>
+		<key>MaximumSize</key>
+		<string>{10000, 23}</string>
+		<key>MinimumSize</key>
+		<string>{24, 23}</string>
+	</dict>
+	<key>HorizontalTickTopSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BDGFIEID</string>
+		<key>MaximumSize</key>
+		<string>{10000, 22}</string>
+		<key>MinimumSize</key>
+		<string>{23, 22}</string>
+	</dict>
+	<key>HorizontalTopSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BDGFIEID</string>
+		<key>MaximumSize</key>
+		<string>{10000, 18}</string>
+		<key>MinimumSize</key>
+		<string>{19, 18}</string>
+	</dict>
+	<key>MiniHorizontalBottomSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-TPXREF236</string>
+		<key>MaximumSize</key>
+		<string>{10000, 10}</string>
+		<key>MinimumSize</key>
+		<string>{11, 10}</string>
+	</dict>
+	<key>MiniHorizontalTickBottomSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-TPXREF236</string>
+		<key>MaximumSize</key>
+		<string>{10000, 14}</string>
+		<key>MinimumSize</key>
+		<string>{15, 14}</string>
+	</dict>
+	<key>MiniHorizontalTickTopSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-TPXREF236</string>
+		<key>MaximumSize</key>
+		<string>{10000, 14}</string>
+		<key>MinimumSize</key>
+		<string>{15, 14}</string>
+	</dict>
+	<key>MiniHorizontalTopSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-TPXREF236</string>
+		<key>MaximumSize</key>
+		<string>{10000, 10}</string>
+		<key>MinimumSize</key>
+		<string>{11, 10}</string>
+	</dict>
+	<key>MiniVerticalLeftSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-TPXREF236</string>
+		<key>MaximumSize</key>
+		<string>{11, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{11, 12}</string>
+	</dict>
+	<key>MiniVerticalRightSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-TPXREF236</string>
+		<key>MaximumSize</key>
+		<string>{11, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{11, 12}</string>
+	</dict>
+	<key>MiniVerticalTickLeftSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-TPXREF236</string>
+		<key>MaximumSize</key>
+		<string>{14, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{14, 15}</string>
+	</dict>
+	<key>MiniVerticalTickRightSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-TPXREF236</string>
+		<key>MaximumSize</key>
+		<string>{14, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{14, 15}</string>
+	</dict>
+	<key>SmallHorizontalBottomSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BGBIIHHF</string>
+		<key>MaximumSize</key>
+		<string>{10000, 13}</string>
+		<key>MinimumSize</key>
+		<string>{14, 13}</string>
+	</dict>
+	<key>SmallHorizontalTickBottomSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BGBIIHHF</string>
+		<key>MaximumSize</key>
+		<string>{10000, 16}</string>
+		<key>MinimumSize</key>
+		<string>{17, 16}</string>
+	</dict>
+	<key>SmallHorizontalTickTopSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BGBIIHHF</string>
+		<key>MaximumSize</key>
+		<string>{10000, 15}</string>
+		<key>MinimumSize</key>
+		<string>{16, 15}</string>
+	</dict>
+	<key>SmallHorizontalTopSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BGBIIHHF</string>
+		<key>MaximumSize</key>
+		<string>{10000, 13}</string>
+		<key>MinimumSize</key>
+		<string>{14, 13}</string>
+	</dict>
+	<key>SmallVerticalLeftSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BGBIIHHF</string>
+		<key>MaximumSize</key>
+		<string>{14, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{14, 15}</string>
+	</dict>
+	<key>SmallVerticalRightSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BGBIIHHF</string>
+		<key>MaximumSize</key>
+		<string>{14, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{14, 15}</string>
+	</dict>
+	<key>SmallVerticalTickLeftSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BGBIIHHF</string>
+		<key>MaximumSize</key>
+		<string>{16, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{16, 17}</string>
+	</dict>
+	<key>SmallVerticalTickRightSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BGBIIHHF</string>
+		<key>MaximumSize</key>
+		<string>{16, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{16, 17}</string>
+	</dict>
+	<key>VerticalLeftSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BDGFIEID</string>
+		<key>MaximumSize</key>
+		<string>{18, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{18, 19}</string>
+	</dict>
+	<key>VerticalRightSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BDGFIEID</string>
+		<key>MaximumSize</key>
+		<string>{18, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{18, 19}</string>
+	</dict>
+	<key>VerticalTickLeftSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BDGFIEID</string>
+		<key>MaximumSize</key>
+		<string>{22, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{22, 23}</string>
+	</dict>
+	<key>VerticalTickRightSlider</key>
+	<dict>
+		<key>HelpAnchor</key>
+		<string>//apple_ref/doc/uid/TP30000359-BDGFIEID</string>
+		<key>MaximumSize</key>
+		<string>{22, 10000}</string>
+		<key>MinimumSize</key>
+		<string>{22, 23}</string>
+	</dict>
+</dict>
+</plist>

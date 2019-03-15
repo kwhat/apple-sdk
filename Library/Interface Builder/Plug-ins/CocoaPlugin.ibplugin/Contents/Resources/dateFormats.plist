@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+
+<!--
+ Special escapes:
+   %% A single `%'.
+   %a Abbreviated weekday name.
+   %A Full weekday name.
+   %b Abbreviated month name.
+   %B Full month name.
+   %d Day of the month as a decimal number (01-31).
+   %e Day of the month as a decimal number (1-31) (%d without the leading 0).
+   %F
+   %H
+   %I
+   %j Day of the year as a decimal number (001-366)
+   %m Month as a decimal number (01-12).
+   %M Minute as a decimal number (00-59).
+   %p
+   %S
+   %w
+   %y Year without century (00-99).
+   %Y Year with century (e.g. 1990).
+   %z
+   %Z
+
+   %c Time and date using the NSTimeDateFormatString representation (or a
+      suitable default) for the locale.
+   %x Date using the NSTimeDateFormatString representation (or a suitable
+      default) for the locale.
+   %X Time using the NSTimeDateFormatString representation (or a suitable
+      default) for the locale.
+-->
+
+<plist version="0.9">
+<array>
+  <string>%c</string>
+  <string>%A, %B %e, %Y</string>   <!-- Monday, April 1, 1996 -->
+  <string>%B %e, %Y</string>       <!-- April 1, 1996 -->
+  <string>%e %B %Y</string>        <!-- 1 April 1996 -->
+  <string>%m/%d/%y</string>        <!-- 04/01/96 -->
+  <string>%b %d, %Y</string>       <!-- Apr 01, 1996 -->
+  <string>%B %d</string>           <!-- Apr 01 -->
+  <string>%d %b %Y</string>        <!-- 01 Apr 1996 -->
+  <string>%H:%M:%S</string>        <!-- 10:20:17 -->
+  <string>%I:%M</string>           <!-- 10:20 -->
+</array>
+</plist>

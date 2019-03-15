@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.apple.dtrace.instrument.84A1507E_D8C2_4126_A823_EE3375CF016D" 
+	name="84A1507E-D8C2-4126-A823-EE3375CF016D" 
+	version="1.0">
+
+	<activation>
+		<rule kind="extension" 
+			id="com.apple.powertrace.dtrace-instrument-plugin.main"/>
+	</activation>
+	<extension end_silent="" 
+		helpURL="" 
+		version="1.0" 
+		defaultBrushName="default" 
+		category="Core Data" 
+		point="com.apple.xray.dtrace-instrument-type" 
+		iconURL="rsrc://CoreData.icns" 
+		pluginIdentifier="com.apple.powertrace.dtrace-instrument-plugin.main" 
+		begin_silent="" 
+		deletable="false" 
+		deckUnits="1" 
+		name="Core Data Saves" 
+		runClass="PFTDTraceRun" 
+		instrumentDescription="Displays information about Core Data save activity." 
+		instrumentClass="PFTDTraceInstrument" 
+		data_silent="" 
+		id="84A1507E-D8C2-4126-A823-EE3375CF016D" >
+			<targetType launched="true" 
+				existing="true" 
+				all="true" />
+			<brush name="Default"/>
+			<stack ustack="true" 
+				kstack="false" 
+				jstack="false" />
+			<probe_definition index="0" 
+				event_name="Save Started" 
+				probe="CoreData*:CoreData:*:BeginSave" 
+				silent_script="self-> saveStart = vtimestamp;" 
+				predicate="" 
+				attach_debugger="">
+			</probe_definition>
+			<probe_definition index="1" 
+				event_name="Save Ended" 
+				probe="CoreData*:CoreData:*:EndSave" 
+				silent_script="self->saveEnd = (vtimestamp - self->saveStart) / 1000;" 
+				predicate="" 
+				attach_debugger="">
+					<field index="0" 
+						name="Save duration" 
+						code="self->saveEnd" 
+						type="%d" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+	</extension>
+</plugin>

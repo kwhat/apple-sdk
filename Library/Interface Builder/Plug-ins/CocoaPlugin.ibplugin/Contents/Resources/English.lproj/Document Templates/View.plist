@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>An Interface Builder document for creating a Cocoa view.
+
+To customize this document, drag controls from the Library onto the view and use the Inspector to set properties. Consider adding a view controller, or custom controller class with outlets and actions connected to your views to customize their behavior.</string>
+	<key>Icon</key>
+	<string>View.tiff</string>
+	<key>Title</key>
+	<string>Cocoa View Template</string>
+</dict>
+</plist>

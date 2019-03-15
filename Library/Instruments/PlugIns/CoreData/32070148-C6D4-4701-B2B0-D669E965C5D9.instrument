@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.apple.dtrace.instrument.32070148_C6D4_4701_B2B0_D669E965C5D9" 
+	name="32070148-C6D4-4701-B2B0-D669E965C5D9" 
+	version="1.0">
+	
+	<activation>
+		<rule kind="extension" 
+			id="com.apple.powertrace.dtrace-instrument-plugin.main"/>
+	</activation>
+	<extension end_silent="" 
+		helpURL="" 
+		version="1.0" 
+		defaultBrushName="default" 
+		category="Core Data" 
+		point="com.apple.xray.dtrace-instrument-type" 
+		iconURL="rsrc://CoreData.icns" 
+		pluginIdentifier="com.apple.powertrace.dtrace-instrument-plugin.main" 
+		begin_silent="" 
+		deletable="false" 
+		deckUnits="1" 
+		name="Core Data Fetches" 
+		runClass="PFTDTraceRun" 
+		instrumentDescription="Displays information about Core Data fetch activity." 
+		instrumentClass="PFTDTraceInstrument" 
+		data_silent="" 
+		id="32070148-C6D4-4701-B2B0-D669E965C5D9" >
+			<targetType launched="true" 
+				existing="true" 
+				all="true" />
+			<brush name="Default"/>
+			<stack ustack="true" 
+				kstack="false" 
+				jstack="false" />
+			<probe_definition index="0" 
+				event_name="Fetch Started" 
+				probe="CoreData*:CoreData:*:BeginFetch" 
+				silent_script="self->fetchStart = vtimestamp;" 
+				predicate="" 
+				attach_debugger="">	
+					<field index="0" 
+						name="Fetch entity" 
+						code="arg0" 
+						type="%s" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+			<probe_definition index="1" 
+				event_name="Fetch Ended" 
+				probe="CoreData*:CoreData:*:EndFetch" 
+				silent_script="self->fetchEnd = (vtimestamp - self-> fetchStart) / 1000;" 
+				predicate="" 
+				attach_debugger="">			
+					<field index="0" 
+						name="Fetch count" 
+						code="arg0" 
+						type="%d" 
+						width="(null)" 
+						truncation="(null)"/>
+					<field index="1" 
+						name="Fetch duration" 
+						code="self->fetchEnd"
+						type="%d" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+	</extension>
+</plugin>

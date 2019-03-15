@@ -1,0 +1,27 @@
+/*
+    Native Build System properties for the OS X platform
+
+    Copyright (c) 2011 Apple Inc.  All rights reserved.
+
+    Augments the list of build settings for the native build system with settings specific to the OS X build environment.
+*/
+{
+    Type = BuildSystem;
+    Identifier = com.apple.build-system.native;
+    BasedOn = "default:com.apple.build-system.native";
+    Name = "Native Build System";
+    Properties = (
+    
+        {   Name = COMBINE_HIDPI_IMAGES;
+            Type = bool;
+            DefaultValue = NO;
+            Category = "Deployment";
+        },
+        {   Name = PRODUCT_DEFINITION_PLIST;
+            Type = String;
+            DefaultValue = "";
+            Category = "Deployment";
+        },
+        
+    );
+}

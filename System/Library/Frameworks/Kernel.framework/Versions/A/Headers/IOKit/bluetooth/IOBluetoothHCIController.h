@@ -1411,5 +1411,5 @@ public:
 	
 private:
 	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  62 );
-	OSMetaClassDeclareReservedUnuÿsed(	IOBluetoothHCIController,  63 );
+	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  63 );
 };

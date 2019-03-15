@@ -1,0 +1,76 @@
+/*
+    MacOSX Architectures.xcspec
+    
+    Copyright (c) 2001-2010 Apple Inc.
+    All rights reserved.
+
+    Architectures supported by the Mac OS X platform.
+*/
+(
+	{
+		Type = Architecture;
+		Identifier = Standard;
+		Name = "32-bit Intel";
+		Description = "32-bit Mac OS X architectures";
+		ListInEnum = YES;
+		SortNumber = 1;
+		RealArchitectures = (
+			"i386",
+		);
+		ArchitectureSetting = "ARCHS_STANDARD_32_BIT";
+	},
+	{
+		Type = Architecture;
+		Identifier = Universal64bit;
+		Name = "64-bit Intel";
+		Description = "64-bit Mac OS X architectures";
+		ListInEnum = YES;
+		SortNumber = 2;
+		RealArchitectures = (
+			"x86_64",
+		);
+		ArchitectureSetting = "ARCHS_STANDARD_64_BIT";
+	},
+	{
+		Type = Architecture;
+		Identifier = "Universal32_64_Bit";
+		Name = "Standard (32/64-bit Intel)";
+		Description = "32- and 64-bit Mac OS X architectures";
+		ListInEnum = YES;
+		SortNumber = 3;
+		RealArchitectures = (
+			"x86_64",
+			"i386",
+		);
+		ArchitectureSetting = "ARCHS_STANDARD_32_64_BIT";
+	},
+	{
+		Type = Architecture;
+		Identifier = Native;
+		Name = "Native Architecture of Build Machine";
+		Description = "Native 32- or 64-bit architecture of build machine";
+		ListInEnum = YES;
+		SortNumber = 101;
+		ArchitectureSetting = "NATIVE_ARCH_ACTUAL";
+	},
+	{
+		Type = Architecture;
+		Identifier = i386;
+		Name = "Intel";
+		Description = "32-bit Intel";
+		PerArchBuildSettingName = Intel;
+		ByteOrder = little;
+		ListInEnum = NO;
+		SortNumber = 105;
+	},
+	{
+		Type = Architecture;
+		Identifier = "x86_64";
+		Name = "Intel 64-bit";
+		Description = "64-bit Intel";
+		PerArchBuildSettingName = "Intel 64-bit";
+		ByteOrder = little;
+		ListInEnum = NO;
+		SortNumber = 106;
+	},
+)

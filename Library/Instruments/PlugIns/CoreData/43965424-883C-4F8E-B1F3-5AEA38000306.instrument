@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.apple.dtrace.instrument.43965424_883C_4F8E_B1F3_5AEA38000306" 
+	name="43965424-883C-4F8E-B1F3-5AEA38000306" 
+	version="1.0">
+	
+	<activation>
+		<rule kind="extension" 
+			id="com.apple.powertrace.dtrace-instrument-plugin.main"/>
+	</activation>
+	<extension end_silent="" 
+		helpURL="" 
+		version="1.0" 
+		defaultBrushName="default" 
+		category="Core Data" 
+		point="com.apple.xray.dtrace-instrument-type" 
+		iconURL="rsrc://CoreData.icns" 
+		pluginIdentifier="com.apple.powertrace.dtrace-instrument-plugin.main" 
+		begin_silent="" 
+		deletable="false" 
+		deckUnits="1" 
+		name="Core Data Cache Misses" 
+		runClass="PFTDTraceRun" 
+		instrumentDescription="Displays information about filesystem access during Core Data faulting." 
+		instrumentClass="PFTDTraceInstrument" 
+		data_silent="" 
+		id="43965424-883C-4F8E-B1F3-5AEA38000306" >
+			<targetType launched="true" 
+				existing="true" 
+				all="true" />
+			<brush name="Default"/>
+			<stack ustack="true" 
+				kstack="false" 
+				jstack="false" />
+			<probe_definition index="0" 
+				event_name="Cache Miss Started" 
+				probe="CoreData*:CoreData:*:BeginFaultCacheMiss" 
+				silent_script="self->cacheMissStart = vtimestamp;" 
+				predicate="" 
+				attach_debugger="">			
+					<field index="0" 
+						name="Cache miss" 
+						code="arg0" 
+						type="%s" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+			<probe_definition index="1" 
+				event_name="Cache Miss Ended" 
+				probe="CoreData*:CoreData:*:EndFaultCacheMiss" 
+				silent_script="self->cacheMissEnd = (vtimestamp - self-> cacheMissStart) / 1000;" 
+				predicate="" 
+				attach_debugger="">			
+					<field index="0" 
+						name="CM duration" 
+						code="self->cacheMissEnd" 
+						type="%d" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+			<probe_definition index="2" 
+				event_name="Relationship Cache Miss Started" 
+				probe="CoreData*:CoreData:*:BeginRelationshipCacheMiss" 
+				silent_script="self->relationshipCacheMissStart = vtimestamp;" 
+				predicate="" 
+				attach_debugger="">			
+					<field index="0" 
+						name="RCM source" 
+						code="arg0" 
+						type="%s" 
+						width="(null)" 
+						truncation="(null)"/>
+					<field index="1" 
+						name="RCM relationship" 
+						code="arg1" 
+						type="%s" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+			<probe_definition index="3" 
+				event_name="Relationship Cache Miss Ended" 
+				probe="CoreData*:CoreData:*:EndRelationshipCacheMiss" 
+				silent_script="self-> relationshipCacheMissEnd= (vtimestamp - self-> relationshipCacheMissStart) / 1000;" 
+				predicate="" 
+				attach_debugger="">			
+					<field index="0" 
+						name="RCM duration" 
+						code="self->relationshipCacheMissEnd" 
+						type="%d" 
+						width="(null)" 
+						truncation="(null)"/>
+			</probe_definition>
+	</extension>
+</plugin>

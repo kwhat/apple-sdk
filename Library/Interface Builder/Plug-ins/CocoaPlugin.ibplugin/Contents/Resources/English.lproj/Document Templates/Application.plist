@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>An Interface Builder document suitable for creating a Cocoa application, including a main menu and window.
+
+To customize this document, change occurrences of &quot;NewApplication&quot; in the Menu to your application&apos;s name. Drag controls from the Library onto the window and use the Inspector to set properties, bindings, and animations.</string>
+	<key>Icon</key>
+	<string>Application.tiff</string>
+	<key>Title</key>
+	<string>Cocoa Application Template</string>
+</dict>
+</plist>

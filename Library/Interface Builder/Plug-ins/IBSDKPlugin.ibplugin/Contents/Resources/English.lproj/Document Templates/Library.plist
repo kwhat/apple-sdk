@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>An Interface Builder document for creating library components as part of an Interface Builder Plug-in.
+
+To customize the library component, use the example and template provided in the nib.</string>
+	<key>Icon</key>
+	<string>Library.tiff</string>
+	<key>Title</key>
+	<string>IB SDK Library Template</string>
+</dict>
+</plist>

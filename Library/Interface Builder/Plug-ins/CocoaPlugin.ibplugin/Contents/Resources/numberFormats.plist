@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+
+<!--
+  First entry is the format; the second is the positive example value,
+  the third is the negative example value.
+-->
+<plist version="0.9">
+<array>
+    <array>
+      <string>#,##0.00;0.00;-#,##0.00</string>
+      <string>9999.99</string>
+      <string>-9999.99</string>
+    </array>
+    <array>
+      <string>$ #,##0.00;$ 0.00;-$ #,##0.00</string>
+      <string>9999.99</string>
+      <string>-9999.99</string>
+    </array>
+    <array>
+      <string>$ #,##0.00;$ 0.00;[Red]($ #,##0.00)</string>
+      <string>9999.99</string>
+      <string>-9999.99</string>
+    </array>
+    <array>
+      <string>0.00;0.00;-0.00</string>
+      <string>9999.99</string>
+      <string>-9999.99</string>
+    </array>
+    <array>
+      <string>0;0;-0</string>
+      <string>99.99</string>
+      <string>-99.99</string>
+    </array>
+    <array>
+      <string>00000;00000;-00000</string>
+      <string>99.99</string>
+      <string>-99.99</string>
+    </array>
+    <array>
+      <string>0%;0%;-0%</string>
+      <string>99.99</string>
+      <string>-99.99</string>
+    </array>
+    <array>
+      <string>0.00%;0.00%;-0.00%</string>
+      <string>99.99</string>
+      <string>-99.99</string>
+    </array>
+</array>
+</plist>
+
